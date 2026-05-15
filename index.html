@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pediatri App — Tatalaksana & Kalkulator Dosis</title>
+<meta name="description" content="Pedoman tatalaksana penyakit anak dan kalkulator dosis berbasis berat badan untuk dokter. Tersedia luring.">
+<meta name="theme-color" content="#0288D1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pediatri App">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════
+   CSS VARIABLES
+══════════════════════════════════ */
+:root {
+  --primary:#0288D1; --primary-dark:#0171AD; --primary-light:#E1F5FE; --primary-mid:#29B6F6;
+  --success:#26A69A; --success-light:#E0F2F1;
+  --danger:#D32F2F; --danger-light:#FFEBEE;
+  --warning:#F57C00; --warning-light:#FFF3E0;
+  --purple:#7B1FA2; --purple-light:#F3E5F5;
+  --indigo:#3949AB; --indigo-light:#E8EAF6;
+  --bg-body:#F0F5FA; --bg-card:#FFFFFF; --bg-nav:#FFFFFF;
+  --text-primary:#1A2A3A; --text-secondary:#5B7083; --text-muted:#9BADBF;
+  --border:rgba(2,136,209,0.10);
+  --shadow-sm:0 2px 8px rgba(2,136,209,0.08);
+  --shadow-md:0 4px 20px rgba(2,136,209,0.12);
+  --shadow-lg:0 8px 32px rgba(2,136,209,0.18);
+  --radius-sm:10px; --radius-md:16px; --radius-lg:22px;
+  --font-main:'Plus Jakarta Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-main);background:var(--bg-body);color:var(--text-primary);min-height:100vh;padding-bottom:76px;-webkit-font-smoothing:antialiased;overscroll-behavior-y:contain;}
+button,[onclick],a{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:pointer;user-select:none;}
+button:active{transform:scale(0.97);}
+
+/* ══ BOTTOM NAV ══ */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:var(--bg-nav);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;z-index:1000;box-shadow:0 -4px 24px rgba(2,136,209,0.08);padding-bottom:env(safe-area-inset-bottom);}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 16px;border:none;background:transparent;color:var(--text-muted);font-size:10px;font-weight:600;font-family:var(--font-main);letter-spacing:0.3px;border-radius:var(--radius-sm);transition:color 0.2s,transform 0.15s;position:relative;}
+.nav-item .nav-icon{font-size:22px;line-height:1;transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1);}
+.nav-item.active{color:var(--primary);}
+.nav-item.active .nav-icon{transform:scale(1.15) translateY(-1px);}
+.nav-item.active::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:28px;height:3px;background:var(--primary);border-radius:0 0 4px 4px;}
+
+/* ══ TAB PANELS ══ */
+.tab-panel{display:none;min-height:100vh;animation:fadeUp 0.25s ease;}
+.tab-panel.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ APP HEADER ══ */
+.app-header{background:linear-gradient(135deg,#01579B 0%,#0288D1 45%,#039BE5 80%,#26C6DA 100%);padding:20px 20px 28px;position:relative;overflow:hidden;}
+.app-header::before{content:'';position:absolute;top:-30px;right:-20px;width:160px;height:160px;background:rgba(255,255,255,0.07);border-radius:50%;}
+.app-header::after{content:'';position:absolute;bottom:-40px;left:30%;width:200px;height:200px;background:rgba(255,255,255,0.05);border-radius:50%;}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;position:relative;z-index:1;}
+.header-brand{display:flex;align-items:center;gap:10px;}
+.header-logo{width:40px;height:40px;background:rgba(255,255,255,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);}
+.header-title{color:white;}
+.header-title h1{font-size:15px;font-weight:800;letter-spacing:-0.3px;line-height:1.2;}
+.header-title span{font-size:11px;opacity:0.75;font-weight:500;}
+.header-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 12px;color:white;font-size:11px;font-weight:700;backdrop-filter:blur(6px);}
+.header-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:1;}
+.stat-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius-sm);padding:10px 8px;text-align:center;backdrop-filter:blur(6px);}
+.stat-pill .s-val{font-size:18px;font-weight:800;color:white;line-height:1;}
+.stat-pill .s-lbl{font-size:10px;color:rgba(255,255,255,0.75);margin-top:3px;font-weight:500;}
+
+/* ══ MAIN CONTENT ══ */
+.main-content{padding:16px;display:flex;flex-direction:column;gap:16px;}
+.section-title{font-size:13px;font-weight:700;color:var(--text-secondary);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ══ SMART STATUS ══ */
+.smart-status{background:var(--bg-card);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow-sm);border:1px solid var(--border);}
+.status-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.status-dot{width:10px;height:10px;background:var(--success);border-radius:50%;box-shadow:0 0 0 3px var(--success-light);animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 3px rgba(38,166,154,0.2);}50%{box-shadow:0 0 0 6px rgba(38,166,154,0.08);}}
+.status-title{font-size:13px;font-weight:700;color:var(--text-primary);}
+.status-sub{font-size:11px;color:var(--text-muted);}
+.triase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.triase-item{border-radius:var(--radius-sm);padding:10px 8px;text-align:center;}
+.triase-item.red{background:var(--danger-light);}
+.triase-item.yellow{background:var(--warning-light);}
+.triase-item.green{background:var(--success-light);}
+.triase-label{font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px;}
+.triase-item.red .triase-label{color:var(--danger);}
+.triase-item.yellow .triase-label{color:var(--warning);}
+.triase-item.green .triase-label{color:var(--success);}
+.triase-desc{font-size:10px;color:var(--text-secondary);line-height:1.4;}
+
+/* ══ QUICK ACTIONS ══ */
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.quick-card{background:var(--bg-card);border-radius:var(--radius-md);padding:14px;box-shadow:var(--shadow-sm);border:1px solid var(--border);display:flex;align-items:center;gap:12px;transition:transform 0.15s,box-shadow 0.15s;}
+.quick-card:active{transform:scale(0.97);}
+.quick-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.quick-text .q-title{font-size:13px;font-weight:700;color:var(--text-primary);line-height:1.2;}
+.quick-text .q-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+
+/* ══ INFO BANNER ══ */
+.info-banner{background:linear-gradient(135deg,#E1F5FE,#E0F7FA);border:1px solid rgba(2,136,209,0.15);border-radius:var(--radius-md);padding:14px 16px;display:flex;align-items:flex-start;gap:12px;}
+.info-banner .ib-icon{font-size:22px;flex-shrink:0;}
+.info-banner .ib-title{font-size:13px;font-weight:700;color:var(--primary-dark);}
+.info-banner .ib-desc{font-size:11px;color:var(--text-secondary);margin-top:3px;line-height:1.5;}
+
+/* ══ ORGAN HEADER ══ */
+.organ-header{background:linear-gradient(135deg,#1A237E 0%,#3949AB 50%,#5C6BC0 100%);padding:20px 20px 24px;position:relative;overflow:hidden;}
+.organ-header::before{content:'';position:absolute;top:-20px;right:-10px;width:120px;height:120px;background:rgba(255,255,255,0.06);border-radius:50%;}
+.organ-header-title{color:white;font-size:18px;font-weight:800;letter-spacing:-0.3px;position:relative;z-index:1;}
+.organ-header-sub{color:rgba(255,255,255,0.7);font-size:12px;margin-top:4px;position:relative;z-index:1;}
+.search-bar-wrap{padding:14px 16px 0;}
+.search-bar{display:flex;align-items:center;gap:10px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:10px 14px;box-shadow:var(--shadow-sm);}
+.search-bar input{border:none;outline:none;flex:1;font-size:14px;font-family:var(--font-main);color:var(--text-primary);background:transparent;}
+.search-bar input::placeholder{color:var(--text-muted);}
+
+/* ══ MENU GRID ══ */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px;}
+.menu-card{background:var(--bg-card);border-radius:var(--radius-md);padding:14px 10px 12px;box-shadow:var(--shadow-sm);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;cursor:pointer;transition:transform 0.15s;}
+.menu-card:active{transform:scale(0.95);}
+.menu-card-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.menu-card-title{font-size:11px;font-weight:700;color:var(--text-primary);line-height:1.3;}
+.menu-card-count{font-size:10px;color:var(--text-muted);background:var(--bg-body);border-radius:10px;padding:2px 7px;font-weight:600;}
+.mc-blue .menu-card-icon{background:var(--primary-light);}
+.mc-teal .menu-card-icon{background:var(--success-light);}
+.mc-red .menu-card-icon{background:var(--danger-light);}
+.mc-purple .menu-card-icon{background:var(--purple-light);}
+.mc-indigo .menu-card-icon{background:var(--indigo-light);}
+.mc-orange .menu-card-icon{background:var(--warning-light);}
+.mc-yellow .menu-card-icon{background:#FFFDE7;}
+.mc-green .menu-card-icon{background:#E8F5E9;}
+.mc-pink .menu-card-icon{background:#FCE4EC;}
+.mc-cyan .menu-card-icon{background:#E0F7FA;}
+
+/* ══ KALKULATOR ══ */
+.calc-header{background:linear-gradient(135deg,#004D40 0%,#00796B 50%,#26A69A 100%);padding:20px 20px 24px;position:relative;overflow:hidden;}
+.calc-header::before{content:'⚖️';position:absolute;right:20px;top:14px;font-size:52px;opacity:0.15;}
+.calc-header-title{color:white;font-size:18px;font-weight:800;letter-spacing:-0.3px;}
+.calc-header-sub{color:rgba(255,255,255,0.7);font-size:12px;margin-top:4px;}
+.weight-input-card{margin:16px;background:var(--bg-card);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-md);border:1px solid var(--border);}
+.wic-label{font-size:12px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.7px;margin-bottom:10px;}
+.weight-row{display:flex;gap:10px;align-items:center;}
+.weight-field{flex:1;position:relative;}
+.weight-field input{width:100%;padding:12px 42px 12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:20px;font-weight:700;font-family:var(--font-mono);color:var(--text-primary);background:var(--bg-body);outline:none;transition:border-color 0.2s;}
+.weight-field input:focus{border-color:var(--success);}
+.weight-field .unit{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:var(--text-muted);}
+.btn-calc{padding:12px 20px;background:var(--success);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:700;font-family:var(--font-main);white-space:nowrap;box-shadow:0 4px 14px rgba(38,166,154,0.3);}
+.age-row{display:flex;gap:8px;margin-top:10px;}
+.age-row select{flex:1;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:var(--font-main);color:var(--text-primary);background:var(--bg-body);outline:none;}
+.drug-results{padding:0 16px 16px;display:flex;flex-direction:column;gap:12px;}
+.drug-card{background:var(--bg-card);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);}
+.drug-card-header{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;}
+.drug-name{font-size:14px;font-weight:700;color:white;}
+.drug-class{font-size:10px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.15);border-radius:10px;padding:2px 8px;font-weight:600;}
+.drug-card-body{padding:14px 16px;}
+.dose-result-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bg-body);}
+.dose-result-row:last-child{border-bottom:none;}
+.dose-label{font-size:12px;color:var(--text-secondary);font-weight:500;}
+.dose-value{font-size:16px;font-weight:800;font-family:var(--font-mono);color:var(--text-primary);}
+.dose-value.highlight{color:var(--success);}
+.dose-range{font-size:10px;color:var(--text-muted);background:var(--bg-body);border-radius:6px;padding:2px 6px;font-family:var(--font-mono);}
+.drug-note{font-size:11px;color:var(--text-secondary);background:var(--bg-body);border-radius:var(--radius-sm);padding:8px 10px;margin-top:10px;line-height:1.5;border-left:3px solid var(--success);}
+.drug-note.warn{border-left-color:var(--warning);}
+.drug-note.danger{border-left-color:var(--danger);}
+.empty-calc{text-align:center;padding:40px 20px;color:var(--text-muted);}
+.empty-calc .ec-icon{font-size:48px;margin-bottom:12px;}
+.empty-calc .ec-text{font-size:14px;font-weight:600;}
+.empty-calc .ec-sub{font-size:12px;margin-top:6px;}
+
+/* ══ MODAL ══ */
+.feature-modal{position:fixed;inset:0;background:var(--bg-body);z-index:2000;display:none;flex-direction:column;overflow-y:auto;}
+.feature-modal.open{display:flex;}
+.modal-topbar{position:sticky;top:0;background:var(--bg-card);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;align-items:center;gap:12px;z-index:10;box-shadow:var(--shadow-sm);}
+.modal-back{width:36px;height:36px;border-radius:10px;background:var(--bg-body);border:none;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--primary);}
+.modal-title{font-size:15px;font-weight:800;color:var(--text-primary);}
+.modal-subtitle{font-size:11px;color:var(--text-muted);}
+.modal-body{flex:1;padding:0;}
+
+/* ══ DISEASE DETAIL MODAL ══ */
+.disease-detail-header{padding:24px 20px 20px;position:relative;overflow:hidden;}
+.disease-detail-header::before{content:'';position:absolute;right:-20px;top:-20px;width:140px;height:140px;background:rgba(255,255,255,0.08);border-radius:50%;}
+.ddh-icon{font-size:36px;margin-bottom:10px;position:relative;z-index:1;}
+.ddh-title{font-size:20px;font-weight:800;color:white;position:relative;z-index:1;margin-bottom:4px;}
+.ddh-desc{font-size:12px;color:rgba(255,255,255,0.8);position:relative;z-index:1;}
+.detail-tabs{display:flex;overflow-x:auto;scrollbar-width:none;background:var(--bg-card);border-bottom:1px solid var(--border);padding:0 8px;position:sticky;top:57px;z-index:9;}
+.detail-tabs::-webkit-scrollbar{display:none;}
+.detail-tab{padding:12px 14px;border:none;background:transparent;border-bottom:3px solid transparent;font-size:11px;font-weight:600;color:var(--text-muted);white-space:nowrap;font-family:var(--font-main);cursor:pointer;}
+.detail-tab.active{color:var(--primary);border-bottom-color:var(--primary);}
+.detail-content{padding:16px;}
+.detail-section{display:none;}
+.detail-section.active{display:block;}
+.detail-card{background:var(--bg-card);border-radius:var(--radius-md);padding:16px;margin-bottom:12px;box-shadow:var(--shadow-sm);border:1px solid var(--border);}
+.detail-card-title{font-size:12px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.detail-card-title::before{content:'';width:3px;height:14px;background:var(--primary);border-radius:2px;flex-shrink:0;}
+.detail-list{list-style:none;}
+.detail-list li{padding:8px 0 8px 20px;position:relative;font-size:13px;color:var(--text-secondary);border-bottom:1px solid var(--bg-body);line-height:1.6;}
+.detail-list li:last-child{border-bottom:none;}
+.detail-list li::before{content:'▸';position:absolute;left:0;color:var(--primary);font-weight:700;}
+.detail-drug{background:var(--bg-body);border-left:4px solid var(--primary);border-radius:6px;padding:12px 14px;margin-bottom:10px;}
+.detail-drug .dd-name{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:4px;}
+.detail-drug .dd-class{font-size:10px;color:var(--primary);background:var(--primary-light);padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px;font-weight:600;}
+.detail-drug .dd-dose{font-size:12px;color:var(--text-secondary);font-family:var(--font-mono);margin-bottom:4px;}
+.detail-drug .dd-note{font-size:11px;color:var(--text-muted);background:var(--warning-light);border-radius:4px;padding:6px 8px;margin-top:8px;line-height:1.5;}
+.detail-klas{background:var(--bg-body);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:8px;}
+.detail-klas .dk-degree{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:4px;}
+.detail-klas .dk-criteria{font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:4px;}
+.detail-klas .dk-action{font-size:11px;color:var(--primary);font-weight:600;}
+.alert-box{border-radius:var(--radius-sm);padding:10px 12px;font-size:12px;line-height:1.5;margin-top:10px;}
+.alert-box.red{background:var(--danger-light);color:#B71C1C;border-left:3px solid var(--danger);}
+.alert-box.blue{background:var(--primary-light);color:#01579B;border-left:3px solid var(--primary);}
+.alert-box.green{background:var(--success-light);color:#00332F;border-left:3px solid var(--success);}
+.alert-box.yellow{background:var(--warning-light);color:#7B3F00;border-left:3px solid var(--warning);}
+.penunjang-item{background:var(--bg-body);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:8px;}
+.pi-nama{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:3px;}
+.pi-indikasi{font-size:11px;color:var(--primary);font-weight:600;margin-bottom:3px;}
+.pi-desc{font-size:12px;color:var(--text-secondary);line-height:1.5;}
+
+/* ══ PROFIL TAB ══ */
+.profil-header{background:linear-gradient(135deg,#263238,#37474F,#546E7A);padding:28px 20px 24px;text-align:center;position:relative;overflow:hidden;}
+.profil-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--primary),var(--primary-mid));border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:32px;border:3px solid rgba(255,255,255,0.2);position:relative;z-index:1;}
+.profil-name{color:white;font-size:16px;font-weight:800;position:relative;z-index:1;}
+.profil-role{color:rgba(255,255,255,0.65);font-size:12px;margin-top:4px;position:relative;z-index:1;}
+.profil-content{padding:16px;display:flex;flex-direction:column;gap:14px;}
+.profil-card{background:var(--bg-card);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);border:1px solid var(--border);overflow:hidden;}
+.profil-card-title{padding:12px 16px;font-size:12px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.7px;border-bottom:1px solid var(--border);background:var(--bg-body);}
+.profil-row{display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid var(--bg-body);gap:14px;}
+.profil-row:last-child{border-bottom:none;}
+.pr-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pr-icon.blue{background:var(--primary-light);}
+.pr-icon.green{background:var(--success-light);}
+.pr-icon.orange{background:var(--warning-light);}
+.pr-icon.purple{background:var(--purple-light);}
+.pr-text{flex:1;}
+.pr-title{font-size:13px;font-weight:600;color:var(--text-primary);}
+.pr-sub{font-size:11px;color:var(--text-muted);margin-top:1px;}
+.version-badge{display:inline-flex;align-items:center;gap:6px;background:var(--primary-light);color:var(--primary);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;}
+.watermark-footer{text-align:center;padding:20px;font-size:12px;color:var(--text-muted);line-height:1.6;}
+.watermark-footer strong{color:var(--text-secondary);font-weight:700;}
+.watermark-footer .wm-brand{font-size:14px;font-weight:800;color:var(--primary);display:block;margin-bottom:2px;}
+
+/* ══ BOTTOM SHEET ══ */
+.qa-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1500;display:none;align-items:flex-end;backdrop-filter:blur(4px);}
+.qa-modal.open{display:flex;}
+.qa-sheet{background:var(--bg-card);border-radius:24px 24px 0 0;padding:8px 20px 32px;width:100%;max-height:85vh;overflow-y:auto;animation:sheetUp 0.3s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes sheetUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+.qa-handle{width:40px;height:4px;background:var(--border);border-radius:4px;margin:10px auto 16px;}
+.qa-title{font-size:16px;font-weight:800;color:var(--text-primary);margin-bottom:4px;}
+.qa-sub{font-size:12px;color:var(--text-muted);margin-bottom:16px;}
+.qa-section-title{font-size:12px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.7px;margin:12px 0 8px;}
+.qa-content-block{background:var(--bg-body);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--text-secondary);line-height:1.7;margin-bottom:10px;}
+.qa-drug-row{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--bg-body);border-radius:var(--radius-sm);margin-bottom:6px;}
+.qdr-name{font-size:12px;font-weight:700;color:var(--text-primary);}
+.qdr-dose{font-size:12px;color:var(--text-secondary);font-family:var(--font-mono);}
+
+/* ══ TOAST ══ */
+#toastContainer{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:92%;max-width:420px;z-index:9999;pointer-events:none;display:flex;flex-direction:column;gap:8px;}
+.toast{background:var(--bg-card);border-radius:14px;padding:12px 16px;box-shadow:0 8px 28px rgba(0,0,0,0.14);display:flex;align-items:center;gap:10px;animation:toastSlide 0.3s cubic-bezier(0.34,1.56,0.64,1);border-left:4px solid var(--success);}
+@keyframes toastSlide{from{opacity:0;transform:translateY(-12px) scale(0.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+.toast-icon{font-size:20px;}
+.toast-text{font-size:13px;font-weight:600;color:var(--text-primary);}
+
+/* ══ TAG & DIVIDER ══ */
+.tag{display:inline-flex;align-items:center;gap:4px;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:700;}
+.tag.blue{background:var(--primary-light);color:var(--primary);}
+.tag.green{background:var(--success-light);color:var(--success);}
+.tag.red{background:var(--danger-light);color:var(--danger);}
+.tag.orange{background:var(--warning-light);color:var(--warning);}
+</style>
+</head>
+<body>
+
+<div id="toastContainer"></div>
+
+<!-- ════════ TAB: BERANDA ════════ -->
+<div id="tab-beranda" class="tab-panel active">
+  <div class="app-header">
+    <div class="header-top">
+      <div class="header-brand">
+        <div class="header-logo">🩺</div>
+        <div class="header-title">
+          <h1>Pediatri App</h1>
+          <span>Tatalaksana & Kalkulator Dosis</span>
+        </div>
+      </div>
+      <div class="header-badge">v2.0</div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill"><div class="s-val">10</div><div class="s-lbl">Sistem Organ</div></div>
+      <div class="stat-pill"><div class="s-val">10</div><div class="s-lbl">Penyakit</div></div>
+      <div class="stat-pill"><div class="s-val">12</div><div class="s-lbl">Poin Klinis</div></div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="smart-status">
+      <div class="status-header">
+        <div class="status-dot"></div>
+        <div>
+          <div class="status-title">Smart Status — Triase Cepat</div>
+          <div class="status-sub">Panduan triase pediatri singkat</div>
+        </div>
+      </div>
+      <div class="triase-grid">
+        <div class="triase-item red"><div class="triase-label">🔴 Merah</div><div class="triase-desc">Ancaman jiwa — resusitasi segera</div></div>
+        <div class="triase-item yellow"><div class="triase-label">🟡 Kuning</div><div class="triase-desc">Darurat, tidak langsung mengancam jiwa</div></div>
+        <div class="triase-item green"><div class="triase-label">🟢 Hijau</div><div class="triase-desc">Non-urgen, dapat menunggu</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Quick Actions — Kasus Tersering</div>
+      <div class="quick-grid">
+        <div class="quick-card" onclick="openQuickAction('ispa')">
+          <div class="quick-icon" style="background:#E3F2FD;">🫁</div>
+          <div class="quick-text"><div class="q-title">ISPA Atas</div><div class="q-sub">Faringo-tonsilitis, Otitis</div></div>
+        </div>
+        <div class="quick-card" onclick="openQuickAction('diare')">
+          <div class="quick-icon" style="background:#E8F5E9;">💧</div>
+          <div class="quick-text"><div class="q-title">Diare Akut</div><div class="q-sub">Rehidrasi & tatalaksana</div></div>
+        </div>
+        <div class="quick-card" onclick="openQuickAction('kejang')">
+          <div class="quick-icon" style="background:#FCE4EC;">⚡</div>
+          <div class="quick-text"><div class="q-title">Kejang Demam</div><div class="q-sub">Simple vs kompleks</div></div>
+        </div>
+        <div class="quick-card" onclick="openQuickAction('asma')">
+          <div class="quick-icon" style="background:#FFF3E0;">🌬️</div>
+          <div class="quick-text"><div class="q-title">Asma Anak</div><div class="q-sub">Derajat & nebulisasi</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="info-banner">
+      <div class="ib-icon">💡</div>
+      <div>
+        <div class="ib-title">Database 12 Poin Klinis</div>
+        <div class="ib-desc">Setiap penyakit tersedia <strong>12 poin klinis lengkap</strong>: Definisi, Etiologi, Patofisiologi, Diagnosis, Pemeriksaan, Klasifikasi, Tatalaksana, Monitoring, Komplikasi, Edukasi, Prognosis & Referensi.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Penyakit Tersedia (10)</div>
+      <div style="background:var(--bg-card);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);border:1px solid var(--border);overflow:hidden;">
+        <div class="profil-row" onclick="openDiseaseFromHome('sepsis-neonatorum')">
+          <div class="pr-icon blue">🦠</div>
+          <div class="pr-text"><div class="pr-title">Sepsis Neonatorum</div><div class="pr-sub">EOS & LOS — Ampisilin + Gentamisin</div></div>
+          <span class="tag blue">Neo</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('hiperbilirubinemia')">
+          <div class="pr-icon" style="background:#FFFDE7;">🟡</div>
+          <div class="pr-text"><div class="pr-title">Hiperbilirubinemia Neonatal</div><div class="pr-sub">Ikterus — Fototerapi & Transfusi Tukar</div></div>
+          <span class="tag blue">Neo</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('asma-anak')">
+          <div class="pr-icon blue">🌬️</div>
+          <div class="pr-text"><div class="pr-title">Asma Anak — Serangan Akut</div><div class="pr-sub">Salbutamol Nebulisasi + Steroid</div></div>
+          <span class="tag green">Resp</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('pneumonia-komunitas')">
+          <div class="pr-icon blue">🫁</div>
+          <div class="pr-text"><div class="pr-title">Pneumonia Komunitas Anak</div><div class="pr-sub">CAP — Amoksisilin Lini 1</div></div>
+          <span class="tag green">Resp</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('diare-akut')">
+          <div class="pr-icon green">💧</div>
+          <div class="pr-text"><div class="pr-title">Diare Akut Anak</div><div class="pr-sub">Rehidrasi WHO Plan A/B/C & Zinc</div></div>
+          <span class="tag orange">Cerna</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('kejang-demam')">
+          <div class="pr-icon purple">⚡</div>
+          <div class="pr-text"><div class="pr-title">Kejang Demam</div><div class="pr-sub">Simple vs Complex — Diazepam</div></div>
+          <span class="tag red">Saraf</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('demam-berdarah-dengue')">
+          <div class="pr-icon orange">🦟</div>
+          <div class="pr-text"><div class="pr-title">Demam Berdarah Dengue</div><div class="pr-sub">Derajat I–IV — Ringer Laktat</div></div>
+          <span class="tag orange">Infeksi</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('demam-tifoid')">
+          <div class="pr-icon orange">🌡️</div>
+          <div class="pr-text"><div class="pr-title">Demam Tifoid Anak</div><div class="pr-sub">Salmonella typhi — Ceftriaxone</div></div>
+          <span class="tag orange">Infeksi</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('tb-paru-anak')">
+          <div class="pr-icon orange">🧫</div>
+          <div class="pr-text"><div class="pr-title">Tuberkulosis Paru Anak</div><div class="pr-sub">Skor TB IDAI & OAT HRZE+HR</div></div>
+          <span class="tag orange">Infeksi</span>
+        </div>
+        <div class="profil-row" onclick="openDiseaseFromHome('sindrom-nefrotik')">
+          <div class="pr-icon" style="background:#E0F7FA;">🫘</div>
+          <div class="pr-text"><div class="pr-title">Sindrom Nefrotik Anak</div><div class="pr-sub">Prednisolon 2 mg/kg/hr + Diuretik</div></div>
+          <span class="tag blue">Nefro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ TAB: SISTEM ORGAN ════════ -->
+<div id="tab-organ" class="tab-panel">
+  <div class="organ-header">
+    <div class="organ-header-title">Indeks Sistem Organ</div>
+    <div class="organ-header-sub">Pilih sistem organ untuk melihat daftar penyakit</div>
+  </div>
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <span style="font-size:18px;color:var(--text-muted);">🔍</span>
+      <input type="text" id="organSearchInput" placeholder="Cari penyakit, tatalaksana…" oninput="filterOrgan(this.value)">
+    </div>
+  </div>
+  <div class="menu-grid" id="organMenuGrid">
+    <div class="menu-card mc-red" onclick="openOrganModule('neonatologi')"><div class="menu-card-icon">👶</div><div class="menu-card-title">Neonatologi</div><div class="menu-card-count">2 penyakit</div></div>
+    <div class="menu-card mc-blue" onclick="openOrganModule('respirasi')"><div class="menu-card-icon">🫁</div><div class="menu-card-title">Respirasi</div><div class="menu-card-count">2 penyakit</div></div>
+    <div class="menu-card mc-teal" onclick="openOrganModule('pencernaan')"><div class="menu-card-icon">🫃</div><div class="menu-card-title">Pencernaan</div><div class="menu-card-count">1 penyakit</div></div>
+    <div class="menu-card mc-purple" onclick="openOrganModule('saraf')"><div class="menu-card-icon">🧠</div><div class="menu-card-title">Saraf</div><div class="menu-card-count">1 penyakit</div></div>
+    <div class="menu-card mc-orange" onclick="openOrganModule('infeksi')"><div class="menu-card-icon">🦠</div><div class="menu-card-title">Infeksi Tropis</div><div class="menu-card-count">3 penyakit</div></div>
+    <div class="menu-card mc-cyan" onclick="openOrganModule('nefrologi')"><div class="menu-card-icon">🫘</div><div class="menu-card-title">Nefrologi</div><div class="menu-card-count">1 penyakit</div></div>
+    <div class="menu-card mc-green" onclick="comingSoon('Nutrisi & Tumbang')"><div class="menu-card-icon">🥦</div><div class="menu-card-title">Nutrisi & Tumbang</div><div class="menu-card-count">Segera</div></div>
+    <div class="menu-card mc-indigo" onclick="comingSoon('Alergi & Imuno')"><div class="menu-card-icon">🛡️</div><div class="menu-card-title">Alergi & Imuno</div><div class="menu-card-count">Segera</div></div>
+    <div class="menu-card mc-pink" onclick="comingSoon('Hematologi')"><div class="menu-card-icon">🩸</div><div class="menu-card-title">Hematologi</div><div class="menu-card-count">Segera</div></div>
+    <div class="menu-card mc-yellow" onclick="comingSoon('Kardiologi')"><div class="menu-card-icon">❤️</div><div class="menu-card-title">Kardiologi</div><div class="menu-card-count">Segera</div></div>
+  </div>
+</div>
+
+<!-- ════════ TAB: KALKULATOR ════════ -->
+<div id="tab-kalkulator" class="tab-panel">
+  <div class="calc-header">
+    <div class="calc-header-title">Kalkulator Dosis</div>
+    <div class="calc-header-sub">Masukkan berat badan & usia pasien</div>
+  </div>
+  <div class="weight-input-card">
+    <div class="wic-label">Data Pasien</div>
+    <div class="weight-row">
+      <div class="weight-field">
+        <input type="number" id="calcWeight" placeholder="0.0" min="0.1" max="100" step="0.1" oninput="calcDoses()">
+        <span class="unit">kg</span>
+      </div>
+      <button class="btn-calc" onclick="calcDoses()">Hitung</button>
+    </div>
+    <div class="age-row">
+      <select id="calcAge" onchange="calcDoses()">
+        <option value="">— Pilih Usia —</option>
+        <option value="neo">Neonatus (0–28 hari)</option>
+        <option value="infant">Bayi (1–12 bulan)</option>
+        <option value="toddler">Batita (1–3 tahun)</option>
+        <option value="pre">Pra-sekolah (3–6 tahun)</option>
+        <option value="school">Usia Sekolah (6–12 tahun)</option>
+        <option value="teen">Remaja (>12 tahun)</option>
+      </select>
+      <select id="calcCategory" onchange="calcDoses()">
+        <option value="all">Semua Kategori</option>
+        <option value="antibiotik">Antibiotik</option>
+        <option value="antipiretik">Antipiretik</option>
+        <option value="bronkodilator">Bronkodilator</option>
+        <option value="antiepilepsi">Anti-Epilepsi</option>
+        <option value="rehidrasi">Rehidrasi</option>
+      </select>
+    </div>
+  </div>
+  <div id="calcEmptyState" class="empty-calc"><div class="ec-icon">⚖️</div><div class="ec-text">Masukkan berat badan pasien</div><div class="ec-sub">Dosis akan dihitung otomatis sesuai BB</div></div>
+  <div id="drugResults" class="drug-results" style="display:none;"></div>
+</div>
+
+<!-- ════════ TAB: PROFIL ════════ -->
+<div id="tab-profil" class="tab-panel">
+  <div class="profil-header">
+    <div class="profil-avatar">👨‍⚕️</div>
+    <div class="profil-name">Pediatri App</div>
+    <div class="profil-role">Platform Klinis Anak — Indonesia</div>
+    <div style="margin-top:10px;"><span class="version-badge">🏥 Versi 2.0 · PWA Ready</span></div>
+  </div>
+  <div class="profil-content">
+    <div class="profil-card">
+      <div class="profil-card-title">📖 Tentang Aplikasi</div>
+      <div class="profil-row"><div class="pr-icon blue">🎯</div><div class="pr-text"><div class="pr-title">Tujuan</div><div class="pr-sub">Pedoman tatalaksana 12 poin klinis per penyakit berbasis bukti (IDAI, WHO)</div></div></div>
+      <div class="profil-row"><div class="pr-icon green">📡</div><div class="pr-text"><div class="pr-title">Mode Luring</div><div class="pr-sub">Dapat digunakan tanpa koneksi internet (PWA)</div></div></div>
+      <div class="profil-row"><div class="pr-icon orange">⚖️</div><div class="pr-text"><div class="pr-title">Kalkulator Dosis</div><div class="pr-sub">Perhitungan instan berbasis berat badan pasien</div></div></div>
+    </div>
+    <div class="profil-card">
+      <div class="profil-card-title">📚 Sumber Referensi</div>
+      <div class="profil-row"><div class="pr-icon blue">📗</div><div class="pr-text"><div class="pr-title">IDAI (Ikatan Dokter Anak Indonesia)</div><div class="pr-sub">Pedoman Pelayanan Medis & Formularium Anak</div></div></div>
+      <div class="profil-row"><div class="pr-icon green">🌍</div><div class="pr-text"><div class="pr-title">WHO IMCI Guidelines</div><div class="pr-sub">Integrated Management of Childhood Illness</div></div></div>
+      <div class="profil-row"><div class="pr-icon purple">📘</div><div class="pr-text"><div class="pr-title">Nelson Textbook of Pediatrics</div><div class="pr-sub">Referensi dosis & tatalaksana internasional</div></div></div>
+    </div>
+    <div class="profil-card">
+      <div class="profil-card-title">⚠️ Disclaimer</div>
+      <div style="padding:14px 16px;">
+        <p style="font-size:12px;color:var(--text-secondary);line-height:1.7;">Aplikasi ini bersifat <strong>alat bantu klinis</strong>, bukan pengganti penilaian dokter. Selalu lakukan <strong>penilaian klinis menyeluruh</strong> sebelum mengambil keputusan terapeutik.</p>
+        <div class="alert-box red" style="margin-top:10px;font-size:11px;">🚨 Untuk kasus kritis, selalu rujuk ke panduan resmi dan konsultasi spesialis.</div>
+      </div>
+    </div>
+    <div class="watermark-footer">
+      <span class="wm-brand">Pediatri App</span>
+      Dikembangkan oleh <strong>@dokrifqi</strong><br>
+      dr. Mochamad Rifqie N K · Dokter Anak Indonesia<br>
+      <span style="font-size:10px;color:var(--text-muted);">© 2025 · Hak Cipta Dilindungi</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ BOTTOM NAV ════════ -->
+<nav class="bottom-nav">
+  <button class="nav-item active" onclick="switchTab('beranda',this)"><span class="nav-icon">🏠</span>Beranda</button>
+  <button class="nav-item" onclick="switchTab('organ',this)"><span class="nav-icon">🔬</span>Sistem Organ</button>
+  <button class="nav-item" onclick="switchTab('kalkulator',this)"><span class="nav-icon">⚖️</span>Kalkulator</button>
+  <button class="nav-item" onclick="switchTab('profil',this)"><span class="nav-icon">👤</span>Profil</button>
+</nav>
+
+<!-- ════════ DISEASE DETAIL MODAL ════════ -->
+<div id="diseaseModal" class="feature-modal">
+  <div class="modal-topbar">
+    <button class="modal-back" onclick="closeDiseaseModal()">←</button>
+    <div>
+      <div class="modal-title" id="dm-title">—</div>
+      <div class="modal-subtitle" id="dm-sub">—</div>
+    </div>
+  </div>
+  <!-- Detail Header -->
+  <div class="disease-detail-header" id="dm-header">
+    <div class="ddh-icon" id="dm-icon">🏥</div>
+    <div class="ddh-title" id="dm-name">—</div>
+    <div class="ddh-desc" id="dm-desc">—</div>
+  </div>
+  <!-- Detail Tabs -->
+  <div class="detail-tabs" id="detailTabs">
+    <button class="detail-tab active" onclick="switchDetailTab('d-definisi',this)">📖 Definisi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-etiologi',this)">🔬 Etiologi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-patofis',this)">⚙️ Patofisiologi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-diagnosis',this)">🔍 Diagnosis</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-pemeriksaan',this)">🧪 Pemeriksaan</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-klasifikasi',this)">📊 Klasifikasi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-tatalaksana',this)">💊 Tatalaksana</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-monitoring',this)">📈 Monitoring</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-komplikasi',this)">⚠️ Komplikasi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-edukasi',this)">👨‍👩‍👧 Edukasi</button>
+    <button class="detail-tab" onclick="switchDetailTab('d-prognosis',this)">🎯 Prognosis</button>
+  </div>
+  <div class="detail-content">
+    <div id="d-definisi" class="detail-section active">
+      <div class="detail-card"><div class="detail-card-title">Pengertian</div><p id="dd-pengertian" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+      <div class="detail-card"><div class="detail-card-title">Epidemiologi</div><p id="dd-epid" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+      <div class="detail-card"><div class="detail-card-title">Angka Morbiditas & Mortalitas</div><p id="dd-morb" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+    </div>
+    <div id="d-etiologi" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Penyebab Utama</div><ul class="detail-list" id="dd-penyebab"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Faktor Risiko</div><ul class="detail-list" id="dd-faktor"></ul></div>
+    </div>
+    <div id="d-patofis" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Mekanisme Penyakit</div><p id="dd-mekanisme" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+      <div class="detail-card"><div class="detail-card-title">Poin Kunci</div><ul class="detail-list" id="dd-poin"></ul></div>
+    </div>
+    <div id="d-diagnosis" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Anamnesis</div><ul class="detail-list" id="dd-anamnesis"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Pemeriksaan Fisik</div><ul class="detail-list" id="dd-pemfisik"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Kriteria Diagnosis</div><p id="dd-kriteria" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+      <div class="detail-card"><div class="detail-card-title">Algoritma Diagnosis</div><ul class="detail-list" id="dd-algoritma"></ul></div>
+    </div>
+    <div id="d-pemeriksaan" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Laboratorium</div><div id="dd-lab"></div></div>
+      <div class="detail-card"><div class="detail-card-title">Radiologi</div><div id="dd-rad"></div></div>
+      <div class="detail-card"><div class="detail-card-title">Pemeriksaan Lain</div><div id="dd-lain"></div></div>
+    </div>
+    <div id="d-klasifikasi" class="detail-section">
+      <div class="detail-card">
+        <div class="detail-card-title">Sistem Klasifikasi</div>
+        <p id="dd-sistem" style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;"></p>
+        <div id="dd-tingkatan"></div>
+      </div>
+    </div>
+    <div id="d-tatalaksana" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Prinsip Umum</div><ul class="detail-list" id="dd-prinsip"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Terapi Farmakologis — Dosis per Usia</div><div id="dd-obat"></div></div>
+      <div class="detail-card"><div class="detail-card-title">Non-Farmakologis</div><ul class="detail-list" id="dd-nonfar"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Kriteria Rawat Inap</div><ul class="detail-list" id="dd-rawatinap"></ul></div>
+    </div>
+    <div id="d-monitoring" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Parameter Klinis</div><ul class="detail-list" id="dd-paramkl"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Parameter Lab</div><ul class="detail-list" id="dd-paramlab"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Target Terapi</div><ul class="detail-list" id="dd-target"></ul></div>
+    </div>
+    <div id="d-komplikasi" class="detail-section">
+      <div class="alert-box red" id="dd-redflags-wrap"><strong>🚨 Red Flags — Tanda Bahaya Segera:</strong><ul class="detail-list" id="dd-redflags" style="margin-top:8px;"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Komplikasi Dini</div><ul class="detail-list" id="dd-komdini"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Komplikasi Lanjut</div><ul class="detail-list" id="dd-komlanjut"></ul></div>
+    </div>
+    <div id="d-edukasi" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Edukasi Keluarga</div><ul class="detail-list" id="dd-keluarga"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Pencegahan</div><ul class="detail-list" id="dd-pencegahan"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Kapan Kembali ke Dokter</div><ul class="detail-list" id="dd-kembali"></ul></div>
+    </div>
+    <div id="d-prognosis" class="detail-section">
+      <div class="detail-card"><div class="detail-card-title">Prognosis Umum</div><p id="dd-progumum" style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;"></p></div>
+      <div class="detail-card"><div class="detail-card-title">✅ Faktor Baik</div><ul class="detail-list" id="dd-progbaik"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">❌ Faktor Buruk</div><ul class="detail-list" id="dd-progburuk"></ul></div>
+      <div class="detail-card"><div class="detail-card-title">Referensi</div><div id="dd-referensi"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ ORGAN MODULE MODAL ════════ -->
+<div id="organModal" class="feature-modal">
+  <div class="modal-topbar">
+    <button class="modal-back" onclick="closeOrganModal()">←</button>
+    <div>
+      <div class="modal-title" id="om-title">—</div>
+      <div class="modal-subtitle" id="om-sub">—</div>
+    </div>
+  </div>
+  <div class="modal-body" id="om-body"></div>
+</div>
+
+<!-- ════════ QUICK ACTION SHEET ════════ -->
+<div id="qaModal" class="qa-modal" onclick="closeQA(event)">
+  <div class="qa-sheet">
+    <div class="qa-handle"></div>
+    <div class="qa-title" id="qa-title">—</div>
+    <div class="qa-sub" id="qa-sub">—</div>
+    <div id="qa-content"></div>
+  </div>
+</div>
+
+<script src="data/index.js"></script>
+<script>
+
+/* ══════════════════════════════════════
+   TAB NAVIGATION
+══════════════════════════════════════ */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+/* ══════════════════════════════════════
+   TOAST
+══════════════════════════════════════ */
+function showToast(icon, text, color) {
+  const c = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.style.borderLeftColor = color||'var(--success)';
+  t.innerHTML = `<span class="toast-icon">${icon}</span><span class="toast-text">${text}</span>`;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+function comingSoon(name) { showToast('🔧', `"${name}" segera hadir!`, 'var(--warning)'); }
+
+/* ══════════════════════════════════════
+   ORGAN SEARCH
+══════════════════════════════════════ */
+function filterOrgan(q) {
+  document.querySelectorAll('#organMenuGrid .menu-card').forEach(c => {
+    c.style.display = c.textContent.toLowerCase().includes(q.toLowerCase())||!q ? '' : 'none';
+  });
+}
+
+/* ══════════════════════════════════════
+   ORGAN DATA
+══════════════════════════════════════ */
+const ORGAN_DATA = {
+  neonatologi: {
+    title:'👶 Neonatologi', sub:'Penyakit bayi baru lahir (0–28 hari)',
+    color:'linear-gradient(135deg,#B71C1C,#D32F2F)',
+    diseases:[
+      {icon:'🦠', name:'Sepsis Neonatorum', sub:'Early & Late Onset', key:'sepsis-neonatorum'},
+      {icon:'🟡', name:'Hiperbilirubinemia', sub:'Fisiologis & Patologis — Fototerapi', key:'hiperbilirubinemia'},
+      {icon:'💨', name:'RDS (Gawat Napas)', sub:'Sindrom Distres Respirasi', key:null},
+      {icon:'🩺', name:'Asfiksia Neonatorum', sub:'Resusitasi & Manajemen', key:null},
+      {icon:'🔬', name:'Hipoglikemia Neonatal', sub:'Screening & Tatalaksana', key:null},
+    ]
+  },
+  respirasi: {
+    title:'🫁 Respirasi', sub:'Penyakit saluran napas anak',
+    color:'linear-gradient(135deg,#01579B,#0288D1)',
+    diseases:[
+      {icon:'🌬️', name:'Asma Anak', sub:'Klasifikasi & Nebulisasi', key:'asma-anak'},
+      {icon:'🫁', name:'Pneumonia Komunitas', sub:'CAP — Antibiotik Lini 1', key:'pneumonia-komunitas'},
+      {icon:'😮‍💨', name:'Bronkiolitis', sub:'Etiologi RSV, Suportif', key:null},
+      {icon:'🧫', name:'TB Paru Anak', sub:'Skoring TB & OAT', key:'tb-paru-anak'},
+      {icon:'🔴', name:'Croup', sub:'Westley Score & Manajemen', key:null},
+    ]
+  },
+  pencernaan: {
+    title:'🫃 Pencernaan', sub:'Gastroenterologi anak',
+    color:'linear-gradient(135deg,#1B5E20,#388E3C)',
+    diseases:[
+      {icon:'💧', name:'Diare Akut', sub:'Dehidrasi & Rehidrasi WHO', key:'diare-akut'},
+      {icon:'🔄', name:'Intususepsi', sub:'Diagnosis & Reduksi', key:null},
+      {icon:'🟡', name:'Hepatitis A', sub:'Suportif & Pencegahan', key:null},
+    ]
+  },
+  saraf: {
+    title:'🧠 Neurologi', sub:'Penyakit saraf anak',
+    color:'linear-gradient(135deg,#4A148C,#7B1FA2)',
+    diseases:[
+      {icon:'⚡', name:'Kejang Demam', sub:'Simple vs Kompleks', key:'kejang-demam'},
+      {icon:'🧬', name:'Epilepsi Anak', sub:'Klasifikasi & AED Lini 1', key:null},
+      {icon:'🧠', name:'Meningitis Bakteri', sub:'LP & Antibiotik Empiris', key:null},
+    ]
+  },
+  infeksi: {
+    title:'🦠 Infeksi Tropis', sub:'Penyakit infeksi endemik Indonesia',
+    color:'linear-gradient(135deg,#E65100,#F57C00)',
+    diseases:[
+      {icon:'🦟', name:'Demam Berdarah Dengue', sub:'Derajat I–IV & Syok', key:'demam-berdarah-dengue'},
+      {icon:'🌡️', name:'Demam Tifoid', sub:'Widal & Antibiotik Pilihan', key:'demam-tifoid'},
+      {icon:'🧫', name:'TB Paru Anak', sub:'Skor TB IDAI & OAT', key:'tb-paru-anak'},
+      {icon:'🦟', name:'Malaria Falciparum', sub:'ACT & Malaria Berat', key:null},
+    ]
+  },
+  nefrologi: {
+    title:'🫘 Nefrologi', sub:'Penyakit ginjal dan saluran kemih anak',
+    color:'linear-gradient(135deg,#006064,#0097A7)',
+    diseases:[
+      {icon:'🔵', name:'Sindrom Nefrotik', sub:'Steroid & Relaps', key:'sindrom-nefrotik'},
+      {icon:'🩺', name:'Glomerulonefritis Akut', sub:'Post-Streptokokal', key:null},
+      {icon:'🦠', name:'Infeksi Saluran Kemih', sub:'ISK Atas & Bawah', key:null},
+    ]
+  }
+};
+
+/* ══════════════════════════════════════
+   ORGAN MODULE
+══════════════════════════════════════ */
+function openOrganModule(key) {
+  const data = ORGAN_DATA[key];
+  if(!data) return;
+  const modal = document.getElementById('organModal');
+  document.getElementById('om-title').textContent = data.title;
+  document.getElementById('om-sub').textContent = data.sub;
+  let html = `<div style="background:${data.color};padding:16px 20px;position:relative;overflow:hidden;"><div style="color:white;font-size:15px;font-weight:800;position:relative;z-index:1;">${data.title}</div><div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:2px;position:relative;z-index:1;">${data.sub}</div></div>`;
+  html += '<div style="padding:12px 16px;display:flex;flex-direction:column;gap:10px;">';
+  data.diseases.forEach(d => {
+    const hasData = !!d.key;
+    html += `<div style="background:white;border-radius:var(--radius-md);padding:14px 16px;box-shadow:var(--shadow-sm);border:1px solid var(--border);display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="${hasData ? `openDisease('${d.key}')` : `comingSoon('${d.name}')`}">
+      <div style="width:40px;height:40px;border-radius:12px;background:var(--bg-body);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">${d.icon}</div>
+      <div style="flex:1;"><div style="font-size:13px;font-weight:700;color:var(--text-primary);">${d.name}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${d.sub}</div></div>
+      ${hasData ? `<span class="tag green">Data Lengkap</span>` : `<span style="font-size:16px;color:var(--text-muted);">›</span>`}
+    </div>`;
+  });
+  html += '</div>';
+  document.getElementById('om-body').innerHTML = html;
+  modal.classList.add('open');
+}
+
+function closeOrganModal() { document.getElementById('organModal').classList.remove('open'); }
+
+/* ══════════════════════════════════════
+   DISEASE DETAIL
+══════════════════════════════════════ */
+const CAT_COLORS = {
+  neonatologi:'linear-gradient(135deg,#B71C1C,#D32F2F)',
+  respirasi:'linear-gradient(135deg,#01579B,#0288D1)',
+  pencernaan:'linear-gradient(135deg,#1B5E20,#2E7D32)',
+  saraf:'linear-gradient(135deg,#4A148C,#7B1FA2)',
+  infeksi:'linear-gradient(135deg,#E65100,#F57C00)',
+  nefrologi:'linear-gradient(135deg,#006064,#0097A7)',
+};
+
+function openDiseaseFromHome(key) { closeOrganModal(); openDisease(key); }
+
+async function openDisease(key) {
+  showToast('⏳','Memuat data...','var(--primary)');
+  const data = await loadDiseaseData(key);
+  if(!data){ showToast('❌','Gagal memuat data','var(--danger)'); return; }
+  renderDiseaseModal(data);
+  document.getElementById('diseaseModal').classList.add('open');
+  switchDetailTab('d-definisi', null);
+}
+
+function renderDiseaseModal(d) {
+  const cat = d.category||'neonatologi';
+  document.getElementById('dm-title').textContent = d.name;
+  document.getElementById('dm-sub').textContent = d.shortDesc||'';
+  const hdr = document.getElementById('dm-header');
+  hdr.style.background = CAT_COLORS[cat]||CAT_COLORS.neonatologi;
+  setText2('dm-icon', d.icon||'🏥');
+  setText2('dm-name', d.name);
+  setText2('dm-desc', d.shortDesc||'');
+
+  // 1. Definisi
+  setText2('dd-pengertian', d.definisi?.pengertian||'—');
+  setText2('dd-epid', d.definisi?.epidemiologi||'—');
+  setText2('dd-morb', d.definisi?.angkaMorbiditas||'—');
+  // 2. Etiologi
+  setList2('dd-penyebab', d.etiologi?.penyebabUtama||[]);
+  setList2('dd-faktor', d.etiologi?.faktorRisiko||[]);
+  // 3. Patofisiologi
+  setText2('dd-mekanisme', d.patofisiologi?.mekanisme||'—');
+  setList2('dd-poin', d.patofisiologi?.poinKunci||[]);
+  // 4. Diagnosis
+  setList2('dd-anamnesis', d.diagnosisKlinis?.anamnesis||[]);
+  setList2('dd-pemfisik', d.diagnosisKlinis?.pemeriksaanFisik||[]);
+  setText2('dd-kriteria', d.diagnosisKlinis?.kriteriaDiagnosis||'—');
+  setList2('dd-algoritma', d.diagnosisKlinis?.algoritmaDiagnosis||[]);
+  // 5. Pemeriksaan
+  setPenunjang2('dd-lab', d.pemeriksaanPenunjang?.laboratorium||[]);
+  setPenunjang2('dd-rad', d.pemeriksaanPenunjang?.radiologi||[]);
+  setPenunjang2('dd-lain', d.pemeriksaanPenunjang?.penunjangLain||[]);
+  // 6. Klasifikasi
+  const kl = d.klasifikasi||{};
+  setText2('dd-sistem', kl.sistemKlasifikasi||'—');
+  setKlas2('dd-tingkatan', kl.tingkatan||[]);
+  // 7. Tatalaksana
+  const tt = d.tatalaksana||{};
+  setList2('dd-prinsip', tt.prinsipUmum||[]);
+  setDrugs2('dd-obat', tt.obatObatan||[]);
+  setList2('dd-nonfar', tt.tindakanNonFarmakologis||[]);
+  setList2('dd-rawatinap', tt.kriteriaRawatInap||[]);
+  // 8. Monitoring
+  const mn = d.monitoring||{};
+  setList2('dd-paramkl', mn.parametarKlinis||mn.parameterKlinis||[]);
+  setList2('dd-paramlab', mn.parametarLab||mn.parameterLab||[]);
+  setList2('dd-target', mn.targetTerapi||[]);
+  // 9. Komplikasi
+  const kp = d.komplikasi||{};
+  setList2('dd-redflags', kp.redFlags||[]);
+  setList2('dd-komdini', kp.komplikasiDini||[]);
+  setList2('dd-komlanjut', kp.komplikasiLanjut||[]);
+  // 10. Edukasi
+  const ed = d.edukasi||{};
+  setList2('dd-keluarga', ed.untukKeluarga||[]);
+  setList2('dd-pencegahan', ed.pencegahan||[]);
+  setList2('dd-kembali', ed.kapanKembaliKeDokter||[]);
+  // 11. Prognosis
+  const pr = d.prognosis||{};
+  setText2('dd-progumum', pr.umum||'—');
+  setList2('dd-progbaik', pr.faktorPrognostikBaik||[]);
+  setList2('dd-progburuk', pr.faktorPrognostikBuruk||[]);
+  setRef2('dd-referensi', d.referensi||[]);
+}
+
+function closeDiseaseModal() { document.getElementById('diseaseModal').classList.remove('open'); }
+
+function switchDetailTab(id, btn) {
+  document.querySelectorAll('.detail-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.detail-tab').forEach(b => b.classList.remove('active'));
+  const sec = document.getElementById(id);
+  if(sec) sec.classList.add('active');
+  if(btn) btn.classList.add('active');
+  else {
+    document.querySelectorAll('.detail-tab').forEach(b => {
+      if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
+    });
+  }
+  document.getElementById('diseaseModal').scrollTop = 0;
+}
+
+/* ══════════════════════════════════════
+   HELPER FUNCTIONS
+══════════════════════════════════════ */
+function setText2(id, val) { const e=document.getElementById(id); if(e) e.textContent=val||'—'; }
+function setList2(id, arr) {
+  const e=document.getElementById(id); if(!e) return;
+  e.innerHTML = (arr&&arr.length) ? arr.map(i=>`<li>${i}</li>`).join('') : '<li>Data tidak tersedia</li>';
+}
+function setPenunjang2(id, arr) {
+  const e=document.getElementById(id); if(!e) return;
+  if(!arr||!arr.length){ e.innerHTML='<p style="font-size:12px;color:var(--text-muted);">Tidak ada data</p>'; return; }
+  e.innerHTML = arr.map(item => {
+    if(typeof item==='string') return `<div class="penunjang-item"><div class="pi-desc">${item}</div></div>`;
+    const desc = item.interpretasi||item.temuanKhas||'';
+    return `<div class="penunjang-item"><div class="pi-nama">${item.nama||'—'}</div>${item.indikasi?`<div class="pi-indikasi">🎯 ${item.indikasi}</div>`:''}<div class="pi-desc">${desc}</div></div>`;
+  }).join('');
+}
+function setKlas2(id, arr) {
+  const e=document.getElementById(id); if(!e) return;
+  const colors=['var(--success)','var(--warning)','var(--danger)','var(--primary)'];
+  e.innerHTML = (arr||[]).map((item,i) => {
+    if(typeof item==='string') return `<div class="detail-klas" style="border-left:3px solid ${colors[i%4]};"><p class="dk-criteria">${item}</p></div>`;
+    return `<div class="detail-klas" style="border-left:3px solid ${colors[i%4]};"><div class="dk-degree">${item.derajat||'—'}</div><div class="dk-criteria">${item.kriteria||'—'}</div>${item.tindakan?`<div class="dk-action">→ ${item.tindakan}</div>`:''}</div>`;
+  }).join('');
+}
+function setDrugs2(id, arr) {
+  const e=document.getElementById(id); if(!e) return;
+  const USIA=['neonatus','bayi','batita','prasekolah','sekolah','remaja'];
+  const ULABEL=['Neonatus','Bayi','Batita','Pra-sekolah','Usia Sekolah','Remaja'];
+  e.innerHTML = (arr||[]).map(ob => {
+    const doseObj = ob.dosis||ob.dosisBerdasarkanUsia||{};
+    const notes = ob.catatanKhusus||ob.catatan||'';
+    let rows='';
+    USIA.forEach((u,i)=>{
+      if(!doseObj[u]) return;
+      const val=doseObj[u];
+      const na=val.toLowerCase().includes('tidak digunakan');
+      rows+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bg-body);gap:10px;"><span style="font-size:11px;font-weight:600;color:var(--text-secondary);flex-shrink:0;">${ULABEL[i]}</span><span style="font-size:11px;${na?'color:var(--text-muted);font-style:italic;':'color:var(--success);font-weight:700;font-family:var(--font-mono);'}text-align:right;">${val}</span></div>`;
+    });
+    return `<div class="detail-drug"><div class="dd-name">${ob.nama||'—'}</div><div class="dd-class">${ob.kelas||''}</div>${ob.indikasi?`<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">${ob.indikasi}</div>`:''}${rows?`<div style="margin-top:4px;">${rows}</div>`:''}${ob.dosisMaksimal?`<div class="dd-dose">Maks: ${ob.dosisMaksimal}</div>`:''}${notes?`<div class="dd-note">💡 ${notes}</div>`:''}</div>`;
+  }).join('');
+}
+function setRef2(id, arr) {
+  const e=document.getElementById(id); if(!e) return;
+  e.innerHTML = (arr||[]).map((r,i)=>`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg-body);font-size:12px;color:var(--text-secondary);"><span style="width:22px;height:22px;background:var(--primary-light);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;">${i+1}</span><span>${r}</span></div>`).join('');
+}
+
+/* ══════════════════════════════════════
+   QUICK ACTIONS
+══════════════════════════════════════ */
+const QA_DATA = {
+  ispa:{title:'🫁 ISPA Anak',sub:'Infeksi Saluran Pernapasan Atas',content:`<div class="qa-section-title">Klasifikasi WHO</div><div class="qa-content-block"><strong>Batuk/Pilek Biasa:</strong> Tanpa distres napas, rawat jalan, suportif<br><strong>Pneumonia Ringan:</strong> RR ≥50 (2–12 bln), retraksi ringan<br><strong>Pneumonia Berat:</strong> Retraksi berat, sianosis → rawat inap</div><div class="qa-section-title">Faringo-Tonsilitis</div><div class="qa-drug-row"><span class="qdr-name">Amoksisilin</span><span class="qdr-dose">50 mg/kg/hr ÷ 3×</span></div><div class="qa-drug-row"><span class="qdr-name">Klindamisin (alergi PCN)</span><span class="qdr-dose">20–30 mg/kg/hr ÷ 3×</span></div><div class="qa-drug-row"><span class="qdr-name">Parasetamol</span><span class="qdr-dose">10–15 mg/kg q6h</span></div>`},
+  diare:{title:'💧 Diare Akut',sub:'Protokol rehidrasi WHO',content:`<div class="qa-section-title">Penilaian Dehidrasi</div><div class="qa-content-block"><strong>Tanpa dehidrasi:</strong> &lt;5% BB — Plan A<br><strong>Dehidrasi ringan-sedang:</strong> 5–10% — Plan B (RO)<br><strong>Dehidrasi berat:</strong> &gt;10% — Plan C (IV)</div><div class="qa-section-title">Terapi Cairan</div><div class="qa-drug-row"><span class="qdr-name">Plan A — ORS</span><span class="qdr-dose">10 mL/kg/diare</span></div><div class="qa-drug-row"><span class="qdr-name">Plan B — Oralit</span><span class="qdr-dose">75 mL/kg × 3 jam</span></div><div class="qa-drug-row"><span class="qdr-name">Plan C — RL/NaCl</span><span class="qdr-dose">30 mL/kg → 1 jam</span></div><div class="qa-drug-row"><span class="qdr-name">Zinc (&lt;6 bln)</span><span class="qdr-dose">10 mg/hr × 10 hr</span></div><div class="qa-drug-row"><span class="qdr-name">Zinc (≥6 bln)</span><span class="qdr-dose">20 mg/hr × 10 hr</span></div>`},
+  kejang:{title:'⚡ Kejang Demam',sub:'Simple vs Kompleks',content:`<div class="qa-section-title">Klasifikasi</div><div class="qa-content-block"><strong>Simple:</strong> Umum, &lt;15 mnt, tidak berulang 24 jam<br><strong>Kompleks:</strong> Fokal ATAU &gt;15 mnt ATAU berulang</div><div class="qa-section-title">Tatalaksana Akut</div><div class="qa-drug-row"><span class="qdr-name">Diazepam Rektal</span><span class="qdr-dose">0.5 mg/kg (max 10 mg)</span></div><div class="qa-drug-row"><span class="qdr-name">Diazepam IV</span><span class="qdr-dose">0.3–0.5 mg/kg IV pelan</span></div><div class="qa-drug-row"><span class="qdr-name">Parasetamol</span><span class="qdr-dose">10–15 mg/kg q4–6h</span></div>`},
+  asma:{title:'🌬️ Asma Anak',sub:'Derajat serangan & nebulisasi',content:`<div class="qa-section-title">Derajat Serangan</div><div class="qa-content-block"><strong>Ringan:</strong> SpO2 ≥95%, bicara kalimat<br><strong>Sedang:</strong> SpO2 91–94%, bicara kata-kata, retraksi (+)<br><strong>Berat:</strong> SpO2 &lt;91%, retraksi berat<br><strong>Mengancam jiwa:</strong> Silent chest, sianosis</div><div class="qa-section-title">Nebulisasi</div><div class="qa-drug-row"><span class="qdr-name">Salbutamol</span><span class="qdr-dose">0.15 mg/kg q20mnt × 3</span></div><div class="qa-drug-row"><span class="qdr-name">Ipratropium</span><span class="qdr-dose">250–500 mcg/dosis</span></div><div class="qa-drug-row"><span class="qdr-name">Prednisolon oral</span><span class="qdr-dose">1–2 mg/kg/hr × 3–5 hr</span></div>`}
+};
+
+function openQuickAction(key) {
+  const d=QA_DATA[key]; if(!d) return;
+  document.getElementById('qa-title').textContent=d.title;
+  document.getElementById('qa-sub').textContent=d.sub;
+  document.getElementById('qa-content').innerHTML=d.content;
+  document.getElementById('qaModal').classList.add('open');
+}
+function closeQA(e) { if(e.target===document.getElementById('qaModal')) document.getElementById('qaModal').classList.remove('open'); }
+
+/* ══════════════════════════════════════
+   KALKULATOR DOSIS
+══════════════════════════════════════ */
+const DRUGS = [
+  {name:'Parasetamol',class:'Antipiretik',category:'antipiretik',color:'linear-gradient(135deg,#E65100,#F57C00)',dosePerKg:15,doseMin:10,doseMax:15,unit:'mg/dosis',interval:'q4–6h',maxDayDose:60,maxSingleDose:1000,note:'Sirup 120mg/5mL atau 250mg/5mL. Tidak untuk neonatus ≤4 minggu.',noteType:'',ageGroups:['infant','toddler','pre','school','teen']},
+  {name:'Ibuprofen',class:'Antipiretik/NSAID',category:'antipiretik',color:'linear-gradient(135deg,#AD1457,#E91E63)',dosePerKg:10,doseMin:5,doseMax:10,unit:'mg/dosis',interval:'q6–8h',maxDayDose:40,maxSingleDose:400,note:'Tidak untuk <6 bulan, asma, atau gangguan ginjal. Sirup 100mg/5mL.',noteType:'warn',ageGroups:['toddler','pre','school','teen']},
+  {name:'Amoksisilin',class:'Antibiotik Beta-Laktam',category:'antibiotik',color:'linear-gradient(135deg,#0D47A1,#1565C0)',dosePerKg:50,doseMin:40,doseMax:90,unit:'mg/dosis',interval:'q8h',maxDayDose:90,maxSingleDose:500,note:'Dosis tinggi 80-90 mg/kg/hr untuk OMA & CAP. Sirup 125mg/5mL.',noteType:'',ageGroups:['infant','toddler','pre','school','teen']},
+  {name:'Cefixime',class:'Sefalosporin III',category:'antibiotik',color:'linear-gradient(135deg,#1B5E20,#2E7D32)',dosePerKg:8,doseMin:8,doseMax:10,unit:'mg/dosis',interval:'q12–24h',maxDayDose:16,maxSingleDose:400,note:'ISK, sinusitis, otitis. Sirup 100mg/5mL.',noteType:'',ageGroups:['infant','toddler','pre','school','teen']},
+  {name:'Salbutamol',class:'Bronkodilator SABA',category:'bronkodilator',color:'linear-gradient(135deg,#004D40,#00796B)',dosePerKg:0.15,doseMin:0.1,doseMax:0.15,unit:'mg/dosis',interval:'q20mnt ×3 (akut)',maxDayDose:null,maxSingleDose:5,note:'Nebulisasi: min 2.5mg. Tambahkan NaCl 0.9% hingga total 4mL.',noteType:'',ageGroups:['infant','toddler','pre','school','teen']},
+  {name:'Diazepam Rektal',class:'Anti-Epilepsi Akut',category:'antiepilepsi',color:'linear-gradient(135deg,#4A148C,#6A1B9A)',dosePerKg:0.5,doseMin:0.3,doseMax:0.5,unit:'mg/dosis',interval:'ulang 1× setelah 5 mnt',maxDayDose:null,maxSingleDose:10,note:'Maks 10mg/dosis. Rektal tube 5mg & 10mg. Siapkan bag-mask!',noteType:'danger',ageGroups:['infant','toddler','pre','school','teen']},
+  {name:'Zinc Sulfat',class:'Suplementasi Diare',category:'rehidrasi',color:'linear-gradient(135deg,#1A237E,#283593)',dosePerKg:null,fixedDoseByAge:{infant:10,toddler:20,pre:20,school:20,teen:20},unit:'mg/hari',interval:'sekali sehari × 10 hari',maxDayDose:20,maxSingleDose:20,note:'<6 bulan: 10mg/hr. ≥6 bulan: 20mg/hr. Wajib 10 hari penuh.',noteType:'',ageGroups:['infant','toddler','pre','school','teen']},
+];
+
+function calcDoses() {
+  const bb=parseFloat(document.getElementById('calcWeight')?.value);
+  const ag=document.getElementById('calcAge')?.value;
+  const cat=document.getElementById('calcCategory')?.value;
+  const es=document.getElementById('calcEmptyState');
+  const rd=document.getElementById('drugResults');
+  if(!bb||bb<=0){es.style.display='block';rd.style.display='none';return;}
+  es.style.display='none'; rd.style.display='flex';
+  const filtered=DRUGS.filter(d=>{
+    if(cat!=='all'&&d.category!==cat) return false;
+    if(ag&&!d.ageGroups.includes(ag)) return false;
+    return true;
+  });
+  if(!filtered.length){rd.innerHTML=`<div class="empty-calc"><div class="ec-icon">🔍</div><div class="ec-text">Tidak ada obat</div><div class="ec-sub">Coba ubah filter</div></div>`;return;}
+  const AGE_MAP={neo:'infant',infant:'infant',toddler:'toddler',pre:'pre',school:'school',teen:'teen'};
+  const ageKey=AGE_MAP[ag]||ag;
+  let html='';
+  filtered.forEach(drug=>{
+    let dose=drug.dosePerKg ? drug.dosePerKg*bb : (drug.fixedDoseByAge&&ageKey?drug.fixedDoseByAge[ageKey]:0);
+    if(drug.maxSingleDose&&dose>drug.maxSingleDose) dose=drug.maxSingleDose;
+    const doseDisplay=dose.toFixed(1)+' '+drug.unit.split('/')[0];
+    const minD=drug.doseMin?(drug.doseMin*bb).toFixed(1):null;
+    const maxD=drug.doseMax?Math.min(drug.doseMax*bb,drug.maxSingleDose||99999).toFixed(1):null;
+    const range=(minD&&maxD)?`${minD}–${maxD} mg`:'';
+    const capped=drug.maxSingleDose&&drug.dosePerKg&&(drug.dosePerKg*bb)>drug.maxSingleDose;
+    html+=`<div class="drug-card">
+      <div class="drug-card-header" style="background:${drug.color};"><div class="drug-name">${drug.name}</div><span class="drug-class">${drug.class}</span></div>
+      <div class="drug-card-body">
+        <div class="dose-result-row"><span class="dose-label">Dosis per pemberian</span><span class="dose-value highlight">${doseDisplay}</span></div>
+        <div class="dose-result-row"><span class="dose-label">Rentang dosis</span><span class="dose-range">${range||'Lihat catatan'}</span></div>
+        <div class="dose-result-row"><span class="dose-label">Interval</span><span class="dose-value" style="font-size:13px;font-family:var(--font-main);">${drug.interval}</span></div>
+        ${capped?`<div class="alert-box yellow" style="font-size:11px;">⚠️ Dibatasi pada dosis maks: ${drug.maxSingleDose} mg</div>`:''}
+        <div class="drug-note ${drug.noteType}">${drug.note}</div>
+      </div></div>`;
+  });
+  rd.innerHTML=html;
+}
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  showToast('👋','Selamat datang di Pediatri App!','var(--primary)');
+});
+</script>
+
+<!-- PWA Service Worker -->
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('sw.js',{scope:'/',updateViaCache:'none'});
+      console.log('✅ SW registered:', reg.scope);
+    } catch(e){ console.warn('SW failed (ok in dev):', e.message); }
+  });
+  window.addEventListener('offline',()=>showToast('📡','Mode Luring Aktif','var(--warning)'));
+  window.addEventListener('online',()=>showToast('✅','Koneksi Kembali','var(--success)'));
+}
+</script>
+</body>
+</html>

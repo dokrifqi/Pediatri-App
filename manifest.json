@@ -1,0 +1,35 @@
+{
+  "name": "Pediatri App — Tatalaksana & Kalkulator Dosis",
+  "short_name": "Pediatri App",
+  "description": "Pedoman tatalaksana penyakit anak dan kalkulator dosis berbasis berat badan untuk dokter. Tersedia luring.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F5FA",
+  "theme_color": "#0288D1",
+  "orientation": "portrait-primary",
+  "categories": ["medical", "health"],
+  "lang": "id",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Kalkulator Dosis",
+      "short_name": "Kalkulator",
+      "url": "/?tab=kalkulator",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
