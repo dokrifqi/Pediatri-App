@@ -1,0 +1,229 @@
+{
+  "id": "demam_tifoid",
+  "name": "Demam Tifoid Anak",
+  "icon": "🌡️",
+  "category": "infeksi",
+  "shortDesc": "Salmonella typhi — Ceftriaxone atau Kloramfenikol 14 hari",
+  "definisi": {
+    "pengertian": "Penyakit infeksi sistemik akut yang disebabkan oleh bakteri Salmonella enterica serotipe Typhi, ditandai dengan demam berkepanjangan, gangguan sistem pencernaan, dan keterlibatan sistem retikuloendotelial.",
+    "epidemiologi": "Sangat endemis di negara berkembang dengan sanitasi buruk, menyumbang beban penyakit tinggi pada anak usia sekolah (5-15 tahun) di Indonesia.",
+    "angkaMorbiditas": "Morbiditas tinggi karena sering memicu absensi sekolah berkepanjangan dan perawatan rumah sakit. Mortalitas berkisar 1-4% jika terjadi komplikasi berat."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Salmonella enterica serotipe Typhi (paling utama)",
+      "Salmonella enterica serotipe Paratyphi A, B, atau C (menyebabkan paratifoid, gejala klinis umumnya lebih ringan)"
+    ],
+    "faktorRisiko": [
+      "Konsumsi makanan atau air minum yang terkontaminasi tinja/urin karier tifoid (transmisi fekal-oral)",
+      "Higiene personal yang buruk (tidak mencuci tangan sebelum makan atau setelah dari toilet)",
+      "Membeli jajanan atau makanan yang penyiapannya tidak higienis",
+      "Status imunisasi tifoid yang belum lengkap atau belum pernah sama sekali",
+      "Riwayat kontak dengan penderita sakit atau karier tifoid serumah"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Kuman Salmonella typhi tertelan melalui saluran cerna, sebagian lolos dari asam lambung, lalu menembus epitel mukosa usus halus via sel M di plak Peyer ileum terminalis. Kuman difagosit oleh makrofag, namun mampu bertahan hidup dan bermultiplikasi di dalam makrofag (intraseluler). Kuman menyebar ke kelenjar getah bening mesenterika (bakteremia primer), lalu masuk sirkulasi sistemik dan menetap di organ sistem retikuloendotelial (hati, limpa, sumsum tulang). Multiplikasi memicu bakteremia sekunder masif dan pelepasan endotoksin yang menyebabkan demam sistemik berkelanjutan.",
+    "poinKunci": [
+      "Masa inkubasi berkisar 7 hingga 14 hari (bisa 3-60 hari), sangat bergantung pada besaran jumlah kuman (inokulum) yang tertelan.",
+      "Peradangan hebat dan hiperplasia makrofag pada plak Peyer di ileum, terutama pada minggu ke-2 hingga ke-3, menyebabkan ulserasi dan nekrosis jaringan yang dapat memicu perdarahan atau perforasi usus mematikan.",
+      "Endotoksemia menyebabkan penekanan (supresi) sumsum tulang sehingga terjadi leukopenia, serta memicu toksisitas saraf (ensefalopati)."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Demam yang makin hari makin tinggi (pola step-ladder), biasanya turun di pagi hari dan meninggi saat sore menjelang malam hari, berlangsung > 7 hari",
+      "Gangguan saluran cerna: konstipasi (khas pada anak besar/minggu pertama) atau diare (sering pada balita), mual, dan muntah",
+      "Nyeri perut dan perasaan kembung",
+      "Gejala sistemik awal: sakit kepala hebat bagian depan (frontal), lesu (malaise), nyeri sendi/otot, dan anoreksia berat",
+      "Dapat disertai batuk kering tak berdahak pada awal perjalanan penyakit"
+    ],
+    "pemeriksaanFisik": [
+      "Tanda Vital: Suhu rektal/aksila tinggi, dapat dijumpai bradikardia relatif (kenaikan suhu 1 C tidak diikuti kenaikan nadi 8-10x/menit seperti seharusnya)",
+      "Mulut: Typhoid tongue (lidah tampak kotor/putih keabuan di bagian tengah dengan tepi sangat merah (hiperemis) serta tremor saat dijulurkan)",
+      "Abdomen: Nyeri tekan regio epigastrium atau difus, perut kembung (meteorismus), hepatomegali, dan/atau splenomegali ringan",
+      "Kulit: Dapat muncul Rose spots (bercak makulopapular eritematosa 2-4 mm di dada bawah/perut), walau sangat jarang tampak pada kulit anak Asia",
+      "Saraf: Kesadaran apatis hingga somnolen pada keadaan tifoid toksik yang parah"
+    ],
+    "kriteriaDiagnosis": "Berdasarkan klinis demam > 7 hari yang dominan pada sore/malam hari, disertai tanda patognomonik gangguan pencernaan (lidah tifoid, konstipasi/diare) serta organomegali, dan DITUNJANG oleh hasil positif uji serologis spesifik IgM S. typhi atau biakan darah.",
+    "algoritmaDiagnosis": [
+      "1. Suspek Demam Tifoid pada setiap anak dengan demam > 7 hari tanpa fokus infeksi lokalisata (seperti batuk pilek berat atau ISK) yang jelas.",
+      "2. Lakukan evaluasi tanda bahaya (kesadaran menurun, nyeri perut difus ekstrem) untuk mencari komplikasi ensefalopati atau bedah abdomen akut.",
+      "3. Lakukan pengambilan darah tepi lengkap dan serologi Tubex-TF/IgM anti-Salmonella jika demam sudah >= 4 hari.",
+      "4. Ambil sampel biakan/kultur darah sebagai gold standard, terutama jika pasien datang berobat di minggu pertama (sebelum terapi antibiotik masuk).",
+      "5. Mulai inisiasi antibiotik empiris untuk tifoid sambil menunggu hasil kultur pada kasus klinis yang sangat mendukung."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      "Darah Perifer Lengkap: Leukopenia (< 5000/uL), limfositosis relatif, monositosis, aneosinofilia, serta dapat ditemukan anemia dan trombositopenia ringan pada tifoid berat",
+      "Kultur Darah (Gall Culture): Baku emas diagnostik definitif, persentase kepositifan tertinggi (70-90%) pada spesimen yang diambil di minggu pertama sakit",
+      "Serologi Tubex-TF / Typhidot: Mendeteksi IgM antibodi spesifik O9 dari S. typhi. Memiliki tingkat sensitivitas dan spesifisitas yang jauh lebih tinggi dan dapat positif sejak hari ke-4 sakit",
+      "Uji Widal: MEMILIKI KETERBATASAN SANGAT TINGGI. Rawan memberikan hasil positif palsu karena cross-reaction dengan Enterobacteriaceae lain (misal Dengue, Malaria), status pasca-vaksinasi, atau memori antibodi daerah endemis. Diagnosis Widal HANYA BENAR jika ditemukan peningkatan titer O atau H secara serial sebesar 4 kali lipat dari 2 sampel yang berjarak 5-7 hari. Tidak dianjurkan menggunakan satu hasil Widal tunggal (kecuali dengan cut-off sangat tinggi seperti O > 1/320 sesuai daerah endemis lokal)"
+    ],
+    "radiologi": [
+      "Foto Polos Abdomen 3 posisi: Tidak diperlukan untuk kasus tanpa komplikasi. HANYA dilakukan secara darurat jika dicurigai terjadi komplikasi perforasi usus (mencari gambaran udara bebas subdiafragma / pneumoperitoneum)"
+    ],
+    "penunjangLain": [
+      "Biakan sumsum tulang: Sensitivitas paling tinggi (>90%) dan tetap positif walau antibiotik sudah masuk, namun sangat invasif dan jarang dilakukan",
+      "Biakan feses dan urin: Baru sering menjadi positif pada minggu ke-2 dan ke-3 sakit; sangat berguna melacak status karier"
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Berdasarkan Keparahan Klinis dan Penyerta Komplikasi",
+    "tingkatan": [
+      "Demam Tifoid Sederhana (Tanpa Komplikasi): Demam dengan manifestasi toksisitas sistemik ringan, kesadaran penuh compos mentis, dan dapat mentoleransi terapi asupan oral/rawat jalan.",
+      "Demam Tifoid Berat (Tifoid Toksik / Dengan Komplikasi): Disertai komplikasi intra-intestinal (perdarahan saluran cerna, ileus, perforasi usus) atau komplikasi ekstra-intestinal (ensefalopati tifosa, miokarditis, syok sepsis)."
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Tirah baring mutlak (bed rest) wajib dipatuhi selama fase demam akut hingga minimal seminggu pasca bebas demam, hal ini secara mekanik menekan risiko robekan usus.",
+      "Resusitasi cairan kristaloid untuk koreksi keseimbangan air dan elektrolit dari kehilangan insensible water loss akibat demam dan muntah.",
+      "Tatalaksana gizi dengan Diet Lunak Rendah Serat (bubur saring, bubur kecap tanpa sayur kasaran) secara sementara untuk mengistirahatkan fungsi kerja gerakan usus radang.",
+      "Terapi antibiotika adekuat wajib diberikan berdasarkan resistensi pola lokal (Kloramfenikol konvensional atau Ceftriaxone/Azitromisin sebagai obat pilihan utama)."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Kloramfenikol",
+        "kelas": "Antibiotik Spektrum Luas",
+        "dosisBerdasarkanUsia": {
+          "neonatus": "Tidak digunakan pada usia ini (bahaya Gray Baby Syndrome)",
+          "bayi": "50-100 mg/kg/hari dibagi 4 dosis PO atau IV",
+          "batita": "50-100 mg/kg/hari dibagi 4 dosis PO atau IV",
+          "prasekolah": "50-100 mg/kg/hari dibagi 4 dosis PO atau IV",
+          "sekolah": "50-100 mg/kg/hari dibagi 4 dosis PO atau IV",
+          "remaja": "50-100 mg/kg/hari dibagi 4 dosis PO atau IV"
+        },
+        "dosisMaksimal": "2 gram/hari",
+        "catatan": "Secara historis adalah obat lini pertama klasik penurun relaps terbaik. Wajib diminum penuh 10-14 hari bahkan walau demam turun di hari ke-5. Kekurangannya dapat menekan produksi darah sumsum tulang dan kuman mulai banyak yang kebal."
+      },
+      {
+        "nama": "Ceftriaxone",
+        "kelas": "Antibiotik Sefalosporin Generasi III",
+        "dosisBerdasarkanUsia": {
+          "neonatus": "Tidak direkomendasikan rutin untuk indikasi ini",
+          "bayi": "80 mg/kg/hari dibagi 1-2 dosis IV",
+          "batita": "80 mg/kg/hari dibagi 1-2 dosis IV",
+          "prasekolah": "80 mg/kg/hari dibagi 1-2 dosis IV",
+          "sekolah": "80 mg/kg/hari dibagi 1-2 dosis IV",
+          "remaja": "80 mg/kg/hari dibagi 1-2 dosis IV"
+        },
+        "dosisMaksimal": "4 gram/hari",
+        "catatan": "Obat pilihan utama lini pertama (First Choice) untuk Demam Tifoid Rawat Inap/Tifoid Toksik. Mampu membunuh cepat, memiliki angka resistensi paling rendah, serta dosis perawatannya singkat hanya 5-7 hari."
+      },
+      {
+        "nama": "Azitromisin",
+        "kelas": "Antibiotik Makrolida",
+        "dosisBerdasarkanUsia": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "10-20 mg/kg/hari dosis tunggal PO",
+          "batita": "10-20 mg/kg/hari dosis tunggal PO",
+          "prasekolah": "10-20 mg/kg/hari dosis tunggal PO",
+          "sekolah": "10-20 mg/kg/hari dosis tunggal PO",
+          "remaja": "500-1000 mg/hari dosis tunggal PO"
+        },
+        "dosisMaksimal": "1000 mg/hari",
+        "catatan": "Pilihan terapi mutakhir (paling ideal) untuk tifoid Rawat Jalan. Sangat efektif menembus ke dalam sel makrofag tempat kuman bersembunyi, sangat manjur atasi strain MDR (Multidrug-Resistant), dengan total waktu terapi cuma 5-7 hari."
+      },
+      {
+        "nama": "Deksametason",
+        "kelas": "Kortikosteroid Sistemik",
+        "dosisBerdasarkanUsia": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "Dosis inisial 3 mg/kg/dosis IV lambat, diikuti 1 mg/kg/dosis q6h",
+          "batita": "Dosis inisial 3 mg/kg/dosis IV lambat, diikuti 1 mg/kg/dosis q6h",
+          "prasekolah": "Dosis inisial 3 mg/kg/dosis IV lambat, diikuti 1 mg/kg/dosis q6h",
+          "sekolah": "Dosis inisial 3 mg/kg/dosis IV lambat, diikuti 1 mg/kg/dosis q6h",
+          "remaja": "Dosis inisial 3 mg/kg/dosis IV lambat, diikuti 1 mg/kg/dosis q6h"
+        },
+        "dosisMaksimal": "Sesuai kalkulasi berat badan per dosis",
+        "catatan": "HANYA BOLEH DIBERIKAN pada kondisi ENSEFALOPATI TIFOSA (Syok berat, penurunan kesadaran/koma). Memangkas reaksi badai toksin. Diberikan singkat paling lama hanya 48 jam bersama antibiotik."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Pemasangan akses infus untuk cairan pemeliharaan dan nutrisi parenteral parsial jika terjadi muntah refrakter berat.",
+      "Kompres hangat tepid sponge teratur di area lipatan paha, leher, ketiak untuk mendisipasi panas sentral secara fisiologis.",
+      "Konsultasi cito ke bedah anak jika mendapati keluhan perut tegang seperti papan sebagai persiapan laparotomi potong usus."
+    ],
+    "kriteriaRawatInap": [
+      "Presentasi klinis menunjukkan syok atau tanda ensefalopati tifosa (mengigau meracau, delirium, letargis).",
+      "Suhu tidak kunjung membaik setelah berhari-hari (hiperpireksia > 40 C) atau disertai kejang demam/kejang usai demam lama.",
+      "Muntah hebat tak terbendung (intractable vomiting) yang memicu penolakan asupan makanan maupun pil antibiotik.",
+      "Keluarga atau penderita melanggar syarat kriteria rawat jalan, gagal obat, atau rumah penderita tidak layak dan jauh dari akses urgensi bedah."
+    ],
+    "kriteriaRawatJalan": [
+      "Diagnosis tifoid sederhana awal (uncomplicated) tanpa gangguan mental maupun tanpa kesakitan perut akut.",
+      "Daya telan makanan dan penyerapan per oral baik secara hemodinamik.",
+      "Orang tua teredukasi sempurna untuk menyuapi anak bubur hancur lunak, merawat bed rest harian, dan sangat taat menepati jam minum sirup Azitromisin atau Kloramfenikol."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Kurva kenaikan grafik suhu tubuh tiap interval 4-6 jam; obat antibiotik yang tepat biasanya baru sanggup mematahkan demam pada hari ke-3 sampai ke-5 pemberian.",
+      "Inspeksi raba ketegangan perut harian, waspadai nyeri tekan yang lokasinya menetap di perut kanan bawah (pertanda iritasi usus akut).",
+      "Perbaikan tingkat interaksi (responsen kesadaran) dan daya tahan duduk saat disuap makanan."
+    ],
+    "parametarLab": [
+      "Ulangi cek profil leukosit darah sesudah hari terapi ke-4 bila suhu masih terus meninggi (bisa curigai adanya Multi Drug Resistant S. typhi).",
+      "Mengecek SGOT/SGPT jika anak terus menunjukkan warna kuning pucat di area matanya.",
+      "Tidak ada alasan medis untuk mengulang pemeriksaan antibodi serologi Widal/Tubex di akhir pengobatan karena ia akan menetap positif berbulan-bulan kendati kuman sudah mati hancur."
+    ],
+    "targetTerapi": [
+      "Eradikasi kuman bakteriologis penuh yang mencegah penularan anak tersebut ke kawan sekolahnya sebagai Carrier/Karier menahun.",
+      "Pasien bugar secara fisis termoregulasi dengan toleransi defekasi harian lembut lancar normal."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Perdarahan Saluran Cerna (Intestinal Hemorrhage): Pengikisan lapisan pembuluh darah vena usus di sekitar plak Peyer yang bernanah, menyebabkan BAB kehitaman berdarah (melena/hematokezia).",
+      "Ensefalopati Tifosa: Komplikasi neurologi berat, racun kuman bikin otak meradang bengkak bermanifestasi diamnya kesadaran berujung koma dan tingginya resiko kematian.",
+      "Miokarditis toksik (radang otot jantung) dan radang kantong empedu akut (Kolesistitis)."
+    ],
+    "komplikasiLanjut": [
+      "Carrier Kronis (Karier Asimptomatik): Menetapnya pembuangan kuman via tinja melampaui kurun setahun lamanya (namun hal ini amat jarang pada anak, lebih dominan terjadi pada perawakan dewasa berbatu empedu).",
+      "Relaps (Kekambuhan Infeksi Tifoid): Demam tinggi lagi 1 hingga 2 minggu sesudah pengobatan distop, ini imbas durasi hari antibiotik yang tidak paripurna memberangus bibit patogen di sel RES."
+    ],
+    "redFlags": [
+      "KOMPLIKASI PERFORASI USUS: Terjadi pada minggu kedua/ketiga akibat lapisan usus (ileum) yang tipis meradang hingga bolong (pecah). Anak akan tiba-tiba mendadak menjerit amat kencang sambil memeluk perut, kemudian perut membengkak sekeras tegang papan kayu (defans muskuler), tidak ada kentut bising usus senyap, dan seketika jatuh ke dalam keadaan nadir pucat syok sepsis. Kondisi ini adalah PANGGILAN DARURAT OPERASI BEDAH saat itu juga.",
+      "Tinza berubah jadi hitam kelam lengket bak aspal jalanan, yang menandakan perdarahan rembes usus hebat.",
+      "Pasien mendadak tertegun tatapan matanya kosong mendelik, meracau tak nyambung berbicara, lalu kesulitan bernapas (Krisis ensefalopati toksik akut)."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Sematkan pemahaman esensial bahwa sirup Kloramfenikol / kapsul Azitromisin HARUS diminum licin tuntas genap 14 hari atau 7 hari. Berhenti minum di hari ke-4 gara-gara anak sudah jingkrak-jingkrak turun panasnya, adalah kesalahan mutlak yang dijamin akan membuat anak tepar lagi dua minggu ke depan.",
+      "Selama pengobatan rawat inap atau di rumah, larang total konsumsi kerupuk keras, ciki, buah serat kasar, mi instan cabai, atau saus asam pekat karena gerusan mekaniknya gampang melukai radang usus anak.",
+      "Patahkan kesalahpahaman ibu-ibu bahwa anak yang dicek laboratorium hari pertama dan punya 'Nilai Widal tinggi 1/320' itu pasti mutlak sakit tifus. Edukasi bahwa Widal baru bisa dipercaya jika dicek serial dua kali selang seminggu."
+    ],
+    "pencegahan": [
+      "Vaksinasi Tifoid: Suntikkan Vaksin Vi-Polisakarida disuntik intramuskular bagi balita berumur 2 tahun ke atas dengan frekuensi pengulangan booster berkala wajib setiap 3 tahun.",
+      "Praktek kebersihan tangan (Sanitasi Higienis): Cuci sabun usai main tanah, sehabis keluar toilet, dan pra-menyuap bekal makan, karena kuman hanya hinggap bermula dari perpindahan rute fekal (tinja) manusia sakit ke mulut (oral).",
+      "Mengganti air kran mentah atau air galon yang diragukan mutunya dengan kewajiban air matang dididihkan sempurna."
+    ],
+    "kapanKembaliKeDokter": [
+      "Anak membungkuk merintih kesakitan menunjuk sekujur perutnya membesar yang tidak mau dipengang kulitnya.",
+      "Puntahan muntah yang keluar mengandung noda merah darah muda.",
+      "Lima hari lebih minum obat puskesmas namun hawa panas tubuh masih mendidih awet tanpa penampakan turun."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam (harapan sembuh sangat baik) sejauh terdeteksi sejak awal minggu kesatu demam dan pengobatan empirisnya taat aturan. Dubia ad malam (bertendensi fatal) bila usus terlanjur berlubang, anak telat dibawa, dan di dalam darah bersarang isolat bakteri mutan (MDR/XDR Typhi).",
+    "faktorPrognostikBaik": [
+      "Mendapat hantaman terapi Azitromisin per oral atau Ceftriaxone Injeksi tepat waktu pasca hasil serologi dini Tubex-TF positif.",
+      "Daya tampung nutrisi yang sabar perlahan tertelan lancar melalui mangkuk bubur lunak yang ditakar pengasuhnya.",
+      "Status Imun kompeten normal, dan anak bukan korban stunting gizi buruk marasmik kwashiorkor."
+    ],
+    "faktorPrognostikBuruk": [
+      "Pengobatan dukun alternatif atau penundaan lapor dokter hingga melewati rentang 14 hari demam tinggi berisiko pecah ulkus Peyer.",
+      "Terjadi pemakaian steroid ngawur (diberikan dukun paraji puyer demam) yang justru menutupi gejala komplikasi perforasi fatal usus.",
+      "Daerah anak endemik parah paparan strain Multi-Drug Resistant (MDR) Salmonella typhi galur ganas yang tak mempan ampicillin maupun kotrimoksazol."
+    ]
+  },
+  "referensi": [
+    "Pedoman Pengendalian Penyakit Demam Tifoid, Kementerian Kesehatan Republik Indonesia",
+    "Buku Ajar Infeksi & Pediatri Tropis IDAI, Edisi Pertama (Bab Demam Tifoid)",
+    "Nelson Textbook of Pediatrics, 21st Edition (Chapter: Salmonella Infections)"
+  ]
+}
