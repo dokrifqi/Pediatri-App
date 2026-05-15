@@ -1,0 +1,282 @@
+{
+  "id": "demam_berdarah_dengue",
+  "name": "Demam Berdarah Dengue",
+  "icon": "🦟",
+  "category": "infeksi",
+  "shortDesc": "DHF Derajat I–IV — Ringer Laktat & Transfusi Platelet",
+  "definisi": {
+    "pengertian": "Penyakit infeksi sistemik akut yang ditularkan nyamuk Aedes, disebabkan virus Dengue, dengan karakteristik demam, manifestasi perdarahan, trombositopenia, dan kebocoran plasma.",
+    "epidemiologi": "Endemis di >100 negara tropis dan subtropis termasuk seluruh Indonesia, insiden memuncak pada musim penghujan.",
+    "angkaMorbiditas": "Risiko mortalitas signifikan pada anak balita dan usia sekolah jika jatuh ke fase Dengue Shock Syndrome (DSS)."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Virus Dengue (DENV) serotipe 1, 2, 3, dan 4 (Keluarga Flaviviridae)"
+    ],
+    "faktorRisiko": [
+      "Tinggal di atau bepergian ke daerah endemis",
+      "Infeksi sekunder serotipe berbeda → risiko DHF/DSS via Antibody-Dependent Enhancement",
+      "Status gizi (anak obesitas berisiko syok lebih berat)",
+      "Lingkungan dengan genangan air bersih sebagai sarang Aedes aegypti"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Infeksi virus memicu badai sitokin (TNF-α, IL-6) menyebabkan disfungsi endotel kapiler. Peningkatan permeabilitas kapiler → kebocoran plasma ke ruang ekstravaskular → hipovolemia → syok.",
+    "poinKunci": [
+      "Fase Demam (Hari 1-3): viremia tinggi, demam bifasik, nyeri otot/sendi, dehidrasi ringan.",
+      "Fase Kritis (Hari 4-6): defervesens (suhu turun) TAPI fase paling berbahaya. Kebocoran plasma masif, hemokonsentrasi, risiko DSS.",
+      "Fase Pemulihan (Hari 6-10): reabsorpsi cairan kembali ke intravaskular. Ruam konvalesen muncul."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Demam tinggi mendadak 2-7 hari",
+      "Nyeri kepala retro-orbital, mialgia, artralgia (breakbone fever)",
+      "Nyeri perut (epigastrium/kuadran kanan atas), mual, muntah persisten",
+      "Riwayat perdarahan spontan (epistaksis, gusi, melena, hematemesis)",
+      "Orang sekitar yang juga sakit DBD"
+    ],
+    "pemeriksaanFisik": [
+      "Tanda vital: takikardia, tekanan nadi menyempit (≤20 mmHg), hipotensi persisten",
+      "Uji Torniket (Rumple Leede) positif (≥10 petekie per 1 inci²)",
+      "Inspeksi kulit: petekie, ekimosis, purpura, atau ruam makulopapular",
+      "Palpasi abdomen: hepatomegali, nyeri tekan kuadran kanan atas",
+      "Tanda kebocoran plasma: edema palpebra, asites, efusi pleura",
+      "CRT >2 detik, akral dingin dan lembab pada fase syok"
+    ],
+    "kriteriaDiagnosis": "Klinis (demam 2-7 hari + manifestasi perdarahan + hepatomegali + syok) + laboratorium (trombositopenia <100.000/uL DAN hemokonsentrasi/Ht naik ≥20%).",
+    "algoritmaDiagnosis": [
+      "1. Curigai Dengue pada setiap anak dengan demam akut di daerah endemis.",
+      "2. Cari Warning Signs: nyeri perut hebat, muntah persisten, letargi, perdarahan mukosa, hepatomegali >2 cm, Ht naik + trombosit turun cepat.",
+      "3. Uji Torniket pada demam hari 1-3 jika belum ada petekie spontan.",
+      "4. CBC serial dan antigen NS1 (hari 1-3) atau IgM/IgG anti-Dengue (hari >4).",
+      "5. Plot Ht dan trombosit setiap 12-24 jam (atau 4-6 jam pada fase kritis)."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Darah Perifer Lengkap Serial",
+        "indikasi": "Semua pasien suspek DBD, serial 12-24 jam",
+        "interpretasi": "Leukopenia <5000/uL, trombositopenia <100.000/uL, Ht naik ≥20% dari baseline = tanda kebocoran plasma"
+      },
+      {
+        "nama": "Antigen NS1 Dengue",
+        "indikasi": "Deteksi dini, paling sensitif hari 1-3 demam",
+        "interpretasi": "Positif = infeksi aktif virus Dengue. Spesifisitas tinggi."
+      },
+      {
+        "nama": "Serologi IgM dan IgG anti-Dengue",
+        "indikasi": "Diperiksa mulai hari ke-4-5",
+        "interpretasi": "IgM positif = infeksi primer. IgG positif saat akut = infeksi sekunder (risiko DHF/DSS lebih tinggi)"
+      },
+      {
+        "nama": "Fungsi Hati (SGOT/SGPT)",
+        "indikasi": "Semua pasien DBD berat",
+        "interpretasi": "Sering meningkat tajam (SGOT > SGPT)"
+      },
+      {
+        "nama": "Profil Koagulasi (PT, APTT, Fibrinogen)",
+        "indikasi": "Perdarahan masif, kecurigaan DIC",
+        "interpretasi": "PT/APTT memanjang, fibrinogen turun = DIC"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Rontgen Toraks Right Lateral Decubitus (RLD)",
+        "indikasi": "Kecurigaan efusi pleura pada fase kritis",
+        "temuanKhas": "Efusi pleura sering di hemitoraks kanan"
+      },
+      {
+        "nama": "USG Abdomen",
+        "indikasi": "Deteksi dini asites dan efusi minimal",
+        "temuanKhas": "Asites bebas, penebalan dinding kandung empedu, efusi pleura minimal"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Golongan Darah & Cross-Match",
+        "indikasi": "DBD Derajat III dan IV sebagai persiapan transfusi",
+        "interpretasi": "Persiapan darah sebelum kondisi syok memburuk"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Derajat Keparahan IDAI/WHO 1997 & WHO 2009",
+    "tingkatan": [
+      {
+        "derajat": "Demam Dengue (DD)",
+        "kriteria": "Demam + nyeri kepala + mialgia/artralgia + leukopenia, TANPA tanda kebocoran plasma",
+        "tindakan": "Rawat jalan. Oralit/cairan oral. Parasetamol. Monitor CBC tiap 24 jam."
+      },
+      {
+        "derajat": "DHF Derajat I",
+        "kriteria": "Demam + tanda non-spesifik + Uji Torniket positif + kebocoran plasma (Ht >20%)",
+        "tindakan": "Rawat jalan/observasi. Cairan oral agresif. Monitor serial."
+      },
+      {
+        "derajat": "DHF Derajat II",
+        "kriteria": "Derajat I + perdarahan spontan eksternal (kulit, mukosa, gusi, hidung)",
+        "tindakan": "Rawat inap. Cairan IV kristaloid. Monitor ketat."
+      },
+      {
+        "derajat": "DHF Derajat III (DSS)",
+        "kriteria": "Kegagalan sirkulasi/syok ringan: nadi cepat lemah, tekanan nadi ≤20 mmHg, akral dingin",
+        "tindakan": "Rawat inap ICU. Resusitasi cairan agresif. Monitor tiap 15-30 menit."
+      },
+      {
+        "derajat": "DHF Derajat IV (DSS Berat)",
+        "kriteria": "Syok profound: TD dan nadi tidak terukur (pulseless)",
+        "tindakan": "Resusitasi segera. Koloid jika kristaloid gagal. Pertimbangkan vasopressor."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Tatalaksana cairan adalah penyelamat utama. Gunakan kristaloid isotonik (RL, Asering, NaCl 0.9%).",
+      "Titrasi cairan dinamis berdasarkan BB ideal, Ht, nadi, dan produksi urin.",
+      "Turunkan cairan bertahap (step-down) saat fase pemulihan.",
+      "HINDARI NSAID, aspirin, atau kortikosteroid."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Ringer Laktat / Ringer Asetat (Asering)",
+        "kelas": "Cairan Kristaloid Isotonik",
+        "indikasi": "Semua derajat DHF yang memerlukan cairan IV",
+        "dosis": {
+          "neonatus": "Sesuai protokol syok neonatal spesifik",
+          "bayi": "Pemeliharaan 3-5 ml/kg/jam; Resusitasi Syok 10-20 ml/kg dalam 10-20 menit",
+          "batita": "Pemeliharaan 3-5 ml/kg/jam; Resusitasi Syok 10-20 ml/kg dalam 10-20 menit",
+          "prasekolah": "Pemeliharaan 3-5 ml/kg/jam; Resusitasi Syok 10-20 ml/kg dalam 10-20 menit",
+          "sekolah": "Pemeliharaan 3-5 ml/kg/jam; Resusitasi Syok 10-20 ml/kg dalam 10-20 menit",
+          "remaja": "Pemeliharaan 3-5 ml/kg/jam; Resusitasi Syok 10-20 ml/kg dalam 10-20 menit"
+        },
+        "dosisMaksimal": "Sesuai respons hemodinamik dan kebutuhan cairan harian",
+        "caraPemberian": "IV infus",
+        "durasi": "Sampai fase kritis terlewati (48 jam setelah defervesens)",
+        "catatanKhusus": "Hitung berdasarkan BB Ideal (IBW) untuk cegah overhidrasi pada anak obesitas."
+      },
+      {
+        "nama": "Cairan Koloid (HES/Gelatin/Albumin 5%)",
+        "kelas": "Volume Expander Makromolekul",
+        "indikasi": "DSS Derajat III/IV yang refrakter setelah 1-2 kali loading kristaloid 20 ml/kg",
+        "dosis": {
+          "neonatus": "Tidak direkomendasikan rutin",
+          "bayi": "10-20 ml/kg/dosis IV 10-20 menit",
+          "batita": "10-20 ml/kg/dosis IV 10-20 menit",
+          "prasekolah": "10-20 ml/kg/dosis IV 10-20 menit",
+          "sekolah": "10-20 ml/kg/dosis IV 10-20 menit",
+          "remaja": "10-20 ml/kg/dosis IV 10-20 menit"
+        },
+        "dosisMaksimal": "Sesuai restriksi jenis koloid (mis. HES maks 30 ml/kg/hari)",
+        "caraPemberian": "IV cepat",
+        "durasi": "Sesuai respons hemodinamik",
+        "catatanKhusus": "Hanya jika kristaloid gagal. Albumin lebih aman dari HES."
+      },
+      {
+        "nama": "Parasetamol",
+        "kelas": "Antipiretik Lini Pertama",
+        "indikasi": "Antipiretik pada semua fase",
+        "dosis": {
+          "neonatus": "Tidak digunakan rutin",
+          "bayi": "10-15 mg/kg/dosis q6h",
+          "batita": "10-15 mg/kg/dosis q6h",
+          "prasekolah": "10-15 mg/kg/dosis q6h",
+          "sekolah": "10-15 mg/kg/dosis q6h",
+          "remaja": "500 mg/dosis q6h"
+        },
+        "dosisMaksimal": "60 mg/kg/hari atau maks 4 gram/hari pada remaja",
+        "caraPemberian": "Oral atau rektal",
+        "durasi": "Selama fase demam",
+        "catatanKhusus": "NSAID (Ibuprofen) KONTRAINDIKASI karena risiko iritasi lambung dan disfungsi trombosit."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Transfusi Trombosit: TIDAK profilaksis hanya karena trombosit rendah. HANYA jika perdarahan klinis masif mengancam nyawa (10-15 ml/kg).",
+      "Transfusi PRC/Whole Blood: syok refrakter dengan Ht menurun tajam (perdarahan internal tersembunyi).",
+      "Kateter urin (Foley) untuk monitor diuresis per jam pada DSS.",
+      "Hentikan cairan IV maksimal 48 jam pasca defervesens untuk cegah edema paru fase reabsorpsi."
+    ],
+    "kriteriaRawatInap": [
+      "Dengue Warning Signs (nyeri perut difus, muntah terus, perdarahan mukosa, letargi/gelisah).",
+      "Ht naik persisten + trombosit turun cepat.",
+      "Bayi, obesitas berat, komorbiditas bawaan, atau kondisi sosial sulit kontrol harian."
+    ],
+    "kriteriaRawatJalan": [
+      "Demam Dengue tanpa tanda bahaya.",
+      "Keluarga mampu hidrasi oral agresif.",
+      "Anak bisa kencing minimal sekali tiap 6 jam.",
+      "Bisa cek CBC tiap 24 jam di laboratorium."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Tanda vital: kualitas nadi, HR, RR, TD setiap 1-4 jam (15-30 menit saat syok).",
+      "Perfusi jaringan: CRT <2 detik, suhu akral.",
+      "Produksi urin: target >0.5-1 ml/kg/jam."
+    ],
+    "parametarLab": [
+      "Ht dan trombosit serial (12-24 jam fase demam; 4-6 jam fase kritis DSS).",
+      "AGD, laktat, elektrolit pada DSS dengan ancaman asidosis dan hipokalsemia."
+    ],
+    "targetTerapi": [
+      "Nadi kuat, HR normal sesuai usia.",
+      "Tekanan nadi >20 mmHg.",
+      "Ht kembali ke baseline dan stabil setelah IV di-stop."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "DSS menyebabkan asidosis laktat intravaskular.",
+      "DIC: perdarahan tanpa henti dari tempat tusukan, lambung, hidung.",
+      "Severe Dengue Organ Involvement: ensefalopati, miokarditis akut, gagal hati akut.",
+      "Edema paru akut akibat fluid overload."
+    ],
+    "komplikasiLanjut": [
+      "Pelebaran batas jantung kanan sesaat.",
+      "Rambut rontok pasca infeksi (telogen effluvium, reversibel)."
+    ],
+    "redFlags": [
+      "Suhu tubuh tiba-tiba turun normal hari ke-3-5 = BUKAN tanda sembuh, AWAL syok kritis!",
+      "Perilaku sangat rewel/menangis histeris (bayi) atau kesadaran berkabut (ensefalopati).",
+      "Hematemesis (muntah ampas kopi) atau melena (feses aspal pekat).",
+      "Sesak napas disertai batuk berbuih di akhir perawatan = edema paru akibat fluid overload."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "'Fase Pelana Kuda/Krisis Hari ke-4': demam turun BUKAN berarti aman. Waspada anak lemas, tidak kencing, dingin → segera ke IGD.",
+      "Pantau kencing tiap 4-6 jam. Urin harus jernih.",
+      "Jangan beri makanan/minuman merah tua atau hitam (stroberi, cokelat, buah naga) → menyamarkan perdarahan lambung."
+    ],
+    "pencegahan": [
+      "PSN 3M Plus minimal seminggu sekali + bubuk larvasida (Abate).",
+      "Vaksinasi Dengue: TAK-003/Qdenga sejak usia 6 tahun ke atas tanpa skrining serologi.",
+      "Kelambu tidur, kasa anti-nyamuk, lotion repelan (DEET, Picaridin) untuk anak."
+    ],
+    "kapanKembaliKeDokter": [
+      "Wajib evaluasi Ht dan trombosit tiap 24 jam untuk rawat jalan hari ke-1 dan ke-2.",
+      "Segera ke faskes jika: nyeri perut merintih, pucat abu-abu sedingin es, atau muntah semua yang dimakan."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam jika diagnosis tepat dan resusitasi cairan sesuai. Mortalitas DSS berat >10% jika terlambat dikenali.",
+    "faktorPrognostikBaik": [
+      "Kesadaran penuh, gizi proporsional ideal.",
+      "Identifikasi dini onset defervesens hari ke-4 dengan pengawalan agresif.",
+      "Respons hemodinamik cepat setelah 1x loading RL."
+    ],
+    "faktorPrognostikBuruk": [
+      "Daerah pinggiran dengan transportasi ke RS rujukan berjam-jam.",
+      "Masuk RS dalam nadi tidak teraba (Derajat IV).",
+      "Infeksi Dengue tumpang tindih Malaria atau Tifoid.",
+      "Perdarahan intrakranial sekunder koagulopati dan trombositopenia berat."
+    ]
+  },
+  "referensi": [
+    "WHO Dengue Guidelines for Diagnosis, Treatment, Prevention and Control 2009",
+    "PNPK Tatalaksana Infeksi Dengue pada Anak dan Remaja IDAI, Revisi Terkini",
+    "Buku Ajar Infeksi & Pediatri Tropis IDAI, Edisi Pertama (Bab Infeksi Virus Dengue)"
+  ]
+}
