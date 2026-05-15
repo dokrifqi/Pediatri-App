@@ -1,0 +1,271 @@
+{
+  "id": "diare_akut",
+  "name": "Diare Akut Anak",
+  "icon": "💧",
+  "category": "pencernaan",
+  "shortDesc": "Diare cair <14 hari — Rehidrasi WHO Plan A/B/C & Suplementasi Zinc",
+  "definisi": {
+    "pengertian": "Kondisi buang air besar dengan konsistensi cair atau lembek (menyesuaikan dengan usia dan asupan) lebih dari 3 kali dalam 24 jam yang berlangsung kurang dari 14 hari.",
+    "epidemiologi": "Penyakit endemis dengan insidensi tertinggi pada anak usia 6-11 bulan, bertepatan dengan masa penyapihan dan paparan patogen dari makanan pendamping.",
+    "angkaMorbiditas": "Salah satu penyebab utama morbiditas dan mortalitas pada balita, memberikan kontribusi signifikan terhadap stunting sekunder akibat infeksi berulang dan malnutrisi."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Rotavirus (penyebab paling sering pada bayi dan anak)",
+      "Norovirus",
+      "Escherichia coli (ETEC, EPEC, EAEC, EIEC, EHEC)",
+      "Shigella spp. (diare berdarah/disentri)",
+      "Vibrio cholerae (diare cair masif seperti air cucian beras)",
+      "Entamoeba histolytica",
+      "Giardia lamblia"
+    ],
+    "faktorRisiko": [
+      "Tidak mendapatkan ASI eksklusif hingga 6 bulan",
+      "Praktek higiene sanitasi dan cuci tangan yang buruk",
+      "Sumber air minum yang terkontaminasi feses",
+      "Penyiapan dan penyimpanan makanan yang tidak higienis",
+      "Malnutrisi atau defisiensi imun",
+      "Belum atau tidak mendapat imunisasi Rotavirus"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Terjadi akibat infeksi patogen usus yang menyebabkan inflamasi mukosa atau produksi enterotoksin. Hal ini memicu ketidakseimbangan absorpsi dan sekresi air serta elektrolit di usus (diare sekretorik akibat aktivasi siklik AMP) atau kerusakan mikrovili yang menyebabkan malabsorpsi laktosa dan karbohidrat lain (diare osmotik).",
+    "poinKunci": [
+      "Kehilangan cairan intravaskular dan interstisial berlebihan berujung pada syok hipovolemik.",
+      "Kehilangan bikarbonat melalui feses dan produksi asam laktat akibat hipoperfusi memicu asidosis metabolik.",
+      "Pengosongan kalium dari sel akibat dehidrasi menyebabkan hipokalemia, memicu kelemahan otot dan ileus paralitik."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Lama waktu diare, frekuensi per hari, volume, dan konsistensi tinja",
+      "Ada tidaknya darah segar atau lendir berdarah dalam tinja",
+      "Adanya gejala sistemik penyerta (demam, batuk, pilek, kejang)",
+      "Frekuensi dan volume muntah (penting untuk menentukan toleransi asupan oral)",
+      "Rasa haus anak (minum lahap, biasa saja, atau malas/tidak bisa minum)",
+      "Frekuensi buang air kecil terakhir (mendeteksi oliguria/anuria)"
+    ],
+    "pemeriksaanFisik": [
+      "Penilaian Keadaan Umum: compos mentis, gelisah/rewel, atau letargi/tidak sadar",
+      "Pemeriksaan Mata: normal atau cekung",
+      "Pemeriksaan Turgor Kulit: cubitan kulit perut kembali cepat, lambat (<2 detik), atau sangat lambat (>=2 detik)",
+      "Tanda Vital: takikardia (tanda dini syok), pernapasan cepat/Kussmaul (tanda asidosis metabolik), dan suhu tubuh",
+      "Pemeriksaan Antropometri untuk menyingkirkan komorbid gizi buruk"
+    ],
+    "kriteriaDiagnosis": "Ditegakkan berdasarkan anamnesis pola defekasi (>3x/hari, cair) dan penemuan klinis yang difokuskan pada penilaian derajat dehidrasi menurut WHO (Tanpa Dehidrasi, Dehidrasi Ringan-Sedang, atau Dehidrasi Berat).",
+    "algoritmaDiagnosis": [
+      "1. Periksa tanda bahaya umum (letargi, kesadaran menurun, tidak bisa minum).",
+      "2. Evaluasi 4 parameter MTBS/WHO: Keadaan umum, Mata, Rasa haus, dan Turgor kulit.",
+      "3. Tentukan derajat dehidrasi berdasarkan temuan dari 4 parameter tersebut (klasifikasikan A/B/C).",
+      "4. Tanyakan apakah terdapat darah dalam feses untuk mendiagnosis disentri.",
+      "5. Lakukan penilaian status gizi anak secara visual dan plotting berat badan."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Darah Perifer Lengkap & Elektrolit Serum",
+        "indikasi": "Dehidrasi berat, kejang, atau rehidrasi IV tidak memberikan respons memadai",
+        "interpretasi": "Leukositosis/leukopenia (infeksi), hiponatremia/hipernatremia, hipokalemia"
+      },
+      {
+        "nama": "Analisis Gas Darah (AGD)",
+        "indikasi": "Dicurigai asidosis metabolik berat (napas Kussmaul dalam dan cepat)",
+        "interpretasi": "pH < 7.35, HCO3 menurun, BE negatif menandakan asidosis metabolik"
+      },
+      {
+        "nama": "Pemeriksaan Feses Makroskopis & Mikroskopis",
+        "indikasi": "Kecurigaan disentri persisten atau infeksi parasit",
+        "interpretasi": "Leukosit feses positif menandakan infeksi invasif; kista/trofozoit amuba/giardia"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Foto Polos Abdomen (BNO)",
+        "indikasi": "TIDAK rutin. Hanya jika dicurigai tanda bahaya bedah: invaginasi, ileus, atau peritonitis",
+        "temuanKhas": "Distribusi udara tidak normal, air-fluid level, atau free air subdiafragma"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Kultur Feses & Uji Resistensi Antibiotik",
+        "indikasi": "Wabah kolera, disentri tidak membaik dengan antibiotik empiris, atau pasien imunokompromais",
+        "interpretasi": "Identifikasi organisme dan pola sensitivitas untuk penentuan antibiotik definitif"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Derajat Dehidrasi Berdasarkan Kriteria WHO/MTBS",
+    "tingkatan": [
+      {
+        "derajat": "Tanpa Dehidrasi (Plan A)",
+        "kriteria": "Kurang dari 2 tanda dehidrasi: keadaan umum baik, mata tidak cekung, minum biasa/tidak haus, turgor kembali cepat.",
+        "tindakan": "Perawatan di rumah. Cairan tambahan + ASI lanjut + Zinc 10 hari + edukasi tanda bahaya."
+      },
+      {
+        "derajat": "Dehidrasi Ringan-Sedang (Plan B)",
+        "kriteria": "2 atau lebih tanda: gelisah/rewel, mata cekung, haus/minum dengan lahap, turgor kembali lambat.",
+        "tindakan": "Perawatan di faskes. Oralit 75 ml/kgBB dalam 3 jam. Pantau tiap jam. Nilai ulang setelah 3 jam."
+      },
+      {
+        "derajat": "Dehidrasi Berat (Plan C)",
+        "kriteria": "2 atau lebih tanda: letargi/tidak sadar, mata cekung, tidak bisa/malas minum, turgor kembali sangat lambat.",
+        "tindakan": "Rawat inap. Resusitasi IV segera: RL/NaCl 0.9%. Bayi <1 th: 30 ml/kg dalam 1 jam + 70 ml/kg dalam 5 jam. Anak ≥1 th: 30 ml/kg dalam 30 menit + 70 ml/kg dalam 2.5 jam."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Penerapan LINTAS DIARE (Lima Langkah Tuntaskan Diare):",
+      "1. Berikan oralit osmolalitas rendah untuk mencegah dan mengatasi dehidrasi.",
+      "2. Berikan Zinc selama 10 hari berturut-turut.",
+      "3. Lanjutkan pemberian ASI dan Makanan rutin yang bergizi.",
+      "4. Berikan antibiotik HANYA atas indikasi medis spesifik (seperti disentri atau kolera).",
+      "5. Berikan edukasi (nasihat) kepada ibu atau pengasuh mengenai tanda bahaya."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Oralit (WHO/Osmolaritas Rendah)",
+        "kelas": "Cairan Rehidrasi Oral (CRO)",
+        "indikasi": "Semua derajat dehidrasi sebagai terapi lini pertama",
+        "dosis": {
+          "neonatus": "Sesuai anjuran ASI atau 50-100 ml setiap BAB cair",
+          "bayi": "50-100 ml setiap BAB cair (atau semaunya/ad libitum)",
+          "batita": "50-100 ml setiap BAB cair (atau semaunya/ad libitum)",
+          "prasekolah": "100-200 ml setiap BAB cair (atau semaunya/ad libitum)",
+          "sekolah": "100-200 ml setiap BAB cair (atau semaunya/ad libitum)",
+          "remaja": "Semampunya (umumnya 200-400 ml setiap BAB cair)"
+        },
+        "dosisMaksimal": "Sesuai kebutuhan dan rasa haus anak",
+        "caraPemberian": "Oral, diberikan sedikit demi sedikit dengan sendok",
+        "durasi": "Selama episode diare berlangsung",
+        "catatanKhusus": "Na 75 mEq/L, Glukosa 75 mmol/L (osmolaritas 245 mOsm/L). Berikan sedikit demi sedikit dengan sendok untuk mencegah muntah."
+      },
+      {
+        "nama": "Zinc Sulfate / Zinc Syrup",
+        "kelas": "Suplemen Mikronutrien",
+        "indikasi": "Semua anak dengan diare akut",
+        "dosis": {
+          "neonatus": "10 mg/hari dosis tunggal",
+          "bayi": "Usia <6 bulan: 10 mg/hari; Usia ≥6 bulan: 20 mg/hari dosis tunggal",
+          "batita": "20 mg/hari dosis tunggal",
+          "prasekolah": "20 mg/hari dosis tunggal",
+          "sekolah": "20 mg/hari dosis tunggal",
+          "remaja": "20 mg/hari dosis tunggal"
+        },
+        "dosisMaksimal": "20 mg/hari",
+        "caraPemberian": "Oral, sekali sehari",
+        "durasi": "10-14 hari PENUH, meskipun diare sudah berhenti",
+        "catatanKhusus": "Mempercepat regenerasi epitel usus dan mencegah episode diare dalam 2-3 bulan ke depan."
+      },
+      {
+        "nama": "Cefixime (HANYA untuk Disentri/Shigellosis)",
+        "kelas": "Antibiotik Sefalosporin Generasi III",
+        "indikasi": "Tinja berdarah disertai anak tampak sakit (kecurigaan Shigellosis)",
+        "dosis": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "5 mg/kg/dosis q12h",
+          "batita": "5 mg/kg/dosis q12h",
+          "prasekolah": "5 mg/kg/dosis q12h",
+          "sekolah": "5 mg/kg/dosis q12h",
+          "remaja": "5 mg/kg/dosis q12h"
+        },
+        "dosisMaksimal": "400 mg/hari",
+        "caraPemberian": "Per oral",
+        "durasi": "3-5 hari",
+        "catatanKhusus": "Antibiotik bukan terapi rutin. Mayoritas diare disebabkan Rotavirus. Berikan HANYA jika ada tinja berdarah."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Plan A (Tanpa Dehidrasi): Perawatan di rumah. Cairan tambahan (ASI, Oralit, kuah sayur, air tajin). Teruskan makan. Suplementasi Zinc. Pantau tanda bahaya.",
+      "Plan B (Dehidrasi Ringan-Sedang): Di faskes. Oralit 75 ml/kgBB dalam 3 jam. Pantau tiap jam. Nilai ulang status dehidrasi setelah 3 jam.",
+      "Plan C (Dehidrasi Berat): Rawat inap. IV RL/NaCl 0.9% segera. Evaluasi ketat nadi dan napas tiap 15-30 menit."
+    ],
+    "kriteriaRawatInap": [
+      "Semua anak dengan klasifikasi Dehidrasi Berat (Plan C).",
+      "Dehidrasi ringan-sedang yang gagal rehidrasi oral (muntah profus atau asupan ditolak).",
+      "Kecurigaan komplikasi: kejang, kesadaran menurun, napas Kussmaul berat.",
+      "Komorbid gizi buruk."
+    ],
+    "kriteriaRawatJalan": [
+      "Tanpa dehidrasi (Plan A) dengan keadaan umum baik dan ibu memahami cara perawatan.",
+      "Dehidrasi ringan-sedang (Plan B) yang berhasil direhidrasi di klinik dalam 3-4 jam observasi."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Tingkat kesadaran dan keaktifan anak (kembalinya respons normal).",
+      "Kualitas denyut nadi, laju pernapasan, dan suhu tubuh aksila.",
+      "Kembalinya turgor kulit yang elastis dan produksi air mata bila menangis.",
+      "Toleransi minum anak dan tidak adanya muntah profus.",
+      "Produksi urin (target > 1 ml/kg/jam menandakan hidrasi adekuat)."
+    ],
+    "parametarLab": [
+      "Fungsi ginjal (ureum, kreatinin) dan elektrolit pada jam ke-12 atau ke-24 pasca resusitasi (rawat inap).",
+      "Gula darah acak bila anak tampak letargi berkepanjangan pasca rehidrasi."
+    ],
+    "targetTerapi": [
+      "Perbaikan status dari Dehidrasi Berat/Ringan-Sedang menjadi Tanpa Dehidrasi dalam 3-6 jam.",
+      "Anak mampu makan dan minum secara oral dengan normal.",
+      "Frekuensi diare berkurang bertahap dalam 3-5 hari tanpa perburukan klinis."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Syok Hipovolemik (penurunan drastis tekanan darah dan perfusi organ perifer).",
+      "Asidosis metabolik non-anion gap akibat sekresi bikarbonat masif.",
+      "Gangguan elektrolit: hiponatremia, hipernatremia, hipokalemia.",
+      "Kejang akibat kelainan neuro-metabolik (ensefalopati hiponatremia)."
+    ],
+    "komplikasiLanjut": [
+      "Diare Persisten (diare berlanjut >14 hari berturut-turut).",
+      "Malnutrisi Energi Protein (wasting berat akibat intake buruk dan malabsorpsi).",
+      "Intoleransi Laktosa sekunder atau permanen pasca-enteritis berat."
+    ],
+    "redFlags": [
+      "Feses campur lendir dan darah seperti jeli red currant → kecurigaan intususepsi.",
+      "Perut membuncit hebat dan bising usus menghilang → curiga ileus paralitik atau peritonitis.",
+      "Anuria melewati jam ke-8 observasi rehidrasi yang adekuat."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Cara menakar oralit: 1 sachet dalam 200 ml air matang. Jangan larutkan ke susu atau jus.",
+      "Tetap menyusui ASI lebih sering dan lebih lama dari biasanya di sela-sela pemberian oralit.",
+      "Zinc harus dihabiskan sampai hari ke-10 atau 14 walau tinja anak sudah kembali padat."
+    ],
+    "pencegahan": [
+      "ASI Eksklusif dari lahir hingga 6 bulan tanpa cairan tambahan lain.",
+      "Cuci tangan pakai sabun di bawah air mengalir sebelum makan dan pasca eliminasi.",
+      "Lengkapi imunisasi Rotavirus dan Campak.",
+      "Jaga higienitas MPASI termasuk cara menyimpannya."
+    ],
+    "kapanKembaliKeDokter": [
+      "Diare menjadi semakin sering.",
+      "Timbul demam tinggi persisten dan muntah setiap kali diisi asupan.",
+      "Anak sangat kehausan tak terpuaskan, atau mulai sulit dibangunkan.",
+      "Tampak darah segar di dalam tinja anak."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam (sangat baik) apabila rehidrasi yang memadai dimulai segera dan defisit cairan dikompensasi secara terukur.",
+    "faktorPrognostikBaik": [
+      "Usia anak >6 bulan dengan status gizi baik/normal.",
+      "Penyakit murni akibat infeksi virus tanpa invasi bakteri sistemik.",
+      "Toleransi oralit baik dan pengasuh kooperatif."
+    ],
+    "faktorPrognostikBuruk": [
+      "Malnutrisi akut berat (SAM/Gizi Buruk) sebagai komorbid.",
+      "Keterlambatan rujukan ke sentra gawat darurat.",
+      "Diare masif >15 ml/kg/jam yang tidak berhenti.",
+      "Usia neonatus prematur atau anomali saluran cerna bawaan."
+    ]
+  },
+  "referensi": [
+    "Buku Saku Pelayanan Kesehatan Anak di Rumah Sakit WHO Indonesia, Edisi terbaru",
+    "Buku Ajar Gastroenterologi-Hepatologi IDAI, Edisi Pertama (Bab Diare Akut)",
+    "Buku Bagan MTBS, Kementerian Kesehatan Republik Indonesia",
+    "Nelson Textbook of Pediatrics, 21st Edition (Chapter: Acute Gastroenteritis in Children)"
+  ]
+}
