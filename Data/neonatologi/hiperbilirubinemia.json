@@ -1,0 +1,250 @@
+{
+  "id": "hiperbilirubinemia_neonatal",
+  "name": "Hiperbilirubinemia Neonatal",
+  "icon": "🟡",
+  "category": "neonatologi",
+  "shortDesc": "Ikterus neonatorum fisiologis & patologis — Fototerapi & ET",
+  "definisi": {
+    "pengertian": "Peningkatan kadar bilirubin serum total (BST) pada neonatus yang bermanifestasi sebagai ikterus (kuning) pada kulit, sklera, dan membran mukosa.",
+    "epidemiologi": "Terjadi pada ~60% bayi cukup bulan dan ~80% bayi kurang bulan pada minggu pertama kehidupan.",
+    "angkaMorbiditas": "Sebagian besar fisiologis, namun sebagian kecil dapat berkembang menjadi hiperbilirubinemia berat yang berisiko kerusakan saraf permanen (kernikterus)."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Penyakit hemolitik isoimun (inkompatibilitas ABO atau Rhesus)",
+      "Defisiensi enzim G6PD",
+      "Infeksi perinatal atau sepsis neonatal",
+      "Polisitemia",
+      "Perdarahan tertutup (sefalhematom, memar luas)",
+      "Ikterus terkait ASI (Breastfeeding jaundice & Breast milk jaundice)"
+    ],
+    "faktorRisiko": [
+      "Prematuritas (<38 minggu)",
+      "Ras Asia Timur",
+      "Riwayat saudara kandung ikterus + fototerapi",
+      "Trauma jalan lahir",
+      "Ibu diabetes makrosomia",
+      "Asupan ASI tidak adekuat dan dehidrasi"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Ketidakseimbangan antara produksi bilirubin (pemecahan eritrosit fetal berlebihan) dan klirens hati (imaturitas UGT1A1), ditambah peningkatan sirkulasi enterohepatik → akumulasi bilirubin tak terkonjugasi.",
+    "poinKunci": [
+      "Bilirubin tak terkonjugasi (indirek) bersifat lipofilik dan dapat menembus sawar darah-otak yang imatur → neurotoksisitas.",
+      "Ikterus fisiologis memuncak hari ke-3 sampai ke-5 pada bayi cukup bulan.",
+      "Ikterus patologis: <24 jam, menetap >2 minggu, atau peningkatan sangat progresif."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Waktu pasti awitan ikterus (sangat krusial: <24 jam vs >24 jam)",
+      "Golongan darah ibu dan bayi",
+      "Riwayat kehamilan, komplikasi persalinan, dan trauma lahir",
+      "Pola eliminasi (frekuensi miksi dan mekonium)",
+      "Kecukupan asupan ASI atau formula"
+    ],
+    "pemeriksaanFisik": [
+      "Penilaian derajat ikterus visual dengan modifikasi Kramer (tekan kulit di ruangan terang)",
+      "Tanda dehidrasi dan turgor kulit",
+      "Perdarahan ekstravaskular (sefalhematom, memar)",
+      "Hepatosplenomegali",
+      "Skrining ensefalopati dini: letargi, hipotonia, high-pitched cry, opistotonus"
+    ],
+    "kriteriaDiagnosis": "BST melebihi persentil ke-95 pada nomogram Bhutani spesifik jam, atau memasuki zona indikasi terapi berdasarkan panduan AAP 2022/IDAI sesuai usia gestasi.",
+    "algoritmaDiagnosis": [
+      "1. Skrining risiko dan penilaian klinis ikterus setiap 8-12 jam pascasalin.",
+      "2. Evaluasi golongan darah, Rhesus, DAT/Coombs pada bayi dari ibu O atau Rh negatif.",
+      "3. TcB atau BST jika ikterus meluas >dada atau muncul <24 jam pertama.",
+      "4. Plot BST/TcB pada Nomogram Bhutani (skor risiko spesifik-jam).",
+      "5. Plot BST pada kurva AAP 2022/IDAI untuk tentukan threshold fototerapi atau transfusi tukar."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Bilirubin Serum Total (BST) dan Fraksi Direk",
+        "indikasi": "Semua neonatus dengan ikterus klinis atau TcB tinggi",
+        "interpretasi": "BST >persentil ke-95 Bhutani = risiko tinggi. Bilirubin direk >2 mg/dL = curiga kolestasis"
+      },
+      {
+        "nama": "Golongan Darah & Rhesus + DAT/Coombs",
+        "indikasi": "Bayi dari ibu O atau Rh-negatif",
+        "interpretasi": "DAT positif = hemolisis isoimun (ABO/Rh incompatibility)"
+      },
+      {
+        "nama": "Darah Perifer Lengkap, Morfologi Eritrosit, Hitung Retikulosit",
+        "indikasi": "Kecurigaan hemolisis",
+        "interpretasi": "Anemia, polikromasia, spherosit (ABO), retikulositosis → hemolisis aktif"
+      },
+      {
+        "nama": "Skrining G6PD",
+        "indikasi": "Etnis berisiko (Asia, Afrika, Mediterania) atau respons fototerapi buruk",
+        "interpretasi": "Defisiensi G6PD = risiko hemolisis akut saat terpapar oksidan"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "USG Abdomen & Saluran Bilier",
+        "indikasi": "Hanya jika bilirubin direk tinggi (curiga kolestasis/atresia bilier)",
+        "temuanKhas": "Tidak visualisasi kandung empedu, triangular cord sign = atresia bilier"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Bilirubin Transkutan (TcB)",
+        "indikasi": "Alat skrining non-invasif pada semua neonatus",
+        "interpretasi": "TIDAK akurat saat/setelah fototerapi, atau jika estimasi >15 mg/dL → lanjut BST darah"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Berdasarkan Onset, Durasi, dan Etiologi",
+    "tingkatan": [
+      {
+        "derajat": "Ikterus Fisiologis",
+        "kriteria": "Awitan >24 jam, puncak hari 3-5, BST <15 mg/dL, hilang klinis 1-2 minggu",
+        "tindakan": "Pastikan asupan ASI adekuat. Pantau BST. Tidak perlu fototerapi jika di bawah threshold."
+      },
+      {
+        "derajat": "Ikterus Patologis",
+        "kriteria": "Awitan <24 jam, kecepatan naik >5 mg/dL/hari, bilirubin direk >2 mg/dL, atau bertahan >2 minggu",
+        "tindakan": "Evaluasi etiologi segera. Fototerapi jika threshold terpenuhi. Pertimbangkan transfusi tukar."
+      },
+      {
+        "derajat": "Breastfeeding Jaundice",
+        "kriteria": "Minggu pertama (hari 2-4), asupan ASI tidak adekuat, penurunan BB >10%",
+        "tindakan": "Konseling laktasi. Tingkatkan frekuensi menyusui ≥8-12x/hari. Suplementasi formula jika perlu."
+      },
+      {
+        "derajat": "Breast Milk Jaundice",
+        "kriteria": "Awitan lambat (minggu ke-2-3), BST memuncak minggu ke-2-3, jinak, menyusui tetap lanjut",
+        "tindakan": "Lanjutkan ASI. Pantau BST. Fototerapi jika threshold terpenuhi."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Cegah BST melampaui ambang neurotoksisitas untuk hindari ensefalopati bilirubin dan kernikterus.",
+      "Tatalaksana segera etiologi dasar (antibiotik jika sepsis, koreksi asidosis).",
+      "Optimalisasi nutrisi enteral untuk memperlancar sirkulasi enterohepatik."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Imunoglobulin Intravena (IVIG)",
+        "kelas": "Imunomodulator",
+        "indikasi": "Ikterus hemolitik isoimun (ABO/Rh, Coombs positif) yang BST naik meski fototerapi intensif",
+        "dosis": {
+          "neonatus": "0.5-1 g/kg/dosis IV lambat 2 jam; dapat diulang 1x dalam 12 jam",
+          "bayi": "Tidak digunakan",
+          "batita": "Tidak digunakan",
+          "prasekolah": "Tidak digunakan",
+          "sekolah": "Tidak digunakan",
+          "remaja": "Tidak digunakan"
+        },
+        "dosisMaksimal": "Sesuai BB",
+        "caraPemberian": "IV infus lambat",
+        "durasi": "1-2 dosis",
+        "catatanKhusus": "Efektif mengurangi kebutuhan transfusi tukar pada hemolisis isoimun."
+      },
+      {
+        "nama": "Phenobarbital",
+        "kelas": "Induser Enzim Glukuronil Transferase",
+        "indikasi": "Jarang; sesekali dipakai pada Crigler-Najjar atau kolestasis tertentu",
+        "dosis": {
+          "neonatus": "2.5-5 mg/kg/hari dibagi 1-2 dosis PO atau IV",
+          "bayi": "Tidak digunakan",
+          "batita": "Tidak digunakan",
+          "prasekolah": "Tidak digunakan",
+          "sekolah": "Tidak digunakan",
+          "remaja": "Tidak digunakan"
+        },
+        "dosisMaksimal": "5 mg/kg/hari",
+        "caraPemberian": "PO atau IV",
+        "durasi": "Sesuai kebutuhan",
+        "catatanKhusus": "Jarang direkomendasikan rutin karena efek sedasi dan kerja lambat (butuh beberapa hari)."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Fototerapi Intensif: lampu biru-hijau (460-490 nm), jarak 30-50 cm. Tutup mata dan genitalia. Maksimalkan paparan. Lanjutkan ASI.",
+      "Transfusi Tukar (Double Volume Exchange Transfusion): emergensi jika tanda ABE atau BST melewati threshold transfusi tukar AAP 2022.",
+      "Dukungan laktasi: pelekatan baik, susui minimal 8-12x/hari untuk mendorong mekonium."
+    ],
+    "kriteriaRawatInap": [
+      "BST atau estimasi TcB setara/melebihi threshold fototerapi spesifik usia panduan AAP 2022/IDAI."
+    ],
+    "kriteriaRawatJalan": [
+      "BST di bawah garis fototerapi, kenaikan stabil, klinis bugar, hidrasi terjaga, edukasi orang tua memadai."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Tanda vital kontinu dan suhu (cegah hipotermia/hipertermia di bawah fototerapi).",
+      "Hidrasi harian: penurunan BB, mukosa, turgor, ubun-ubun.",
+      "Frekuensi dan karakteristik eliminasi.",
+      "Status neurologis: kewaspadaan, tonus otot, tangisan untuk deteksi ABE."
+    ],
+    "parametarLab": [
+      "BST ulang 2-6 jam pasca fototerapi pada risiko tinggi; setiap 8-12 jam pada ikterus sedang.",
+      "BST rebound 12-24 jam setelah fototerapi dihentikan (terutama ABO/Rh)."
+    ],
+    "targetTerapi": [
+      "Penurunan BST ke tingkat aman; turun 1-2 mg/dL dalam 4-6 jam fototerapi intensif.",
+      "Bayi aktif, menyusu kuat, terhidrasi, tanpa bukti cedera neurologis."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "ABE fase awal: letargi, hipotonia ringan, malas minum.",
+      "ABE fase lanjut: irritabilitas, hipertonia, kejang, high-pitched cry, opistotonus.",
+      "Dari fototerapi: dehidrasi, instabilitas suhu, eritema."
+    ],
+    "komplikasiLanjut": [
+      "Kernikterus (Kronik ABE): CP koreoatetoid permanen.",
+      "Gangguan pendengaran sensorineural (SNHL) atau neuropati auditorik.",
+      "Defek neuromotorik, displasia enamel gigi."
+    ],
+    "redFlags": [
+      "Ikterus <24 jam pertama kelahiran.",
+      "Laju naik bilirubin sangat cepat (>0.2 mg/dL/jam atau >5 mg/dL/hari).",
+      "Ikterus menetap >2 minggu (aterm) atau >3 minggu (prematur) → curiga kolestasis.",
+      "Gangguan tonus otot dan penurunan kesadaran drastis → ABE."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Cara pantau ikterus mandiri (tekan kulit) di ruangan dengan cahaya alami.",
+      "Rutinitas laktasi adekuat (tiap 2-3 jam) untuk cegah dehidrasi dan melancarkan BAB.",
+      "Menjemur bayi di bawah terik matahari langsung TIDAK dianjurkan sebagai terapi utama."
+    ],
+    "pencegahan": [
+      "Promosi IMD dan laktasi optimal sejak menit pertama.",
+      "Hindari air putih/air gula yang tidak esensial untuk bayi ASI.",
+      "Rho(D) immunoglobulin untuk ibu Rh-negatif untuk cegah aloimunisasi."
+    ],
+    "kapanKembaliKeDokter": [
+      "Warna kuning semakin meluas sampai lengan, perut bawah, atau telapak kaki.",
+      "Bayi sangat malas menghisap, tidak bisa dibangunkan, tangis melengking aneh.",
+      "Feses berubah pucat dempul atau urin gelap seperti teh (tanda kolestasis)."
+    ]
+  },
+  "prognosis": {
+    "umum": "Dubia ad bonam untuk ikterus fisiologis yang terdeteksi dan dirawat dini. Dubia ad malam jika terlambat dan sudah terjadi kerusakan SSP (kernikterus).",
+    "faktorPrognostikBaik": [
+      "Coombs negatif (bukan hemolisis isoimun).",
+      "Neonatus cukup bulan yang menyusu agresif.",
+      "Respons cepat dengan fototerapi standar."
+    ],
+    "faktorPrognostikBuruk": [
+      "BST meroket <24 jam.",
+      "Kombinasi prematuritas berat + asfiksia perinatal atau sepsis.",
+      "BST melebihi threshold transfusi tukar tapi tindakan ditolak.",
+      "Gejala ensefalopati muncul sebelum intervensi."
+    ]
+  },
+  "referensi": [
+    "AAP Clinical Practice Guideline Revision 2022: Management of Hyperbilirubinemia in Newborn ≥35 Weeks",
+    "Buku Ajar Neonatologi IDAI, Edisi Pertama (Bab Hiperbilirubinemia)",
+    "PNPK Tata Laksana Ikterus Neonatorum IDAI"
+  ]
+}
