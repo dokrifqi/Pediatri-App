@@ -1,0 +1,274 @@
+{
+  "id": "kejang_demam",
+  "name": "Kejang Demam",
+  "icon": "⚡",
+  "category": "saraf",
+  "shortDesc": "Simple vs Complex — Diazepam akut & Antipiretik profilaksis",
+  "definisi": {
+    "pengertian": "Bangkitan kejang pada kenaikan suhu tubuh (rektal >38°C) akibat proses ekstrakranium, terjadi pada anak usia 6 bulan hingga 5 tahun, tanpa infeksi intrakranial atau gangguan elektrolit.",
+    "epidemiologi": "Kelainan saraf paling sering pada anak, mengenai 2-5% populasi anak usia 6 bulan hingga 5 tahun.",
+    "angkaMorbiditas": "Sebagian besar prognosis sangat baik dan tidak memengaruhi kognitif, namun risiko berulang 30-50%."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Infeksi Saluran Pernapasan Akut (ISPA)",
+      "Otitis Media Akut (OMA)",
+      "Gastroenteritis (terutama Shigella dan Rotavirus)",
+      "Infeksi Saluran Kemih (ISK)",
+      "Demam pasca-imunisasi (DPT, MMR)"
+    ],
+    "faktorRisiko": [
+      "Riwayat kejang demam dalam keluarga (genetik autosomal dominan penetrans tidak lengkap)",
+      "Suhu tubuh tinggi saat demam",
+      "Usia anak (puncak kejadian 18 bulan)",
+      "Riwayat perawatan NICU >28 hari",
+      "Keterlambatan perkembangan saraf"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Demam meningkatkan metabolisme otak dan kebutuhan O2. Kenaikan suhu mendadak mengubah keseimbangan pompa Na/K ATPase dan menurunkan ambang kejang, memicu depolarisasi eksitatorik masif.",
+    "poinKunci": [
+      "Imaturitas SSP membuat anak sangat rentan terhadap perubahan suhu.",
+      "Kejang demam BUKAN epilepsi.",
+      "Tidak menyebabkan kerusakan otak permanen pada kejang demam sederhana."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Adanya demam sebelum/saat/segera setelah kejang",
+      "Sifat kejang: fokal atau umum",
+      "Durasi (< atau ≥15 menit)",
+      "Frekuensi dalam 24 jam pertama",
+      "Kesadaran setelah kejang",
+      "Fokus infeksi ekstrakranial: batuk, pilek, diare, nyeri telinga"
+    ],
+    "pemeriksaanFisik": [
+      "Tanda vital dan suhu tubuh aktual",
+      "Pediatric Glasgow Coma Scale",
+      "Tanda Rangsang Meningeal WAJIB: kaku kuduk, Brudzinski, Kernig (singkirkan meningitis)",
+      "Neurologis komprehensif: tonus, refleks patologis, lateralisasi, paresis N. Kranialis",
+      "Inspeksi membran timpani, auskultasi paru (cari sumber infeksi)"
+    ],
+    "kriteriaDiagnosis": "Anak usia 6 bln-5 tahun, kejang terkait demam (>38°C), TANPA infeksi SSP, TANPA gangguan metabolik akut, dan TANPA riwayat kejang afebril sebelumnya.",
+    "algoritmaDiagnosis": [
+      "1. Pastikan ABC jika datang saat fase iktal.",
+      "2. Evaluasi kesadaran dan Tanda Rangsang Meningeal untuk beda dengan ensefalopati infeksius.",
+      "3. Indikasi LP: SANGAT DIANJURKAN usia <12 bulan. DIANJURKAN 12-18 bulan. DIPERTIMBANGKAN >18 bulan dengan klinis curiga meningitis atau sudah terima antibiotik.",
+      "4. Klasifikasikan: Kejang Demam Sederhana (KDS) atau Kompleks (KDK).",
+      "5. Identifikasi dan atasi penyakit infeksi primer."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Darah Perifer Lengkap",
+        "indikasi": "Evaluasi sumber infeksi",
+        "interpretasi": "Leukositosis/leukopenia mengarah ke penyebab spesifik"
+      },
+      {
+        "nama": "Gula Darah Acak & Elektrolit (Ca, Mg, Na)",
+        "indikasi": "Hanya jika ada indikasi klinis spesifik (diare hebat, muntah profus)",
+        "interpretasi": "Hipoglikemia, hiponatremia, hipokalsemia bisa menyebabkan kejang tanpa demam"
+      },
+      {
+        "nama": "Urinalisis & Kultur Urin",
+        "indikasi": "Curiga ISK tersembunyi",
+        "interpretasi": "Nitrit positif, leukosituria menandakan ISK"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "CT Scan atau MRI Kepala",
+        "indikasi": "TIDAK RUTIN. Hanya jika defisit neurologis fokal menetap, paresis N. Kranialis, atau curiga peningkatan TIK",
+        "temuanKhas": "Edema serebral, abses, lesi fokal jika ada infeksi SSP"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "EEG (Elektroensefalografi)",
+        "indikasi": "TIDAK rutin. Dipertimbangkan jika kejang fokal atau kejang tanpa demam berulang pasca KD",
+        "interpretasi": "Kelainan EEG pada KDS tidak mempengaruhi tatalaksana"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Klasifikasi Klinis AAP & IDAI",
+    "tingkatan": [
+      {
+        "derajat": "Kejang Demam Sederhana (KDS)",
+        "kriteria": "Umum (tonik-klonik), durasi <15 menit, tidak berulang dalam 24 jam",
+        "tindakan": "Observasi IGD 1-2 jam. Antipiretik. Rawat jalan jika stabil. Edukasi keluarga."
+      },
+      {
+        "derajat": "Kejang Demam Kompleks (KDK)",
+        "kriteria": "Fokal/parsial, ATAU durasi ≥15 menit, ATAU berulang >1x dalam 24 jam",
+        "tindakan": "Rawat inap. LP jika indikasi. Pertimbangkan profilaksis antikonvulsan."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Terminasi kejang sesegera mungkin jika masih dalam fase iktal.",
+      "Turunkan suhu tubuh dengan antipiretik reguler.",
+      "Profilaksis antikonvulsan intermiten atau kontinyu HANYA pada kelompok risiko tinggi spesifik.",
+      "Re-edukasi tentang sifat benigna kejang demam untuk kontrol kecemasan orang tua."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Diazepam Per Rektal",
+        "kelas": "Antikonvulsan Benzodiazepin (Lini Pertama Pra-RS)",
+        "indikasi": "Kejang aktif di rumah atau akses IV belum terpasang",
+        "dosis": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "5 mg/dosis PR (BB <10 kg)",
+          "batita": "5 mg/dosis PR (BB <10 kg); 10 mg/dosis (BB >10 kg)",
+          "prasekolah": "10 mg/dosis PR",
+          "sekolah": "10 mg/dosis PR",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "Maks 2x pemberian, interval jeda 5 menit",
+        "caraPemberian": "Per rektal (suppository atau larutan)",
+        "durasi": "Single/dua kali pemberian akut",
+        "catatanKhusus": "Aman digunakan orang tua di rumah. Onset 5-10 menit."
+      },
+      {
+        "nama": "Diazepam Intravena",
+        "kelas": "Antikonvulsan Benzodiazepin (Lini Pertama RS)",
+        "indikasi": "Kejang aktif di IGD dengan akses IV tersedia",
+        "dosis": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "0.2-0.5 mg/kg/dosis IV lambat",
+          "batita": "0.2-0.5 mg/kg/dosis IV lambat",
+          "prasekolah": "0.2-0.5 mg/kg/dosis IV lambat",
+          "sekolah": "0.2-0.5 mg/kg/dosis IV lambat",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "Maks 10 mg/dosis",
+        "caraPemberian": "IV lambat 1-2 mg/menit",
+        "durasi": "Dosis tunggal akut",
+        "catatanKhusus": "Onset 1-3 menit. Awasi apnea (siapkan bag-mask)."
+      },
+      {
+        "nama": "Parasetamol",
+        "kelas": "Antipiretik & Analgesik",
+        "indikasi": "Turunkan demam pada semua fase",
+        "dosis": {
+          "neonatus": "Tidak digunakan rutin",
+          "bayi": "10-15 mg/kg/dosis q6h PO/PR",
+          "batita": "10-15 mg/kg/dosis q6h PO/PR",
+          "prasekolah": "10-15 mg/kg/dosis q6h PO/PR",
+          "sekolah": "10-15 mg/kg/dosis q6h PO/PR",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "60 mg/kg/hari",
+        "caraPemberian": "Oral atau supositoria rektal",
+        "durasi": "Selama demam berlangsung",
+        "catatanKhusus": "Ibuprofen 5-10 mg/kg/dosis q8h sebagai alternatif."
+      },
+      {
+        "nama": "Asam Valproat (Profilaksis Kontinyu)",
+        "kelas": "Antikonvulsan Rumat",
+        "indikasi": "BUKAN untuk akut. Profilaksis kontinyu HANYA KDK fokal parah atau defisit neurologi menetap",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "15-40 mg/kg/hari dibagi 2-3 dosis PO",
+          "batita": "15-40 mg/kg/hari dibagi 2-3 dosis PO",
+          "prasekolah": "15-40 mg/kg/hari dibagi 2-3 dosis PO",
+          "sekolah": "Tidak digunakan pada usia ini",
+          "remaja": "Tidak digunakan"
+        },
+        "dosisMaksimal": "Sesuai monitoring toleransi hepatik",
+        "caraPemberian": "Per oral",
+        "durasi": "1 tahun, lalu evaluasi",
+        "catatanKhusus": "Risiko hepatotoksisitas. Tidak untuk penanganan akut."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Posisi miring (recovery) untuk cegah aspirasi. JANGAN menahan anak terlalu kuat.",
+      "Bebaskan jalan napas: longgarkan pakaian berkerah.",
+      "DILARANG memasukkan jari/sendok ke mulut.",
+      "Kompres hangat setelah kejang berhenti."
+    ],
+    "kriteriaRawatInap": [
+      "KDK (Kejang Demam Kompleks).",
+      "Kejang pertama pada bayi <6 bulan.",
+      "Kecurigaan meningitis/ensefalitis → LP.",
+      "Masih letargi/somnolen atau defisit fokal setelah post-iktal lewat."
+    ],
+    "kriteriaRawatJalan": [
+      "KDS stabil.",
+      "Anak sadar penuh dan normal di observasi IGD.",
+      "Sumber infeksi jelas, tidak butuh IV.",
+      "Orang tua teredukasi dan memiliki diazepam rektal di rumah."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Kesadaran post-iktal (anak tidur lalu bangun normal).",
+      "Status kardiorespirasi (deteksi depresi napas pasca Diazepam).",
+      "Suhu aksiler/rektal serial tiap 4 jam."
+    ],
+    "parametarLab": [
+      "Profil CSF jika LP dilakukan: pleositosis, glukosa, protein, kultur → deteksi meningitis."
+    ],
+    "targetTerapi": [
+      "Terminasi kejang total <5 menit intervensi.",
+      "Demam mereda di bawah ambang pemicu kejang.",
+      "Cegah progresi ke Status Epileptikus."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Trauma kepala/cedera muskuloskeletal akibat benturan.",
+      "Aspirasi pneumonia akibat muntahan/sekret.",
+      "Status Epileptikus (kejang >30 menit).",
+      "Apnea iatrogenik akibat Diazepam dosis berlebihan."
+    ],
+    "komplikasiLanjut": [
+      "Rekurensi kejang demam (30-50%, lebih tinggi jika pertama <1 tahun).",
+      "Epilepsi masa depan (1-2%, meningkat 5-10% pada KDK dengan genetik epilepsi positif)."
+    ],
+    "redFlags": [
+      "Kejang tidak berhenti walau 2 dosis diazepam rektal + 1 dosis IV.",
+      "Kejang saat suhu sudah normal (<37.5°C).",
+      "Paresis Todd tidak membaik >24 jam."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Kejang demam TIDAK merusak otak dan tidak menyebabkan gangguan kognitif.",
+      "Teknik posisi miring saat kejang. LARANGAN menahan/memeluk kuat saat kelojotan.",
+      "Obat turun panas hanya meredakan tidak nyaman, bukan penangkal kejang."
+    ],
+    "pencegahan": [
+      "Diazepam oral/rektal 0.3 mg/kg/dosis q8h selama 48 jam demam HANYA jika diinstruksikan DPJP untuk KDK berulang berat.",
+      "Tangani segera penyakit primer (ISPA, OMA) sejak hari pertama demam.",
+      "Rehidrasi ekstra saat anak demam untuk bantu termoregulasi."
+    ],
+    "kapanKembaliKeDokter": [
+      "Kejang >5 menit walau stesolid rektal sudah diberikan.",
+      "Kejang fokal (hanya bibir berkedut atau satu tangan menghentak).",
+      "Bibir dan kuku kebiruan (sianosis) setelah kejang.",
+      "Anak sangat mengantuk, merintih, sulit dibangunkan setelah 1 jam."
+    ]
+  },
+  "prognosis": {
+    "umum": "Sangat baik (Bonam) untuk kognitif jangka panjang. Hampir semua outgrow setelah usia 5-6 tahun.",
+    "faktorPrognostikBaik": [
+      "KDS eksklusif.",
+      "Tumbuh kembang normal sesuai milestones.",
+      "Tidak ada riwayat epilepsi primer dalam keluarga."
+    ],
+    "faktorPrognostikBuruk": [
+      "KDK (terutama durasi >15 menit).",
+      "Palsi serebral yang tumpang tindih.",
+      "Awitan pertama <9 bulan."
+    ]
+  },
+  "referensi": [
+    "Konsensus Penatalaksanaan Kejang Demam, UKK Neurologi IDAI, Revisi Terkini",
+    "AAP Clinical Practice Guideline: Febrile Seizures",
+    "Nelson Textbook of Pediatrics, 21st Edition (Section: Neurology)"
+  ]
+}

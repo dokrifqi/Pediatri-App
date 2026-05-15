@@ -1,0 +1,283 @@
+{
+  "id": "tb_paru_anak",
+  "name": "Tuberkulosis Paru Anak",
+  "icon": "🧫",
+  "category": "infeksi",
+  "shortDesc": "Skor TB IDAI & OAT 4 Lini — HRZE × 2 bulan + HR × 4 bulan",
+  "definisi": {
+    "pengertian": "Penyakit infeksi menular kronis yang disebabkan oleh Mycobacterium tuberculosis, yang utamanya menyerang parenkim paru pada usia anak (0-18 tahun).",
+    "epidemiologi": "Indonesia merupakan High Burden Country TB, dimana TB anak menyumbang sekitar 10-15% dari total kasus TB nasional.",
+    "angkaMorbiditas": "Mortalitas dan morbiditas sangat tinggi pada anak <5 tahun, penderita malnutrisi berat, dan anak dengan koinfeksi HIV."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Mycobacterium tuberculosis (Bakteri tahan asam/BTA)"
+    ],
+    "faktorRisiko": [
+      "Kontak erat dengan pasien TB paru BTA positif (faktor risiko paling dominan)",
+      "Usia balita (terutama <2 tahun) karena sistem imun seluler belum matang",
+      "Malnutrisi (Gizi kurang atau buruk)",
+      "Imunokompromais (HIV, keganasan, atau kortikosteroid jangka panjang)",
+      "Lingkungan hunian padat dengan ventilasi dan pencahayaan buruk"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Basil TB terinhalasi via droplet nuclei, difagositosis makrofag alveolus. Basil yang bertahan bereplikasi dan memicu pembentukan tuberkel (granuloma). Fokus Ghon + limfangitis + limfadenitis regional membentuk Kompleks Primer. Dari sini, kuman bisa dorman, sembuh, atau menyebar limfohematogen ke organ lain.",
+    "poinKunci": [
+      "TB paru anak umumnya paucibacillary (jumlah kuman sedikit) sehingga jarang menularkan.",
+      "Masa inkubasi hingga konversi uji tuberkulin 2-12 minggu pasca paparan.",
+      "Risiko progresi dari infeksi primer menjadi sakit TB paling tinggi pada 1 tahun pertama."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Batuk kronis ≥3 minggu tidak membaik dengan pengobatan standar",
+      "Demam berkepanjangan ≥2 minggu tanpa sebab jelas (umumnya subfebris)",
+      "BB turun atau tidak naik dalam 2 bulan meskipun asupan gizi adekuat",
+      "Anak tampak lesu, kurang aktif",
+      "Riwayat kontak erat dengan pasien TB paru dewasa BTA positif"
+    ],
+    "pemeriksaanFisik": [
+      "Status gizi kurang (Z-score <-2 SD) atau buruk",
+      "Pembesaran KGB superfisial multipel >1 cm, tidak nyeri, konfluen",
+      "Pemeriksaan paru sering tidak spesifik; bisa ada ronkhi atau wheezing fokal menetap",
+      "Inspeksi tulang belakang untuk gibbus (kifosis) atau pincang (koksitis)"
+    ],
+    "kriteriaDiagnosis": "Sistem Skoring TB Anak IDAI: skor ≥6 → diagnosis dan diobati sebagai TB Paru. Parameter: (1) Kontak BTA+= 3; (2) Tuberkulin positif = 3; (3) Gizi buruk/BGM = 2, Gizi kurang = 1; (4) Demam ≥2 minggu = 1; (5) Batuk ≥3 minggu = 1; (6) Pembesaran KGB = 1; (7) Bengkak tulang/sendi = 1; (8) Foto toraks mengesankan TB = 1.",
+    "algoritmaDiagnosis": [
+      "1. Skrining gejala klinis TB pada anak.",
+      "2. TCM (Xpert MTB/RIF) dari dahak, bilasan lambung, atau feses.",
+      "3. Jika TCM positif → TB Terkonfirmasi Bakteriologis + uji resistensi Rifampisin.",
+      "4. Jika TCM negatif/tidak tersedia → Skor TB IDAI + Tuberkulin + Foto Toraks.",
+      "5. Skor ≥6 → OAT. Skor <6 tapi curiga tinggi → observasi dan perbaiki gizi 2-4 minggu, lalu evaluasi ulang."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "TCM/GeneXpert MTB/RIF",
+        "indikasi": "Alat diagnostik utama lini pertama",
+        "interpretasi": "MTB detected = TB terkonfirmasi; Rifampisin Resistant = curiga MDR-TB"
+      },
+      {
+        "nama": "Mikroskopis BTA Sputum",
+        "indikasi": "Alternatif jika TCM tidak tersedia",
+        "interpretasi": "Sensitivitas rendah pada anak. BTA positif konfirmasi, BTA negatif tidak menyingkirkan TB"
+      },
+      {
+        "nama": "Kultur Mycobacterium tuberculosis",
+        "indikasi": "Baku emas, butuh waktu 2-6 minggu",
+        "interpretasi": "Gold standard. Juga untuk uji sensitivitas OAT"
+      },
+      {
+        "nama": "Histopatologi (Biopsi KGB/Jaringan)",
+        "indikasi": "Jika diindikasikan untuk konfirmasi",
+        "interpretasi": "Granuloma dengan nekrosis perkijuan (kaseosa) = spesifik TB"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Rontgen Toraks AP/PA dan Lateral",
+        "indikasi": "Semua kasus suspek TB paru anak",
+        "temuanKhas": "Pembesaran KGB hilus/paratrakeal, konsolidasi segmental/lobar, bercak milier, efusi pleura, atau kavitas (anak besar/remaja)"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Uji Tuberkulin (Mantoux)",
+        "indikasi": "Skrining infeksi TB latent",
+        "interpretasi": "Positif jika indurasi ≥10 mm; ≥5 mm pada HIV/imunokompromais. Baca 48-72 jam setelah injeksi intrakutan 0.1 ml PPD"
+      },
+      {
+        "nama": "IGRA (Interferon Gamma Release Assay)",
+        "indikasi": "Alternatif Mantoux, tidak dipengaruhi vaksinasi BCG",
+        "interpretasi": "Positif = infeksi TB latent. Lebih spesifik dari Mantoux"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Berdasarkan Lokasi Anatomi dan Riwayat Pengobatan",
+    "tingkatan": [
+      {
+        "derajat": "TB Paru",
+        "kriteria": "Melibatkan parenkim paru atau trakeobronkial",
+        "tindakan": "OAT 6 bulan: 2HRZ(E) + 4HR"
+      },
+      {
+        "derajat": "TB Ekstraparu",
+        "kriteria": "Melibatkan organ di luar paru (KGB, tulang, meningitis). Jika ada keduanya → TB Paru",
+        "tindakan": "OAT 6-12 bulan tergantung organ yang terlibat"
+      },
+      {
+        "derajat": "Kasus Baru",
+        "kriteria": "Belum pernah OAT atau OAT <1 bulan",
+        "tindakan": "Regimen standar 2HRZ(E) + 4HR"
+      },
+      {
+        "derajat": "Kasus Kambuh (Relaps)",
+        "kriteria": "Pernah sembuh/lengkap, kembali sakit dengan bukti klinis/bakteriologis",
+        "tindakan": "TCM ulang untuk deteksi MDR sebelum memulai OAT ulang"
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Pengobatan 2 fase: Fase Intensif (2 bulan, HRZ atau HRZE) membunuh kuman aktif; Fase Lanjutan (4 bulan, HR) membunuh kuman persister.",
+      "Total durasi 6 bulan untuk TB paru sensitif obat.",
+      "Wajib didampingi PMO (Pengawas Menelan Obat)."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Isoniazid (H)",
+        "kelas": "OAT Lini Pertama (Bakterisidal Kuat)",
+        "indikasi": "Semua kasus TB sensitif. Fase intensif + lanjutan",
+        "dosis": {
+          "neonatus": "10 mg/kg/hari dosis tunggal",
+          "bayi": "10 mg/kg/hari dosis tunggal",
+          "batita": "10 mg/kg/hari dosis tunggal",
+          "prasekolah": "10 mg/kg/hari dosis tunggal",
+          "sekolah": "10 mg/kg/hari dosis tunggal",
+          "remaja": "10 mg/kg/hari dosis tunggal"
+        },
+        "dosisMaksimal": "300 mg/hari",
+        "caraPemberian": "Per oral, perut kosong",
+        "durasi": "6 bulan (fase intensif + lanjutan)",
+        "catatanKhusus": "Suplementasi Piridoksin (B6) 5-10 mg/hari untuk cegah neuropati perifer, terutama pada malnutrisi dan HIV."
+      },
+      {
+        "nama": "Rifampisin (R)",
+        "kelas": "OAT Lini Pertama (Bakterisidal & Sterilisasi)",
+        "indikasi": "Semua kasus TB sensitif. Fase intensif + lanjutan",
+        "dosis": {
+          "neonatus": "15 mg/kg/hari dosis tunggal",
+          "bayi": "15 mg/kg/hari dosis tunggal",
+          "batita": "15 mg/kg/hari dosis tunggal",
+          "prasekolah": "15 mg/kg/hari dosis tunggal",
+          "sekolah": "15 mg/kg/hari dosis tunggal",
+          "remaja": "15 mg/kg/hari dosis tunggal"
+        },
+        "dosisMaksimal": "600 mg/hari",
+        "caraPemberian": "Per oral, perut kosong",
+        "durasi": "6 bulan",
+        "catatanKhusus": "Urin, keringat, air mata menjadi merah-oranye (NORMAL). Enzyme inducer → interaksi OCP, kortikoid."
+      },
+      {
+        "nama": "Pirazinamid (Z)",
+        "kelas": "OAT Lini Pertama (Bakterisidal kuman intraseluler)",
+        "indikasi": "Fase intensif saja",
+        "dosis": {
+          "neonatus": "35 mg/kg/hari dosis tunggal",
+          "bayi": "35 mg/kg/hari dosis tunggal",
+          "batita": "35 mg/kg/hari dosis tunggal",
+          "prasekolah": "35 mg/kg/hari dosis tunggal",
+          "sekolah": "35 mg/kg/hari dosis tunggal",
+          "remaja": "35 mg/kg/hari dosis tunggal"
+        },
+        "dosisMaksimal": "2000 mg/hari",
+        "caraPemberian": "Per oral",
+        "durasi": "2 bulan (fase intensif saja)",
+        "catatanKhusus": "Risiko hepatotoksisitas dan hiperurisemia/artralgia."
+      },
+      {
+        "nama": "Etambutol (E)",
+        "kelas": "OAT Lini Pertama (Bakteriostatik)",
+        "indikasi": "Fase intensif pada TB parenkim luas atau curiga resistensi",
+        "dosis": {
+          "neonatus": "Tidak digunakan pada usia ini",
+          "bayi": "20 mg/kg/hari dosis tunggal",
+          "batita": "20 mg/kg/hari dosis tunggal",
+          "prasekolah": "20 mg/kg/hari dosis tunggal",
+          "sekolah": "20 mg/kg/hari dosis tunggal",
+          "remaja": "20 mg/kg/hari dosis tunggal"
+        },
+        "dosisMaksimal": "1200 mg/hari",
+        "caraPemberian": "Per oral",
+        "durasi": "2 bulan",
+        "catatanKhusus": "Waspada neuritis optik (gangguan visus, buta warna merah-hijau). Monitor tiap bulan."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Diet TKTP (Tinggi Kalori Tinggi Protein) untuk mengejar pertumbuhan dan perbaiki status imun.",
+      "Isolasi di ruangan ventilasi silang dan cahaya matahari langsung ≥2 minggu awal.",
+      "Contact Tracing: cari sumber penular dewasa di rumah dan anak lain yang turut terpapar."
+    ],
+    "kriteriaRawatInap": [
+      "TB Paru dengan komplikasi sesak berat, efusi pleura masif, atau pneumotoraks.",
+      "Hemoptisis masif mengancam jalan napas.",
+      "TB Milier atau kecurigaan meningitis TB.",
+      "Keadaan umum sangat buruk, malnutrisi berat, atau hepatotoksisitas OAT berat."
+    ],
+    "kriteriaRawatJalan": [
+      "TB Paru primer tanpa komplikasi distres napas.",
+      "Keluarga berkomitmen menjadi PMO yang handal.",
+      "Anak toleransi OAT oral (KDT) tanpa muntah persisten."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "BB setiap bulan (indikator terpenting respons terapi).",
+      "Resolusi gejala: demam menghilang, batuk mereda, anak kembali aktif.",
+      "Monitoring toksisitas OAT: ikterus, mual muntah persisten, nyeri sendi, gangguan penglihatan."
+    ],
+    "parametarLab": [
+      "Evaluasi BTA akhir bulan ke-2 dan bulan ke-5 (jika dahak awal positif).",
+      "SGOT/SGPT dan bilirubin HANYA jika muncul gejala hepatitis imbas obat (ikterik, hepatomegali nyeri)."
+    ],
+    "targetTerapi": [
+      "Penyelesaian total regimen OAT tanpa putus obat (Treatment Success).",
+      "Konversi BB menuju kurva pertumbuhan normal (catch-up growth).",
+      "Resolusi kelainan radiologis (limfadenopati hilus bisa bertahan lebih lama)."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Hepatitis Imbas Obat/DILI akibat INH, Rifampisin, atau Pirazinamid.",
+      "Atelektasis parsial akibat kompresi bronkus oleh KGB hilus masif.",
+      "Efusi pleura tuberkulosa."
+    ],
+    "komplikasiLanjut": [
+      "Bronkiektasis pasca-TB (kerusakan struktural bronkus ireversibel).",
+      "Fibrosis paru dan penurunan kapasitas fungsi paru."
+    ],
+    "redFlags": [
+      "Tanda MDR-TB: tidak ada perbaikan klinis setelah 2-3 bulan OAT, riwayat kontak MDR, atau TCM resistensi Rifampisin.",
+      "Penurunan kesadaran, kejang, paresis N. kranialis → meningitis TB.",
+      "Sklera kuning pekat, muntah proyektil pasca OAT → gagal hati akut imbas obat."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "OAT diminum setiap hari di waktu sama tanpa putus, minimal 6 bulan penuh.",
+      "Ajarkan etika batuk/bersin yang benar dan pastikan jendela kamar sering dibuka pagi hari.",
+      "Tablet OAT KDT dilarutkan dalam air matang untuk balita yang belum bisa menelan tablet."
+    ],
+    "pencegahan": [
+      "BCG sesegera mungkin pada bayi baru lahir untuk cegah TB berat (Milier dan Meningitis TB).",
+      "TPT (Terapi Pencegahan TB): balita <5 tahun dan imunokompromais yang kontak TB dewasa tapi TERBUKTI TIDAK SAKIT TB → Isoniazid profilaksis 6 bulan."
+    ],
+    "kapanKembaliKeDokter": [
+      "Urin/feses/air mata kuning pekat seperti teh, atau kulit/mata tampak ikterik.",
+      "Anak menolak makan dan memuntahkan semua obat setiap hari.",
+      "Sesak napas memburuk atau batuk mengeluarkan darah segar."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam jika diagnosis tepat dan kepatuhan PMO terjaga 6 bulan. Dubia ad malam jika terlambat, malnutrisi buruk, koinfeksi HIV, atau MDR.",
+    "faktorPrognostikBaik": [
+      "Kenaikan BB bermakna pada 1-2 bulan pertama OAT.",
+      "Tidak ada kavitas luas atau TB milier.",
+      "Orang tua kooperatif dan logistik KDT terjamin."
+    ],
+    "faktorPrognostikBuruk": [
+      "Kepatuhan minum obat terputus-putus (default/loss to follow up).",
+      "Imunosupresi berat (HIV lanjut).",
+      "Paparan terus-menerus sumber indeks TB yang menolak diobati."
+    ]
+  },
+  "referensi": [
+    "Petunjuk Teknis Manajemen TB Anak, Kemenkes RI & IDAI, Revisi Terkini",
+    "WHO Consolidated Guidelines TB: Module 5: Management in Children and Adolescents (2022)",
+    "Buku Ajar Respirologi Anak IDAI, Edisi Pertama (Bab Tuberkulosis Paru)"
+  ]
+}

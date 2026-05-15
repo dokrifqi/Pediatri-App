@@ -1,0 +1,310 @@
+{
+  "id": "sepsis_neonatorum",
+  "name": "Sepsis Neonatorum",
+  "icon": "🦠",
+  "category": "neonatologi",
+  "shortDesc": "Infeksi sistemik berat pada bayi 0–28 hari — EOS & LOS",
+  "definisi": {
+    "pengertian": "Sindrom klinis penyakit sistemik yang disebabkan oleh infeksi aliran darah yang terjadi pada bulan pertama kehidupan (0-28 hari).",
+    "epidemiologi": "Insiden 1-10 per 1000 kelahiran hidup, angka kejadian berbanding terbalik dengan usia gestasi dan berat badan lahir.",
+    "angkaMorbiditas": "Menyumbang sekitar 30-50% penyebab kematian neonatal di negara berkembang."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Group B Streptococcus (GBS)",
+      "Escherichia coli",
+      "Listeria monocytogenes",
+      "Staphylococcus aureus (terutama LOS)",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii"
+    ],
+    "faktorRisiko": [
+      "Ketuban Pecah Dini (KPD) > 18 jam",
+      "Korioamnionitis pada ibu (demam ibu peripartum)",
+      "Prematuritas (< 37 minggu)",
+      "Berat Badan Lahir Rendah (BBLR)",
+      "Asfiksia perinatal atau skor Apgar rendah",
+      "Penggunaan akses vena sentral atau intubasi endotrakeal berkepanjangan"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Paparan patogen secara vertikal (in utero/intrapartum) atau horizontal (lingkungan pascasalin) menembus barier imunitas neonatus yang imatur, memicu respons inflamasi sistemik, pelepasan kaskade sitokin, kerusakan endotel, hingga kegagalan organ multipel.",
+    "poinKunci": [
+      "Transmisi vertikal dominan pada Early Onset Sepsis (EOS).",
+      "Transmisi horizontal atau nosokomial dominan pada Late Onset Sepsis (LOS).",
+      "Defisiensi fungsi neutrofil dan komplemen pada neonatus memperburuk penyebaran infeksi."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Riwayat faktor risiko maternal (demam, infeksi saluran kemih, KPD)",
+      "Bayi tampak malas minum (poor feeding)",
+      "Letargi, rewel, atau menangis lemah",
+      "Riwayat ketuban keruh atau berbau"
+    ],
+    "pemeriksaanFisik": [
+      "Ketidakstabilan suhu (hipotermia < 36.5 C atau demam > 37.5 C)",
+      "Distress pernapasan (takipnea > 60x/menit, retraksi dinding dada, grunting)",
+      "Kardiovaskular: takikardia (> 160x/menit) atau bradikardia (< 100x/menit), perfusi buruk (CRT > 3 detik)",
+      "Gastrointestinal: distensi abdomen, muntah",
+      "Neurologis: kejang, hipotonia, fontanel membonjol",
+      "Kulit: ikterus awitan dini, petekie, sianosis"
+    ],
+    "kriteriaDiagnosis": "Ditegakkan berdasarkan kombinasi faktor risiko, tanda klinis infeksi sistemik yang persisten, didukung oleh kelainan penanda inflamasi laboratorium dan konfirmasi kultur darah positif.",
+    "algoritmaDiagnosis": [
+      "1. Lakukan skrining faktor risiko maternal dan neonatal.",
+      "2. Observasi tanda klinis sepsis pada neonatus.",
+      "3. Jika curiga sepsis, segera ambil sampel darah rutin, CRP, dan kultur darah.",
+      "4. Mulai terapi antibiotik empiris intravena tanpa menunggu hasil kultur.",
+      "5. Sesuaikan antibiotik atau hentikan berdasarkan hasil kultur pada jam ke-48 hingga 72."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Darah Perifer Lengkap (CBC)",
+        "indikasi": "Skrining awal pada semua bayi dengan curiga sepsis",
+        "interpretasi": "Leukopenia < 5.000/uL atau Leukositosis > 20.000/uL, Trombositopenia < 100.000/uL menunjukkan inflamasi sistemik"
+      },
+      {
+        "nama": "Hitung Jenis Neutrofil (I/T Ratio)",
+        "indikasi": "Penanda infeksi dini",
+        "interpretasi": "Rasio neutrofil imatur terhadap total neutrofil > 0.2 menunjukkan shift to left dan curiga infeksi bakteri"
+      },
+      {
+        "nama": "C-Reactive Protein (CRP)",
+        "indikasi": "Pemeriksaan ulang pada jam ke-24-48",
+        "interpretasi": "CRP > 10 mg/L (normal < 10 mg/L) menunjukkan respon inflamasi terhadap infeksi"
+      },
+      {
+        "nama": "Procalcitonin (PCT)",
+        "indikasi": "Jika tersedia untuk diferensiasi infeksi bakteri vs viral",
+        "interpretasi": "PCT > 0.5 ng/mL lebih spesifik untuk infeksi bakteri dibanding CRP"
+      },
+      {
+        "nama": "Kultur Darah",
+        "indikasi": "WAJIB sebelum pemberian antibiotik",
+        "interpretasi": "Baku emas diagnosis sepsis, hasil positif dalam 24-48 jam dengan identifikasi organisme dan uji sensitivitas"
+      },
+      {
+        "nama": "Gula Darah Sewaktu",
+        "indikasi": "Monitoring metabolik pada bayi sepsis",
+        "interpretasi": "Hipoglikemia < 40 mg/dL atau hiperglikemia > 150 mg/dL menunjukkan gangguan metabolisme akibat infeksi"
+      },
+      {
+        "nama": "Analisis Gas Darah (AGD)",
+        "indikasi": "Jika terdapat distres napas atau tanda syok",
+        "interpretasi": "Asidosis metabolik (pH < 7.35, HCO3 < 18) menunjukkan perfusi jaringan buruk"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Rontgen Toraks (Chest X-Ray)",
+        "indikasi": "Bayi dengan tanda distres napas (takipnea, retraksi, grunting)",
+        "temuanKhas": "Infiltrat alveolar, pola granular, gambaran white-out, atau pneumonia bilateral jika sepsis dengan komplikasi respirasi"
+      },
+      {
+        "nama": "Ultrasound Kepala",
+        "indikasi": "Jika ada curiga meningitis atau ventrikulitis berdasarkan klinis",
+        "temuanKhas": "Pelebaran ventrikel, ekhogenisitas parenkimal yang meningkat, atau tanda-tanda inflamasi CNS lainnya"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Pungsi Lumbal (Lumbar Puncture) dan Analisis CSF",
+        "indikasi": "Kultur darah positif, gejala meningitis (kejang, fontanel membonjol, rigiditas nukal), atau bayi sangat prematur dengan klinis berat",
+        "interpretasi": "Pleositosis (> 20 sel/uL), protein meningkat (> 90 mg/dL), gula CSF < 40% gula darah, kultur CSF positif = meningitis"
+      },
+      {
+        "nama": "Kultur Urin",
+        "indikasi": "Terutama pada Late Onset Sepsis (LOS) dengan curiga infeksi saluran kemih",
+        "interpretasi": "Kultur > 10^4 CFU/mL menunjukkan infeksi saluran kemih"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Berdasarkan waktu awitan infeksi",
+    "tingkatan": [
+      {
+        "derajat": "Early Onset Sepsis (EOS)",
+        "kriteria": "Awitan < 72 jam kehidupan, umumnya didapat in utero atau intrapartum dari ibu dengan KPD, korioamnionitis, atau demam peripartum",
+        "tindakan": "Antibiotik empiris: Ampisilin + Gentamisin (atau Meropenem jika curiga meningitis)"
+      },
+      {
+        "derajat": "Late Onset Sepsis (LOS)",
+        "kriteria": "Awitan ≥ 72 jam kehidupan, umumnya didapat dari lingkungan (nosokomial/komunitas) khususnya pada BBLR dan bayi dengan akses invasif berkepanjangan",
+        "tindakan": "Antibiotik empiris: Meropenem + Vankomycin (untuk coverage Staphylococcus dan Gram-negatif resisten)"
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Stabilisasi hemodinamik dan respirasi (A-B-C): Airway, Breathing, Circulation",
+      "Eradikasi patogen dengan antibiotik intravena spektrum luas segera tanpa menunggu hasil kultur",
+      "Dukungan suportif (termoregulasi, nutrisi, koreksi gangguan metabolik) hingga bayi stabil"
+    ],
+    "obatObatan": [
+      {
+        "nama": "Ampisilin",
+        "kelas": "Antibiotik Spektrum Luas (Lini pertama EOS)",
+        "indikasi": "Terapi empiris untuk Early Onset Sepsis (EOS) dalam kombinasi dengan gentamisin",
+        "dosis": {
+          "neonatus": "50 mg/kg/dosis q12h (usia ≤ 7 hari); 50 mg/kg/dosis q8h (usia > 7 hari)",
+          "bayi": "Tidak digunakan pada usia ini",
+          "batita": "Tidak digunakan pada usia ini",
+          "prasekolah": "Tidak digunakan pada usia ini",
+          "sekolah": "Tidak digunakan pada usia ini",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "100 mg/kg/dosis (untuk meningitis sepsis neonatorum)",
+        "caraPemberian": "Injeksi IV lambat (push) atau infus dalam 3-5 menit",
+        "durasi": "Minimal 10-14 hari untuk EOS tanpa komplikasi meningitis; 14-21 hari jika dengan meningitis",
+        "catatanKhusus": "Selalu dikombinasikan dengan aminoglikosida. Direkomendasikan untuk meningkatkan coverage terhadap Gram-positif terutama GBS dan Listeria."
+      },
+      {
+        "nama": "Gentamisin",
+        "kelas": "Antibiotik Aminoglikosida",
+        "indikasi": "Kombinasi dengan Ampisilin untuk coverage Gram-negatif pada EOS/LOS",
+        "dosis": {
+          "neonatus": "4-5 mg/kg/dosis q24h (untuk bayi cukup bulan/≥ 32 minggu); interval q36h atau q48h untuk bayi prematur < 32 minggu",
+          "bayi": "Tidak digunakan pada usia ini",
+          "batita": "Tidak digunakan pada usia ini",
+          "prasekolah": "Tidak digunakan pada usia ini",
+          "sekolah": "Tidak digunakan pada usia ini",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "Disesuaikan berdasarkan kadar obat dalam darah (TDM) jika tersedia; peak 5-10 μg/mL, trough < 2 μg/mL",
+        "caraPemberian": "Injeksi IV infus selama 30-60 menit",
+        "durasi": "10-14 hari untuk EOS/LOS tanpa meningitis",
+        "catatanKhusus": "Aminoglikosida nefrotoksik dan ototoksik → pastikan hidrasi bayi adekuat, monitor diuresis, dan cek fungsi ginjal setiap 2-3 hari. Hindari derawat simultan dengan loop diuretik."
+      },
+      {
+        "nama": "Meropenem",
+        "kelas": "Antibiotik Karbapenem (beta-laktam spectrum luas)",
+        "indikasi": "Alternatif untuk LOS berat, infeksi nosokomial penghasil ESBL, atau jika dicuriga meningitis",
+        "dosis": {
+          "neonatus": "20 mg/kg/dosis q12h (usia ≤ 7 hari); 20 mg/kg/dosis q8h (usia > 7 hari)",
+          "bayi": "Tidak digunakan pada usia ini",
+          "batita": "Tidak digunakan pada usia ini",
+          "prasekolah": "Tidak digunakan pada usia ini",
+          "sekolah": "Tidak digunakan pada usia ini",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "40 mg/kg/dosis untuk meningitis sepsis neonatorum",
+        "caraPemberian": "Injeksi IV infus dalam 15-30 menit",
+        "durasi": "Disesuaikan dengan klinis; minimal 10-14 hari untuk sepsis, 14-21 hari untuk meningitis",
+        "catatanKhusus": "Meropenem lebih baik mempenetrasi CSF dibanding beta-laktam lain. Reserved untuk LOS atau kasus klinis berat karena risiko timbulnya resistensi."
+      },
+      {
+        "nama": "Vankomycin",
+        "kelas": "Antibiotik Glikopeptida",
+        "indikasi": "Jika dicuriga Staphylococcus aureus MRSA (terutama LOS dengan risk akses invasif)",
+        "dosis": {
+          "neonatus": "10-15 mg/kg/dosis q8-12h (tergantung usia gestasi dan renal function)",
+          "bayi": "Tidak digunakan pada usia ini",
+          "batita": "Tidak digunakan pada usia ini",
+          "prasekolah": "Tidak digunakan pada usia ini",
+          "sekolah": "Tidak digunakan pada usia ini",
+          "remaja": "Tidak digunakan pada usia ini"
+        },
+        "dosisMaksimal": "20 mg/kg/dosis; trough level 10-20 μg/mL (TDM recommended)",
+        "caraPemberian": "Injeksi IV infus perlahan dalam 60 menit (cegah red-man syndrome)",
+        "durasi": "10-14 hari untuk sepsis, 14-21 hari untuk meningitis",
+        "catatanKhusus": "Nefrotoksik → monitor fungsi ginjal, Ototoksik → risiko hearing loss. Penggunaan long-term perlu monitoring kadar obat (TDM)."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Perawatan suportif di inkubator atau radiant warmer untuk mempertahankan suhu tubuh 36.5-37.5°C (thermoregulation)",
+      "Pemberian oksigen atau dukungan ventilasi mekanik jika terjadi apnea berulang (> 3 episode dalam 1 jam) atau distres napas berat (RR > 80, retraksi berat, grunting)",
+      "Puasa sementara (NPO) dan nutrisi parenteral total (TPN) jika hemodinamik tidak stabil, bayi mengalami ileus, atau saluran cerna tidak toleran makanan",
+      "Perawatan umbilikal steril dengan alkohol 70% atau klorheksidin untuk pencegahan infeksi ascending"
+    ],
+    "kriteriaRawatInap": [
+      "Semua neonatus dengan klinis dan kecurigaan tinggi sepsis neonatorum wajib dirawat inap di NICU atau unit perinatologi tingkat lanjut",
+      "Bayi dengan hasil kultur darah positif",
+      "Bayi dengan distres napas membutuhkan oksigen atau ventilasi mekanik"
+    ],
+    "kriteriaRawatJalan": [
+      "TIDAK ADA. Sepsis neonatorum adalah kondisi yang mengancam nyawa dan memerlukan hospitalisasi untuk monitoring ketat dan terapi parenteral"
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Tanda vital secara kontinu: Laju jantung (normal 120-160 x/menit), Laju napas (normal 40-60 x/menit), Saturasi oksigen (target > 92%), Suhu tubuh (target 36.5-37.5°C) — frekuensi tiap jam pada hari pertama",
+      "Perfusi perifer: Capillary Refill Time (CRT) normal < 2 detik, produksi urin target > 1 mL/kg/jam",
+      "Status neurologis: Tingkat kesadaran, tonus otot (normal vs hipotoni), monitoring kejang, bulging fontanel",
+      "Toleransi nutrisi: Jumlah pemberian nutrisi enteral, sisa minum dari lambung, dan tonus usus"
+    ],
+    "parametarLab": [
+      "Kadar gula darah berkala dengan setiap 4-6 jam pada bayi sangat prematur atau dengan instabilitas glukosa",
+      "Darah Perifer Lengkap + Hitung Jenis diulang pada jam 24-48 untuk evaluasi respons terapi (penurunan leukositosis/leukopenia, peningkatan trombosit)",
+      "CRP serial pada jam 24-48 jam (penurunan CRP menunjukkan respons antibiotik yang baik)",
+      "Hasil kultur darah dievaluasi pada hari ke-2 hingga ke-5 untuk mengidentifikasi organisme dan pola sensitivitas obat",
+      "Fungsi ginjal (ureum/kreatinin) diperiksa setiap 2-3 hari jika menggunakan aminoglikosida jangka panjang"
+    ],
+    "targetTerapi": [
+      "Sterilisasi kultur darah (kultur negatif pada hari ke-2-3 pemberian antibiotik)",
+      "Normalisasi suhu tubuh dan stabilisasi hemodinamik (HR, RR, perfusi normal)",
+      "Penurunan bermakna atau normalisasi marker inflamasi (CRP < 10 mg/L, PCT membaik)",
+      "Neonatus aktif, alert, dan dapat toleransi minum per oral secara penuh (untuk persiapan pemulangan)"
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Syok Septik (syok yang refrakter terhadap cairan resusitasi)",
+      "Meningitis Bakteri dengan risiko ventrikulitis",
+      "Disseminated Intravascular Coagulation (DIC) dengan perdarahan masif",
+      "Acute Respiratory Distress Syndrome (ARDS) membutuhkan ventilasi mekanik lanjut",
+      "Gagal Ginjal Akut (AKI) dengan oliguri atau kebutuhan dialisis"
+    ],
+    "komplikasiLanjut": [
+      "Keterlambatan Perkembangan Neurodevelopmental (gangguan kognitif dan motorik) terutama jika bersamaan dengan meningitis",
+      "Palsi Serebral (terutama jika komplikasi meningitis atau asfiksia intrapartum memanjang)",
+      "Gangguan Pendengaran Sensorineural (akibat ototoksisitas antibiotik atau meningitis)"
+    ],
+    "redFlags": [
+      "Hipotermia refrakter (< 36°C meski sudah dihangatkan) dan sklerema (pengerasan jaringan subkutan yang progresif) menunjukkan sepsis berat/syok",
+      "Perdarahan masif dari saluran cerna (hematemesis, melena) atau perdarahan spontan dari tempat tusukan",
+      "Apnea berulang (> 3 episode dalam 1 jam) yang membutuhkan stimulasi atau bantuan ventilasi positif",
+      "Kejang yang tidak membaik dengan fenobarbital lini pertama atau status epileptikus → indikasi lumbal pungsi dan imaging CNS urgent"
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Penjelasan komprehensif mengenai tingkat keparahan penyakit dan alasan bayi dirawat di NICU, meliputi tujuan terapi dan monitoring ketat",
+      "Pemberian informasi mengenai tujuan pemakaian alat bantu medis (ventilator, akses vena sentral, monitor cardiopulmonary) untuk mengurangi kecemasan orang tua",
+      "Mendorong ibu untuk rutin memerah ASI (ASIP) untuk disimpan dan diberikan secara bertahap bila kondisi lambung bayi sudah toleran, dan breastfeeding support jika diperlukan"
+    ],
+    "pencegahan": [
+      "Skrining Group B Streptococcus (GBS) pada ibu hamil pada usia kehamilan 35-37 minggu menggunakan kultur vaginal rektal",
+      "Pemberian antibiotik profilaksis intrapartum (IAP) pada ibu dengan hasil GBS positif atau faktor risiko sepsis neonatorum lain (demam intrapartum, KPD > 18 jam)",
+      "Penerapan praktik mencuci tangan yang sangat ketat (hand hygiene 6 langkah sesuai WHO) oleh semua tenaga medis dan pengunjung untuk pencegahan Late Onset Sepsis (LOS) nosokomial di fasilitas kesehatan"
+    ],
+    "kapanKembaliKeDokter": [
+      "Jadwal kontrol rutin poliklinik tumbuh kembang setelah dipulangkan (minggu pertama, bulan kedua, dan bulan keenam)",
+      "Bawa segera ke IGD jika bayi kembali mengalami: Demam > 37.8°C rektum, Malas menyusu atau volume minum berkurang, Tampak kuning progresif, Rewel berlebih atau suara menangis tidak normal, Sesak napas atau napas bunyi, Perut kembung atau sering muntah, Tinja berdarah atau berwarna aneh"
+    ]
+  },
+  "prognosis": {
+    "umum": "Dubia ad bonam pada bayi cukup bulan dengan Early Onset Sepsis (EOS) yang dideteksi dan diterapi lebih awal; Dubia ad malam pada bayi sangat prematur, Late Onset Sepsis (LOS) dengan patogen resisten, atau penyulit meningitis/syok dengan outcome neurodevelopmental yang bervariasi",
+    "faktorPrognostikBaik": [
+      "Bayi lahir aterm/cukup bulan (≥ 37 minggu) dengan berat badan lahir normal",
+      "Respon klinis cepat dalam 24 jam pertama pemberian antibiotik (normalisasi suhu, perbaikan perfusi, feeding tolerance meningkat)",
+      "Kultur darah steril tanpa bukti keterlibatan sistem saraf pusat (hasil lumbal pungsi normal)"
+    ],
+    "faktorPrognostikBuruk": [
+      "Usia gestasi sangat prematur (< 32 minggu) dan Berat Badan Lahir Rendah (BBLR) < 1500 g",
+      "Keterlambatan inisiasi terapi antibiotik empiris (delay > 6 jam)",
+      "Terjadinya syok septik atau Disseminated Intravascular Coagulation (DIC) yang berat",
+      "Infeksi yang disebabkan oleh jamur sistemik (Candida) atau bakteri Gram-negatif yang multi-resisten (ESBL-producing E. coli, Acinetobacter baumannii)"
+    ]
+  },
+  "referensi": [
+    "Pedoman Nasional Pelayanan Kedokteran (PNPK) Tatalaksana Sepsis Neonatorum, Ikatan Dokter Anak Indonesia (IDAI)",
+    "Buku Ajar Neonatologi IDAI, Edisi Pertama — Tatalaksana Sepsis Neonatorum",
+    "Gomella's Neonatology, 8th Edition — Management, Procedures, On-Call Problems, Diseases, and Drugs",
+    "WHO Guidelines on Neonatal Sepsis Management",
+    "AAP (American Academy of Pediatrics) Guidelines on Perinatal Care"
+  ]
+}
