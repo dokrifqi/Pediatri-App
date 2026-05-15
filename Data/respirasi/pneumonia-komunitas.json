@@ -1,0 +1,280 @@
+{
+  "id": "pneumonia_komunitas",
+  "name": "Pneumonia Komunitas Anak",
+  "icon": "🫁",
+  "category": "respirasi",
+  "shortDesc": "CAP — Amoksisilin Lini 1 + Klasifikasi WHO berdasarkan RR & retraksi",
+  "definisi": {
+    "pengertian": "Infeksi akut yang melibatkan parenkim paru (alveoli dan interstisial) yang didapat di komunitas atau di luar lingkungan rumah sakit.",
+    "epidemiologi": "Penyebab kematian utama balita di seluruh dunia, menyumbang ~15% dari seluruh kematian balita.",
+    "angkaMorbiditas": "Insidens tertinggi pada anak <5 tahun, terutama di negara berkembang dengan sanitasi dan cakupan imunisasi rendah."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Streptococcus pneumoniae (bakteri tersering)",
+      "Haemophilus influenzae tipe b (Hib)",
+      "Virus pernapasan (RSV, Influenza, Adenovirus, Rhinovirus)",
+      "Mycoplasma pneumoniae dan Chlamydia pneumoniae (atipikal, dominan usia sekolah)",
+      "Staphylococcus aureus (sering pasca-infeksi virus atau komplikasi empiema)"
+    ],
+    "faktorRisiko": [
+      "Tidak ASI eksklusif",
+      "Gizi buruk/malnutrisi",
+      "Imunisasi tidak lengkap (Campak, Pertusis, Hib, PCV)",
+      "Kepadatan hunian (crowding)",
+      "Polusi udara (asap rokok, dapur biomass)",
+      "BBLR"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Patogen masuk via inhalasi droplet atau aspirasi sekret nasofaringeal. Melewati pertahanan silier dan makrofag alveolar → respons inflamasi → alveoli terisi eksudat kaya neutrofil, fibrin, cairan (konsolidasi) → gangguan difusi O2 → hipoksemia.",
+    "poinKunci": [
+      "Takipnea dan retraksi adalah kompensasi untuk mempertahankan minute ventilation saat compliance paru turun.",
+      "Konsolidasi menyebabkan V/Q mismatch → hipoksemia primer.",
+      "Infeksi virus mendahului 30-50% pneumonia bakteri dengan merusak epitel napas."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Demam tinggi (sering mendadak pada infeksi bakteri)",
+      "Batuk berdahak atau non-produktif memburuk",
+      "Napas cepat dan sesak napas yang disadari orang tua",
+      "Anak malas minum, letargi, atau gelisah",
+      "Nyeri dada atau nyeri perut (pneumonia lobus bawah)"
+    ],
+    "pemeriksaanFisik": [
+      "Takipnea melebihi batasan usia WHO",
+      "Retraksi dinding dada bawah ke dalam (chest indrawing)",
+      "Napas cuping hidung, grunting pada bayi",
+      "Auskultasi: ronkhi basah halus, suara napas bronkial, atau suara menurun (efusi)",
+      "Sianosis sentral (hipoksemia berat)"
+    ],
+    "kriteriaDiagnosis": "Berdasarkan WHO/MTBS: batuk atau kesulitan bernapas disertai takipnea (cut-off RR: <2 bln: ≥60x/mnt; 2-11 bln: ≥50x/mnt; 1-5 th: ≥40x/mnt; >5 th: ≥20x/mnt).",
+    "algoritmaDiagnosis": [
+      "1. Pastikan airway dan breathing aman. Hitung RR 1 menit penuh saat anak tenang.",
+      "2. Evaluasi retraksi dinding dada bawah (chest indrawing).",
+      "3. Cari tanda bahaya: tidak bisa minum, muntah, kejang, letargi, sianosis, stridor saat tenang.",
+      "4. Klasifikasikan: Pneumonia (napas cepat ± retraksi ringan) atau Pneumonia Berat (ada tanda bahaya atau SpO2 <90%).",
+      "5. SpO2 dengan pulse oximetry pada semua anak."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Darah Perifer Lengkap",
+        "indikasi": "Semua kasus rawat inap",
+        "interpretasi": "Leukositosis PMN → bakteri; leukopenia → virus atau sepsis berat"
+      },
+      {
+        "nama": "CRP atau Prokalsitonin",
+        "indikasi": "Membantu beda bakteri vs virus (tidak rutin rawat jalan)",
+        "interpretasi": "CRP >10 mg/L, PCT >0.5 ng/mL lebih mengarah ke bakteri"
+      },
+      {
+        "nama": "Kultur Darah",
+        "indikasi": "Pneumonia Berat sebelum antibiotik",
+        "interpretasi": "Identifikasi organisme dan pola sensitivitas"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Rontgen Toraks AP/PA dan Lateral",
+        "indikasi": "Rawat inap, kecurigaan komplikasi (efusi, pneumotoraks), atau diagnosis tidak jelas",
+        "temuanKhas": "Infiltrat alveolar patchy, konsolidasi lobar, atau bronkopneumonia difus"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Pulse Oximetry",
+        "indikasi": "WAJIB pada semua kasus untuk tentukan derajat hipoksemia dan kriteria rawat inap",
+        "interpretasi": "SpO2 <90% = rawat inap; <92% = oksigen segera"
+      },
+      {
+        "nama": "Rapid Antigen Virus (RSV, Influenza)",
+        "indikasi": "Jika tersedia pada musim wabah",
+        "interpretasi": "Positif RSV: pertimbangkan suportif tanpa antibiotik"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Klasifikasi MTBS/WHO Revisi (2-59 bulan)",
+    "tingkatan": [
+      {
+        "derajat": "Pneumonia",
+        "kriteria": "Napas cepat (takipnea) dan/atau retraksi dinding dada ringan, TANPA tanda bahaya",
+        "tindakan": "Rawat jalan. Amoksisilin oral 3-5 hari. Antipiretik. Kontrol 2 hari."
+      },
+      {
+        "derajat": "Pneumonia Berat",
+        "kriteria": "Batuk/napas cepat + satu atau lebih tanda bahaya (sianosis, SpO2 <90%, distres berat/grunting, letargi, tidak bisa minum, atau kejang)",
+        "tindakan": "Rawat inap. Oksigen. Ampisilin IV + Gentamisin atau Ceftriaxone IV. Monitor ketat."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Oksigenasi segera pada SpO2 <92%. Target >94%.",
+      "Antibiotik empiris dini mencakup patogen paling mungkin berdasarkan usia.",
+      "Dukungan suportif: hidrasi, antipiretik, nutrisi enteral.",
+      "Identifikasi dan tangani komplikasi (drainase efusi) agresif."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Amoksisilin",
+        "kelas": "Antibiotik Beta-Laktam (Lini 1 Rawat Jalan)",
+        "indikasi": "Pneumonia tanpa komplikasi (rawat jalan)",
+        "dosis": {
+          "neonatus": "Tidak digunakan (neonatus wajib rawat inap)",
+          "bayi": "80-90 mg/kg/hari dibagi 2 dosis selama 3-5 hari",
+          "batita": "80-90 mg/kg/hari dibagi 2 dosis selama 3-5 hari",
+          "prasekolah": "80-90 mg/kg/hari dibagi 2 dosis selama 3-5 hari",
+          "sekolah": "80-90 mg/kg/hari dibagi 2 dosis selama 3-5 hari",
+          "remaja": "500-1000 mg/dosis q8h"
+        },
+        "dosisMaksimal": "3 gram/hari",
+        "caraPemberian": "Per oral",
+        "durasi": "3-5 hari",
+        "catatanKhusus": "Dosis tinggi untuk menjangkau S.pneumoniae yang resisten parsial. Suspensi 125 mg/5ml atau 250 mg/5ml."
+      },
+      {
+        "nama": "Ampisilin",
+        "kelas": "Antibiotik Beta-Laktam (Lini 1 Rawat Inap/Pneumonia Berat)",
+        "indikasi": "Pneumonia Berat rawat inap",
+        "dosis": {
+          "neonatus": "50 mg/kg/dosis q12h (≤7 hari); q8h (>7 hari)",
+          "bayi": "50 mg/kg/dosis q6h IV",
+          "batita": "50 mg/kg/dosis q6h IV",
+          "prasekolah": "50 mg/kg/dosis q6h IV",
+          "sekolah": "50 mg/kg/dosis q6h IV",
+          "remaja": "50 mg/kg/dosis q6h IV"
+        },
+        "dosisMaksimal": "4 gram/hari",
+        "caraPemberian": "Injeksi IV",
+        "durasi": "7-10 hari atau sampai bebas demam 48-72 jam",
+        "catatanKhusus": "Sering kombinasi dengan Gentamisin IV 7.5 mg/kg/hari q24h pada bayi muda atau klinis sepsis."
+      },
+      {
+        "nama": "Ceftriaxone",
+        "kelas": "Antibiotik Sefalosporin Generasi III (Lini 2 Rawat Inap)",
+        "indikasi": "Tidak membaik dengan ampisilin 48 jam, komplikasi empiema/abses, atau sangat kritis",
+        "dosis": {
+          "neonatus": "Tidak digunakan (kontraindikasi relatif kernikterus)",
+          "bayi": "50-100 mg/kg/hari dibagi 1-2 dosis IV",
+          "batita": "50-100 mg/kg/hari dibagi 1-2 dosis IV",
+          "prasekolah": "50-100 mg/kg/hari dibagi 1-2 dosis IV",
+          "sekolah": "50-100 mg/kg/hari dibagi 1-2 dosis IV",
+          "remaja": "50-100 mg/kg/hari dibagi 1-2 dosis IV"
+        },
+        "dosisMaksimal": "2 gram/hari (4 g/hari jika curiga meningitis penyerta)",
+        "caraPemberian": "IV infus",
+        "durasi": "7-10 hari",
+        "catatanKhusus": "Infus dalam 30-60 menit."
+      },
+      {
+        "nama": "Azitromisin",
+        "kelas": "Antibiotik Makrolida",
+        "indikasi": "Kecurigaan pneumonia atipikal (Mycoplasma/Chlamydia) pada anak usia sekolah/remaja",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "Tidak digunakan rutin",
+          "batita": "Tidak digunakan rutin",
+          "prasekolah": "10 mg/kg/hari (hari 1), lalu 5 mg/kg/hari (hari 2-5)",
+          "sekolah": "10 mg/kg/hari (hari 1), lalu 5 mg/kg/hari (hari 2-5)",
+          "remaja": "500 mg (hari 1), lalu 250 mg/hari (hari 2-5)"
+        },
+        "dosisMaksimal": "500 mg/hari hari ke-1",
+        "caraPemberian": "Per oral, sekali sehari",
+        "durasi": "5 hari",
+        "catatanKhusus": "Menembus ke dalam sel untuk patogen intraseluler (Mycoplasma, Chlamydia)."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Oksigen nasal kanul atau sungkup muka target SpO2 ≥92%.",
+      "Akses IV untuk cairan jika dehidrasi atau intake oral sulit.",
+      "Fisioterapi dada TIDAK direkomendasikan rutin."
+    ],
+    "kriteriaRawatInap": [
+      "Usia bayi muda (<2 bulan) apa pun derajatnya.",
+      "Pneumonia Berat (SpO2 <90%, sianosis, grunting, letargi, tidak bisa minum).",
+      "Keluarga tidak bisa observasi atau beri terapi oral teratur.",
+      "Gagal rawat jalan (memburuk setelah 48 jam antibiotik oral)."
+    ],
+    "kriteriaRawatJalan": [
+      "Anak >2 bulan dengan Pneumonia (napas cepat ± retraksi ringan).",
+      "Toleransi minum oral baik.",
+      "Kesadaran penuh, aktif, keluarga kooperatif."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "Status respirasi tiap 4-6 jam (RR, retraksi, usaha napas).",
+      "Suhu tiap 6 jam untuk evaluasi respons antibiotik dalam 48-72 jam.",
+      "Kemampuan makan, minum, kesadaran."
+    ],
+    "parametarLab": [
+      "SpO2 kontinu pada fase akut.",
+      "Rontgen toraks serial HANYA jika tidak ada perbaikan 48-72 jam atau curiga komplikasi."
+    ],
+    "targetTerapi": [
+      "Resolusi demam dalam 48-72 jam pertama antibiotik.",
+      "RR normal sesuai usia dan hilangnya retraksi.",
+      "Toleransi diet penuh."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Efusi pleura parapneumonik dan Empiema.",
+      "Bakteremia dan Sepsis berat/Syok septik.",
+      "Pneumotoraks spontan atau pneumomediastinum.",
+      "Abses paru atau pneumatokel (terutama S.aureus)."
+    ],
+    "komplikasiLanjut": [
+      "Bronkiektasis post-infeksius (dilatasi saluran napas permanen).",
+      "Fibrosis paru parsial pada area konsolidasi luas."
+    ],
+    "redFlags": [
+      "Pernapasan 'gasping' atau apnea episodik.",
+      "Demam persisten atau melonjak setelah hari ke-4 IV (curiga empiema/abses).",
+      "Pekak perkusi dan asimetri dada (efusi masif).",
+      "Distensi abdomen progresif → ileus paralitik sekunder sepsis."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Amoksisilin sirup dihabiskan penuh (3-5 hari) walau anak sudah tampak sehat.",
+      "Beri minum lebih banyak sedikit-sedikit (ASI/air/kuah) karena napas cepat menyebabkan kehilangan cairan.",
+      "Batuk ringan bisa bertahan 1-2 minggu pasca penyembuhan."
+    ],
+    "pencegahan": [
+      "Lengkapi imunisasi PCV, Hib, Campak, DPT.",
+      "ASI Eksklusif 6 bulan dan MPASI bergizi hingga 2 tahun.",
+      "Perbaiki ventilasi rumah dan hindari asap rokok."
+    ],
+    "kapanKembaliKeDokter": [
+      "Napas bayi semakin cepat atau dada melesak dalam.",
+      "Anak gelisah lalu menjadi lemas tidak responsif.",
+      "Menolak semua asupan atau memuntahkan setiap tegukan."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam jika diagnosis dan antibiotik empiris tepat tanpa penundaan. Dubia ad malam pada kelompok rentan (neonatus, malnutrisi berat).",
+    "faktorPrognostikBaik": [
+      "Gizi dan imunologi normal sebelum sakit.",
+      "Respons defervesens jelas dalam 48 jam pertama.",
+      "Infeksi murni patogen atipikal/virus ringan pada anak lebih tua."
+    ],
+    "faktorPrognostikBuruk": [
+      "Malnutrisi Energi Protein berat.",
+      "Keterlambatan >5 hari pasca onset.",
+      "Infeksi bakteri invasif (MRSA, Klebsiella) + komplikasi empiema/nekrosis.",
+      "Komorbiditas bawaan (PJB, defisiensi imun kongenital, cerebral palsy)."
+    ]
+  },
+  "referensi": [
+    "PNPK Tata Laksana Pneumonia pada Anak, Kemenkes RI",
+    "Buku Bagan MTBS/IMCI Guidelines WHO, Revisi Terbaru",
+    "Buku Ajar Respirologi Anak IDAI, Edisi Pertama (Bab Pneumonia Komunitas)",
+    "Nelson Textbook of Pediatrics, 21st Edition (Chapter: Pneumonia)"
+  ]
+}

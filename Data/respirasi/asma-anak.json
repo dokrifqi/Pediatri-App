@@ -1,0 +1,270 @@
+{
+  "id": "asma_serangan_akut",
+  "name": "Asma Anak — Serangan Akut",
+  "icon": "🌬️",
+  "category": "respirasi",
+  "shortDesc": "Klasifikasi derajat serangan & nebulisasi Salbutamol + Steroid",
+  "definisi": {
+    "pengertian": "Episode perburukan akut/subakut dari gejala asma (sesak, batuk, mengi, dada tertekan) akibat inflamasi progresif, hiperreaktivitas, dan obstruksi jalan napas bawah.",
+    "epidemiologi": "Salah satu kegawatdaruratan medis anak dan penyebab utama kunjungan IGD di seluruh dunia.",
+    "angkaMorbiditas": "Memicu absensi sekolah tinggi dan penurunan kualitas hidup; dapat menyebabkan mortalitas jika terlambat atau jatuh dalam status asmatikus."
+  },
+  "etiologi": {
+    "penyebabUtama": [
+      "Infeksi saluran napas atas (virus: Rhinovirus, RSV)",
+      "Paparan alergen spesifik (tungau debu, bulu hewan, spora jamur)",
+      "Polutan lingkungan (asap rokok, asap pembakaran, polusi udara)"
+    ],
+    "faktorRisiko": [
+      "Penghentian tiba-tiba atau ketidakpatuhan ICS (inhaled corticosteroid)",
+      "Perubahan cuaca ekstrem atau udara dingin",
+      "Aktivitas fisik berlebih (Exercise-Induced Bronchoconstriction)",
+      "Stres emosional (menangis, tertawa berlebihan)"
+    ]
+  },
+  "patofisiologi": {
+    "mekanisme": "Pemicu memediasi kaskade inflamasi → trias patofisiologi: bronkospasme akut (kontraksi otot polos), edema mukosa, dan hipersekresi mukus tebal yang menyumbat lumen bronkus.",
+    "poinKunci": [
+      "Obstruksi mempersulit ekspirasi → air trapping → hiperinflasi paru.",
+      "Peningkatan resistensi jalan napas → kerja napas meningkat → otot bantu napas lelah.",
+      "V/Q mismatch → hipoksemia → asidosis respiratorik."
+    ]
+  },
+  "diagnosisKlinis": {
+    "anamnesis": [
+      "Awitan sesak akut, frekuensi batuk malam/dini hari, durasi gejala",
+      "Riwayat asma pribadi/keluarga, alergi, dermatitis atopik, rhinitis",
+      "Kapan dan berapa banyak SABA yang sudah dipakai di rumah",
+      "Faktor pencetus saat ini",
+      "Riwayat ICU atau intubasi sebelumnya"
+    ],
+    "pemeriksaanFisik": [
+      "Tanda vital: takipnea, takikardia, pulsus paradoksus",
+      "Inspeksi: retraksi suprasternal, interkostal, epigastrik; posisi tripod",
+      "Auskultasi: wheezing ekspirasi, pemanjangan ekspirasi, atau silent chest",
+      "SpO2 dengan pulse oximetry"
+    ],
+    "kriteriaDiagnosis": "Obstruksi napas bawah akut. Derajat dinilai dengan skor PRAM (Pediatric Respiratory Assessment Measure) atau skor IDAI (Bicara, Kesadaran, RR, Retraksi, Mengi, SpO2).",
+    "algoritmaDiagnosis": [
+      "1. Triase awal: tanda mengancam jiwa (sianosis, letargi, silent chest).",
+      "2. Nilai skor PRAM atau parameter klinis untuk derajat serangan: Ringan-Sedang vs Berat.",
+      "3. Peak Flow Meter (APE) jika anak >5 tahun dan kooperatif.",
+      "4. Inisiasi terapi inhalasi segera (jangan tunda untuk pemeriksaan penunjang).",
+      "5. Observasi respons klinis 1 jam pasca intervensi untuk tentukan disposisi pasien."
+    ]
+  },
+  "pemeriksaanPenunjang": {
+    "laboratorium": [
+      {
+        "nama": "Analisis Gas Darah (AGD)",
+        "indikasi": "Asma berat atau status asmatikus untuk evaluasi hipoksemia dan hiperkarbia",
+        "interpretasi": "pCO2 meningkat = tanda gagal napas iminens. pH <7.35 = asidosis respiratorik"
+      },
+      {
+        "nama": "Darah Perifer Lengkap (DPL)",
+        "indikasi": "Curiga infeksi sekunder bakteri",
+        "interpretasi": "Leukositosis dengan dominasi neutrofil mengarah ke infeksi bakteri"
+      }
+    ],
+    "radiologi": [
+      {
+        "nama": "Rontgen Toraks PA",
+        "indikasi": "TIDAK rutin. Hanya jika asimetri suara napas, curiga komplikasi (pneumotoraks/pneumomediastinum), pneumonia, atau asma tidak responsif",
+        "temuanKhas": "Hiperinflasi, mendatarnya diafragma, atau komplikasi"
+      }
+    ],
+    "penunjangLain": [
+      {
+        "nama": "Peak Flow Meter (APE)",
+        "indikasi": "Anak >5 tahun kooperatif untuk evaluasi derajat obstruksi",
+        "interpretasi": "Ringan-sedang APE >50%; Berat APE <50% dari nilai prediksi/terbaik pasien"
+      }
+    ]
+  },
+  "klasifikasi": {
+    "adaKlasifikasi": true,
+    "sistemKlasifikasi": "Derajat Serangan Asma Akut (IDAI & GINA)",
+    "tingkatan": [
+      {
+        "derajat": "Ringan-Sedang",
+        "kriteria": "Bicara kalimat, duduk lebih suka dari berbaring, retraksi minimal, mengi sedang, HR stabil, SpO2 (udara kamar) >90% (IDAI) atau >92% (GINA)",
+        "tindakan": "Salbutamol nebulisasi q20 menit × 3. Prednison oral. Observasi 1 jam."
+      },
+      {
+        "derajat": "Berat",
+        "kriteria": "Bicara kata-kata, duduk tripod, gelisah, retraksi dalam, mengi nyaring, takikardia, SpO2 <90% (IDAI) atau <92% (GINA)",
+        "tindakan": "Salbutamol + Ipratropium nebulisasi. Kortikosteroid IV. Oksigen. Monitor intensif."
+      },
+      {
+        "derajat": "Mengancam Jiwa",
+        "kriteria": "Kesadaran menurun/letargi, bradikardia, gasping, SILENT CHEST",
+        "tindakan": "Resusitasi segera. ICU/intubasi. MgSO4 IV. Panggil bantuan."
+      }
+    ]
+  },
+  "tatalaksana": {
+    "prinsipUmum": [
+      "Koreksi hipoksemia cepat dengan oksigen target SpO2 94-98%.",
+      "Atasi bronkospasme segera dengan SABA inhalasi.",
+      "Redakan inflamasi dengan kortikosteroid sistemik dini.",
+      "Observasi ketat respons 1 jam pertama."
+    ],
+    "obatObatan": [
+      {
+        "nama": "Salbutamol/Albuterol (SABA)",
+        "kelas": "Bronkodilator Agonis Reseptor Beta-2",
+        "indikasi": "Semua serangan asma akut. Lini pertama.",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "Nebulisasi 1.25-2.5 mg/dosis dalam NaCl q20 menit (maks 3x dalam jam pertama)",
+          "batita": "Nebulisasi 1.25-2.5 mg/dosis q20 menit",
+          "prasekolah": "Nebulisasi 2.5 mg/dosis q20 menit",
+          "sekolah": "Nebulisasi 2.5-5 mg/dosis q20 menit",
+          "remaja": "Nebulisasi 2.5-5 mg/dosis q20 menit"
+        },
+        "dosisMaksimal": "5 mg/dosis per nebulisasi",
+        "caraPemberian": "Nebulisasi atau MDI + spacer (4-10 puff)",
+        "durasi": "q20 menit × 3 pada jam pertama; sesuaikan respons",
+        "catatanKhusus": "MDI + spacer sama efektif dengan nebulisasi untuk serangan ringan-sedang."
+      },
+      {
+        "nama": "Ipratropium Bromida (SAMA)",
+        "kelas": "Bronkodilator Antikolinergik",
+        "indikasi": "Kombinasi dengan Salbutamol pada serangan BERAT",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "Nebulisasi 250 mcg/dosis dicampur Salbutamol q20 menit",
+          "batita": "Nebulisasi 250 mcg/dosis q20 menit",
+          "prasekolah": "Nebulisasi 250 mcg/dosis q20 menit",
+          "sekolah": "Nebulisasi 500 mcg/dosis q20 menit",
+          "remaja": "Nebulisasi 500 mcg/dosis q20 menit"
+        },
+        "dosisMaksimal": "500 mcg/dosis",
+        "caraPemberian": "Nebulisasi bersama Salbutamol",
+        "durasi": "q20 menit × 3 jam pertama",
+        "catatanKhusus": "Efek sinergis dengan Salbutamol untuk bronkodilatasi lebih kuat."
+      },
+      {
+        "nama": "Prednison/Prednisolon",
+        "kelas": "Kortikosteroid Sistemik Oral",
+        "indikasi": "Semua serangan asma, berikan sedini mungkin",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "1-2 mg/kg/hari dibagi 1-2 dosis 3-5 hari",
+          "batita": "1-2 mg/kg/hari dibagi 1-2 dosis 3-5 hari",
+          "prasekolah": "1-2 mg/kg/hari dibagi 1-2 dosis 3-5 hari",
+          "sekolah": "1-2 mg/kg/hari dibagi 1-2 dosis 3-5 hari",
+          "remaja": "1-2 mg/kg/hari dibagi 1-2 dosis 3-5 hari"
+        },
+        "dosisMaksimal": "<2 th 20 mg/hr; 2-5 th 40 mg/hr; >12 th 60 mg/hr",
+        "caraPemberian": "Per oral (lebih disukai). Atau deksametason 0.6 mg/kg/dosis PO 1-2 hari sebagai alternatif.",
+        "durasi": "3-5 hari tanpa tapering",
+        "catatanKhusus": "Onset 4-6 jam. Berikan pada jam pertama."
+      },
+      {
+        "nama": "Magnesium Sulfat (MgSO4)",
+        "kelas": "Bronkodilator Adjuvan",
+        "indikasi": "Serangan berat yang tidak respons terapi standar (di IGD/ICU)",
+        "dosis": {
+          "neonatus": "Tidak digunakan",
+          "bayi": "Tidak digunakan rutin",
+          "batita": "Tidak digunakan rutin",
+          "prasekolah": "40-50 mg/kg/dosis IV lambat 20-30 menit",
+          "sekolah": "40-50 mg/kg/dosis IV lambat 20-30 menit",
+          "remaja": "40-50 mg/kg/dosis IV lambat 20-30 menit"
+        },
+        "dosisMaksimal": "2 gram/dosis",
+        "caraPemberian": "IV infus 20-30 menit",
+        "durasi": "Dosis tunggal",
+        "catatanKhusus": "Relaksasi otot polos bronkus. Monitoring BP dan HR."
+      }
+    ],
+    "tindakanNonFarmakologis": [
+      "Oksigen nasal/sungkup target SpO2 94-98%.",
+      "Posisi duduk nyaman (semi-fowler/fowler penuh).",
+      "Pastikan anak tenang bersama orang tua; menangis memicu hiperinflasi."
+    ],
+    "kriteriaRawatInap": [
+      "Respons 3x nebulisasi awal inkomplit atau buruk.",
+      "SpO2 <92-94% persisten tanpa O2.",
+      "Presentasi awal serangan mengancam henti napas.",
+      "Riwayat ICU/intubasi pada asma sebelumnya."
+    ],
+    "kriteriaRawatJalan": [
+      "Perbaikan sempurna pasca nebulisasi: retraksi hilang, wheezing minimal, APE >70%.",
+      "SpO2 >94% tanpa O2 stabil 1-2 jam.",
+      "Keluarga memiliki reliever, spacer, steroid oral, dan Asthma Action Plan."
+    ]
+  },
+  "monitoring": {
+    "parametarKlinis": [
+      "RR dan kualitas usaha napas secara terus-menerus.",
+      "Perubahan derajat retraksi (interkostal, subkostal, suprasternal).",
+      "Auskultasi wheezing inspirasi dan ekspirasi.",
+      "Kesadaran dan interaksi anak."
+    ],
+    "parametarLab": [
+      "SpO2 kontinu hingga stabil atau diputuskan rawat jalan.",
+      "Peak Flow Meter pre dan post bronkodilator."
+    ],
+    "targetTerapi": [
+      "SpO2 >94% di udara kamar tanpa tambahan oksigen.",
+      "APE >70% prediksi dasar.",
+      "Resolusi total tanda distres pernapasan."
+    ]
+  },
+  "komplikasi": {
+    "komplikasiDini": [
+      "Status asmatikus refrakter.",
+      "Gagal napas akut tipe II (hiperkarbia) → intubasi ventilasi mekanik.",
+      "Pneumotoraks spontan atau pneumomediastinum.",
+      "Dehidrasi akibat kehilangan insensibel via takipnea."
+    ],
+    "komplikasiLanjut": [
+      "Airway remodeling ireversibel → penurunan fungsi paru menetap.",
+      "Efek samping ICS jika salah pengawasan."
+    ],
+    "redFlags": [
+      "SILENT CHEST: tidak ada wheezing di auskultasi TAPI retraksi dalam → bronkospasme terlalu ekstrem, hampir tidak ada flow udara!",
+      "Kesadaran dari gelisah menjadi letargi/somnolen → akumulasi CO2 mematikan.",
+      "Bradikardia saat sebelumnya takikardia → dekompensasi kardiopulmoner.",
+      "Paradoksikal abdominal breathing → diafragma kelelahan total."
+    ]
+  },
+  "edukasi": {
+    "untukKeluarga": [
+      "Demonstrasi MDI + spacer yang benar (jangan MDI langsung ke mulut pada anak).",
+      "Bedakan reliever (Salbutamol/biru) vs controller (ICS/oranye-cokelat).",
+      "Susun Asthma Action Plan tertulis (zona merah-kuning-hijau)."
+    ],
+    "pencegahan": [
+      "Identifikasi dan hindari pencetus alergi pasien.",
+      "Berhenti merokok 100% untuk semua penghuni rumah.",
+      "Vaksinasi Influenza tahunan untuk asma sedang-berat."
+    ],
+    "kapanKembaliKeDokter": [
+      "Kebutuhan Salbutamol >1x tiap 4 jam setelah pulang.",
+      "Batuk terus dan terbangun malam >2 malam berturut.",
+      "Otot di sekitar tulang rusuk dan leher kembali tertarik (retraksi muncul lagi)."
+    ]
+  },
+  "prognosis": {
+    "umum": "Bonam jika segera dibawa dan asma dikontrol proaktif. Dubia ad malam jika status asmatikus tidak responsif.",
+    "faktorPrognostikBaik": [
+      "Anak mengenali gejala awal dan langsung pakai reliever.",
+      "Terapi ICS teratur menurunkan inflamasi baseline.",
+      "Akses faskes dekat."
+    ],
+    "faktorPrognostikBuruk": [
+      "Riwayat eksaserbasi membutuhkan ICU/ventilator (prediktor mortalitas tertinggi).",
+      "Keluarga denial terhadap penyakit asma, enggan memakai inhaler.",
+      "Penyalahgunaan bronkodilator sirup oral jangka panjang pengganti ICS."
+    ]
+  },
+  "referensi": [
+    "Pedoman Nasional Asma Anak (PNAA) UKK Respirologi IDAI, Revisi 2022",
+    "Global Strategy for Asthma Management and Prevention GINA 2023",
+    "PRAM scoring tool for acute asthma exacerbation severity",
+    "Nelson Textbook of Pediatrics, 21st Edition"
+  ]
+}
